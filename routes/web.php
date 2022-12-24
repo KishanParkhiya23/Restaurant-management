@@ -1,6 +1,11 @@
 <?php
 
 use App\Http\Controllers\Client_side\HomeController;
+use App\Http\Controllers\Client_side\AboutController;
+use App\Http\Controllers\Client_side\MenuController;
+use App\Http\Controllers\Client_side\StoriesController;
+use App\Http\Controllers\Client_side\ContactController;
+use App\Http\Controllers\Client_side\ReservationController;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\layouts\Blank;
 use App\Http\Controllers\layouts\Container;
@@ -36,5 +41,8 @@ Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
 
 // Client Site Routes
 Route::get('/user/',[HomeController::class,'home'])->name('user');
-
-
+Route::get('/user/about/',[AboutController::class,'about'])->name('user.about');
+Route::get('/user/menu/',[MenuController::class,'menu'])->name('user.menu');
+Route::get('/user/stories/',[StoriesController::class,'stories'])->name('user.stories');
+Route::get('/user/contact/',[ContactController::class,'contact'])->name('user.contact');
+Route::get('/user/reservation/',[ReservationController::class,'reservation'])->name('user.reservation');
