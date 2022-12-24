@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Client_side\HomeController;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\layouts\Blank;
 use App\Http\Controllers\layouts\Container;
@@ -31,3 +32,9 @@ Route::get('/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layout
 Route::get('/layouts/without-navbar', [WithoutNavbar::class, 'index'])->name('layouts-without-navbar');
 Route::get('/layouts/container', [Container::class, 'index'])->name('layouts-container');
 Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
+
+
+// Client Site Routes
+Route::get('/user/',[HomeController::class,'home'])->name('user');
+
+
