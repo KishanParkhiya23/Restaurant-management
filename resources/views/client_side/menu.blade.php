@@ -4,7 +4,7 @@
 
 @section('content')
 
-        <section class="hero-wrap hero-wrap-2" style="background-image: url('client_side/images/bg_3.jpg');"
+        <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('client_side/images/bg_3.jpg')}});"
             data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
@@ -58,7 +58,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/breakfast-1.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/breakfast-1.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -79,7 +79,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/breakfast-2.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/breakfast-2.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -101,7 +101,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/breakfast-3.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/breakfast-3.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -122,7 +122,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/breakfast-4.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/breakfast-4.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -144,7 +144,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/breakfast-5.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/breakfast-5.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -165,7 +165,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/breakfast-6.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/breakfast-6.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -186,7 +186,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/breakfast-7.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/breakfast-7.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -207,7 +207,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/breakfast-8.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/breakfast-8.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -233,7 +233,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/lunch-1.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/lunch-1.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -254,7 +254,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/lunch-2.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/lunch-2.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -276,7 +276,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/lunch-3.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/lunch-3.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -297,7 +297,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/lunch-4.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/lunch-4.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -319,7 +319,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/lunch-5.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/lunch-5.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -340,7 +340,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/lunch-6.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/lunch-6.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -362,7 +362,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/lunch-7.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/lunch-7.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -383,7 +383,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/lunch-8.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/lunch-8.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -410,7 +410,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/dinner-1.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dinner-1.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -431,7 +431,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/dinner-2.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dinner-2.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -453,7 +453,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/dinner-3.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dinner-3.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -474,7 +474,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/dinner-4.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dinner-4.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -496,7 +496,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/dinner-5.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dinner-5.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -517,7 +517,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/dinner-6.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dinner-6.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -544,7 +544,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/drink-1.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/drink-1.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -565,7 +565,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/drink-2.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/drink-2.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -587,7 +587,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/drink-3.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/drink-3.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -608,7 +608,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/drink-4.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/drink-4.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -630,7 +630,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/drink-5.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/drink-5.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -651,7 +651,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/drink-6.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/drink-6.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -678,7 +678,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/dessert-1.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dessert-1.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -699,7 +699,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/dessert-2.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dessert-2.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -721,7 +721,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/dessert-3.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dessert-3.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -742,7 +742,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/dessert-4.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dessert-4.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -763,7 +763,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/dessert-5.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/dessert-5.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -784,7 +784,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/drink-6.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/drink-6.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -810,7 +810,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/wine-1.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/wine-1.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -831,7 +831,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/wine-2.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/wine-2.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -853,7 +853,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/wine-3.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/wine-3.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -875,7 +875,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/wine-4.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/wine-4.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -898,7 +898,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/wine-5.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/wine-5.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -919,7 +919,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img"
-                                                    style="background-image: url(client_side/images/wine-6.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/wine-6.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -942,7 +942,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/wine-7.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/wine-7.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">
@@ -963,7 +963,7 @@
                                         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                             <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                                 <div class="menu-img img order-md-last"
-                                                    style="background-image: url(client_side/images/wine-8.jpg);"></div>
+                                                    style="background-image: url({{ asset('client_side/images/wine-8.jpg')}});"></div>
                                                 <div class="text d-flex align-items-center">
                                                     <div>
                                                         <div class="d-flex">

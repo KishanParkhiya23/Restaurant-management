@@ -5,7 +5,7 @@
 @section('content')
 
     <section class="home-slider owl-carousel js-fullheight">
-        <div class="slider-item js-fullheight" style="background-image: url('client_side/images/bg_1.jpg');">
+        <div class="slider-item js-fullheight" style="background-image: url({{ asset('client_side/images/bg_1.jpg')}});">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text js-fullheight justify-content-center align-items-center"
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="slider-item js-fullheight" style="background-image: url(client_side/images/bg_2.jpg);">
+        <div class="slider-item js-fullheight" style="background-image: url({{ asset('client_side/images/bg_2.jpg')}});">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text js-fullheight justify-content-center align-items-center"
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="slider-item js-fullheight" style="background-image: url(client_side/images/bg_3.jpg);">
+        <div class="slider-item js-fullheight" style="background-image: url({{ asset('client_side/images/bg_3.jpg')}});">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -59,7 +59,7 @@
                             <div class="col-md-3">
                                 <div class="featured-menus ftco-animate">
                                     <div class="menu-img img"
-                                        style="background-image: url(client_side/images/breakfast-1.jpg);">
+                                        style="background-image: url({{ asset('client_side/images/breakfast-1.jpg')}});">
                                     </div>
                                     <div class="text text-center">
                                         <h3>Grilled Beef with potatoes</h3>
@@ -72,7 +72,7 @@
                             <div class="col-md-3">
                                 <div class="featured-menus ftco-animate">
                                     <div class="menu-img img"
-                                        style="background-image: url(client_side/images/breakfast-2.jpg);">
+                                        style="background-image: url({{ asset('client_side/images/breakfast-2.jpg')}});">
                                     </div>
                                     <div class="text text-center">
                                         <h3>Grilled Beef with potatoes</h3>
@@ -85,7 +85,7 @@
                             <div class="col-md-3">
                                 <div class="featured-menus ftco-animate">
                                     <div class="menu-img img"
-                                        style="background-image: url(client_side/images/breakfast-3.jpg);">
+                                        style="background-image: url({{ asset('client_side/images/breakfast-3.jpg')}});">
                                     </div>
                                     <div class="text text-center">
                                         <h3>Grilled Beef with potatoes</h3>
@@ -98,7 +98,7 @@
                             <div class="col-md-3">
                                 <div class="featured-menus ftco-animate">
                                     <div class="menu-img img"
-                                        style="background-image: url(client_side/images/breakfast-4.jpg);">
+                                        style="background-image: url({{ asset('client_side/images/breakfast-4.jpg')}});">
                                     </div>
                                     <div class="text text-center">
                                         <h3>Grilled Beef with potatoes</h3>
@@ -120,8 +120,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7 d-flex">
-                    <div class="img img-1 mr-md-2" style="background-image: url(client_side/images/about.jpg);"></div>
-                    <div class="img img-2 ml-md-2" style="background-image: url(client_side/images/about-1.jpg);"></div>
+                    <div class="img img-1 mr-md-2" style="background-image: url({{ asset('client_side/images/about.jpg')}});"></div>
+                    <div class="img img-2 ml-md-2" style="background-image: url({{ asset('client_side/images/about-1.jpg')}});"></div>
                 </div>
                 <div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
                     <div class="heading-section mb-4 my-5 my-md-0">
@@ -250,7 +250,7 @@
             <div class="row no-gutters d-flex align-items-stretch">
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img" style="background-image: url(client_side/images/breakfast-1.jpg);">
+                        <div class="menu-img img" style="background-image: url({{ asset('client_side/images/breakfast-1.jpg')}});">
                         </div>
                         <div class="text d-flex align-items-center">
                             <div>
@@ -270,7 +270,7 @@
                 </div>
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img" style="background-image: url(client_side/images/breakfast-2.jpg);">
+                        <div class="menu-img img" style="background-image: url({{ asset('client_side/images/breakfast-2.jpg')}});">
                         </div>
                         <div class="text d-flex align-items-center">
                             <div>
@@ -292,7 +292,7 @@
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
                         <div class="menu-img img order-md-last"
-                            style="background-image: url(client_side/images/breakfast-3.jpg);"></div>
+                            style="background-image: url({{ asset('client_side/images/breakfast-3.jpg')}});"></div>
                         <div class="text d-flex align-items-center">
                             <div>
                                 <div class="d-flex">
@@ -312,7 +312,7 @@
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
                         <div class="menu-img img order-md-last"
-                            style="background-image: url(client_side/images/breakfast-5.jpg);"></div>
+                            style="background-image: url({{ asset('client_side/images/breakfast-5.jpg')}});"></div>
                         <div class="text d-flex align-items-center">
                             <div>
                                 <div class="d-flex">
@@ -332,7 +332,7 @@
 
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img" style="background-image: url(client_side/images/breakfast-6.jpg);">
+                        <div class="menu-img img" style="background-image: url({{ asset('client_side/images/breakfast-6.jpg')}});">
                         </div>
                         <div class="text d-flex align-items-center">
                             <div>
@@ -352,7 +352,7 @@
                 </div>
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img" style="background-image: url(client_side/images/breakfast-2.jpg);">
+                        <div class="menu-img img" style="background-image: url({{ asset('client_side/images/breakfast-2.jpg')}});">
                         </div>
                         <div class="text d-flex align-items-center">
                             <div>
@@ -385,7 +385,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
-                        <div class="img" style="background-image: url(client_side/images/chef-4.jpg);"></div>
+                        <div class="img" style="background-image: url({{ asset('client_side/images/chef-4.jpg')}});"></div>
                         <div class="text pt-4">
                             <h3>John Smooth</h3>
                             <span class="position mb-2">Restaurant Owner</span>
@@ -406,7 +406,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
-                        <div class="img" style="background-image: url(client_side/images/chef-2.jpg);"></div>
+                        <div class="img" style="background-image: url({{ asset('client_side/images/chef-2.jpg')}});"></div>
                         <div class="text pt-4">
                             <h3>Rebeca Welson</h3>
                             <span class="position mb-2">Head Chef</span>
@@ -427,7 +427,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
-                        <div class="img" style="background-image: url(client_side/images/chef-3.jpg);"></div>
+                        <div class="img" style="background-image: url({{ asset('client_side/images/chef-3.jpg')}});"></div>
                         <div class="text pt-4">
                             <h3>Kharl Branyt</h3>
                             <span class="position mb-2">Chef</span>
@@ -448,7 +448,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
-                        <div class="img" style="background-image: url(client_side/images/chef-1.jpg);"></div>
+                        <div class="img" style="background-image: url({{ asset('client_side/images/chef-1.jpg')}});"></div>
                         <div class="text pt-4">
                             <h3>Luke Simon</h3>
                             <span class="position mb-2">Chef</span>
@@ -471,7 +471,7 @@
         </div>
     </section>
 
-    <section class="ftco-section img" style="background-image: url(client_side/images/bg_3.jpg)"
+    <section class="ftco-section img" style="background-image: url({{ asset('client_side/images/bg_3.jpg')}})"
         data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row d-flex">
@@ -555,7 +555,7 @@
                         <div class="item">
                             <div class="testimony-wrap text-center pb-5">
                                 <div class="user-img mb-4"
-                                    style="background-image: url(client_side/images/person_1.jpg)">
+                                    style="background-image: url({{ asset('client_side/images/person_1.jpg')}})">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -571,7 +571,7 @@
                         <div class="item">
                             <div class="testimony-wrap text-center pb-5">
                                 <div class="user-img mb-4"
-                                    style="background-image: url(client_side/images/person_2.jpg)">
+                                    style="background-image: url({{ asset('client_side/images/person_2.jpg')}})">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -587,7 +587,7 @@
                         <div class="item">
                             <div class="testimony-wrap text-center pb-5">
                                 <div class="user-img mb-4"
-                                    style="background-image: url(client_side/images/person_3.jpg)">
+                                    style="background-image: url({{ asset('client_side/images/person_3.jpg')}})">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -603,7 +603,7 @@
                         <div class="item">
                             <div class="testimony-wrap text-center pb-5">
                                 <div class="user-img mb-4"
-                                    style="background-image: url(client_side/images/person_4.jpg)">
+                                    style="background-image: url({{ asset('client_side/images/person_4.jpg')}})">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -619,7 +619,7 @@
                         <div class="item">
                             <div class="testimony-wrap text-center pb-5">
                                 <div class="user-img mb-4"
-                                    style="background-image: url(client_side/images/person_3.jpg)">
+                                    style="background-image: url({{ asset('client_side/images/person_3.jpg')}})">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -650,7 +650,7 @@
                 <div class="col-md-4 ftco-animate">
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20"
-                            style="background-image: url('client_side/images/image_1.jpg');">
+                            style="background-image: url('{{ asset('client_side/images/image_1.jpg')}}');">
                         </a>
                         <div class="text pt-3 pb-4 px-4">
                             <div class="meta">
@@ -668,7 +668,7 @@
                 <div class="col-md-4 ftco-animate">
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20"
-                            style="background-image: url('client_side/images/image_2.jpg');">
+                            style="background-image: url('{{ asset('client_side/images/image_2.jpg')}}');">
                         </a>
                         <div class="text pt-3 pb-4 px-4">
                             <div class="meta">
@@ -686,7 +686,7 @@
                 <div class="col-md-4 ftco-animate">
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20"
-                            style="background-image: url('client_side/images/image_3.jpg');">
+                            style="background-image: url('{{ asset('client_side/images/image_3.jpg')}}');">
                         </a>
                         <div class="text pt-3 pb-4 px-4">
                             <div class="meta">
