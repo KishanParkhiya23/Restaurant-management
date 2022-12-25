@@ -40,9 +40,19 @@ Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
 
 
 // Client Site Routes
-Route::get('/user/',[HomeController::class,'home'])->name('user');
-Route::get('/user/about/',[AboutController::class,'about'])->name('user.about');
-Route::get('/user/menu/',[MenuController::class,'menu'])->name('user.menu');
-Route::get('/user/stories/',[StoriesController::class,'stories'])->name('user.stories');
-Route::get('/user/contact/',[ContactController::class,'contact'])->name('user.contact');
-Route::get('/user/reservation/',[ReservationController::class,'reservation'])->name('user.reservation');
+// Route::get('/user', [HomeController::class, 'home'])->name('user');
+// Route::get('/user/about', [AboutController::class, 'about'])->name('user.about');
+// Route::get('/user/menu', [MenuController::class, 'menu'])->name('user.menu');
+// Route::get('/user/stories', [StoriesController::class, 'stories'])->name('user.stories');
+// Route::get('/user/contact', [ContactController::class, 'contact'])->name('user.contact');
+// Route::get('/user/reservation', [ReservationController::class, 'reservation'])->name('user.reservation');
+
+
+Route::group(['prefix' => '/user', 'as' => 'user'], function () {
+    Route::get('/', [HomeController::class, 'home']);
+    Route::get('/about', [AboutController::class, 'about'])->name('.about');
+    Route::get('/menu', [MenuController::class, 'menu'])->name('.menu');
+    Route::get('/stories', [StoriesController::class, 'stories'])->name('.stories');
+    Route::get('/contact', [ContactController::class, 'contact'])->name('.contact');
+    Route::get('/reservation', [ReservationController::class, 'reservation'])->name('.reservation');
+});
