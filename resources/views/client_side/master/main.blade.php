@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="{{asset('client_side/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('client_side/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('client_side/css/style.css')}}">
+
+    @yield('extra-css')
+    
 </head>
 
 <body>
