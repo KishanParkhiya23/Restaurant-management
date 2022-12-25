@@ -9717,8 +9717,14 @@ button.list-group-item-gray.active {
 }
 
 .text-danger {
+  font-size: .75rem;
   --bs-text-opacity: 1;
   color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
+}
+
+.is-invalid{
+  border-color: #ff8a76!important;
+  box-shadow: none!important;
 }
 
 .text-light {

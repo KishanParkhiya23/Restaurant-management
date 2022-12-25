@@ -3,7 +3,7 @@ $container = 'container-xxl';
 $containerNav = 'container-xxl';
 @endphp
 
-@extends('layouts/contentNavbarLayout')
+@extends('layouts.contentNavbarLayout')
 
 @section('title', 'Container - Layouts')
 

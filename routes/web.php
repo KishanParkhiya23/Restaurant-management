@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin_side\AdminAuthController;
 use App\Http\Controllers\Client_side\HomeController;
 use App\Http\Controllers\Client_side\AboutController;
 use App\Http\Controllers\Client_side\MenuController;
@@ -27,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 $controller_path = 'App\Http\Controllers';
 
-// Main Page Route
+// Admin Side Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
 
 
@@ -38,15 +39,16 @@ Route::get('/layouts/without-navbar', [WithoutNavbar::class, 'index'])->name('la
 Route::get('/layouts/container', [Container::class, 'index'])->name('layouts-container');
 Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
 
+Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
 
-// Client Site Routes
-// Route::get('/user', [HomeController::class, 'home'])->name('user');
-// Route::get('/user/about', [AboutController::class, 'about'])->name('user.about');
-// Route::get('/user/menu', [MenuController::class, 'menu'])->name('user.menu');
-// Route::get('/user/stories', [StoriesController::class, 'stories'])->name('user.stories');
-// Route::get('/user/contact', [ContactController::class, 'contact'])->name('user.contact');
-// Route::get('/user/reservation', [ReservationController::class, 'reservation'])->name('user.reservation');
+    Route::get('/login', [AdminAuthController::class, 'login'])->name('.login');
+    Route::get('/registration', [AdminAuthController::class, 'registration'])->name('.registration');
+    Route::get('/registration/sttore', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
+    Route::get('/forget-password', [AdminAuthController::class, 'forgetPassword'])->name('.forget-password');
+});
 
+
+// Client Side Routes
 
 Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/', [HomeController::class, 'home']);
