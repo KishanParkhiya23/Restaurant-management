@@ -43,6 +43,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
 
     Route::get('/login', [AdminAuthController::class, 'login'])->name('.login');
     Route::get('/registration', [AdminAuthController::class, 'registration'])->name('.registration');
+    Route::get('/registration/sttore', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
     Route::get('/forget-password', [AdminAuthController::class, 'forgetPassword'])->name('.forget-password');
 });
 

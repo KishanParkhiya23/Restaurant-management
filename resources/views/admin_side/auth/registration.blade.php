@@ -5,10 +5,12 @@
 @section('page-style')
 <!-- Page -->
 <link rel="stylesheet" href="{{asset('assets/vendor/css/pages/page-auth.css')}}">
+
 @endsection
 
-
 @section('content')
+
+
 <div class="container-xxl">
     <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
@@ -19,8 +21,6 @@
                     <!-- Logo -->
                     <div class="app-brand justify-content-center">
                         <a href="{{url('/')}}" class="app-brand-link gap-2">
-                            <!-- <span class="app-brand-logo demo">@include('_partials.macros',["width"=>25,"withbg"=>'#696cff'])</span>
-                            <span class="app-brand-text demo text-body fw-bolder">{{config('variables.templateName')}}</span> -->
                             @include('layouts.sections.logo')
                         </a>
                     </div>
@@ -28,21 +28,25 @@
                     <h4 class="mb-2 text-center">Register Your Self</h4>
                     <p class="mb-4 text-center">Join with us and enjoy life every day</p>
 
-                    <form id="formAuthentication" class="mb-3" action="{{url('/')}}" method="GET">
+                    <form id="formAuthentication" class="mb-3" action="{{ route('admin.registration.store') }}" method="GET">
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" autofocus>
+                            <label for="username" class="form-label">Name</label>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Enter your username" autofocus>
+                            
+                            @error('name') <span class="text-danger"> {{$message}} </span> @enderror
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email">
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email">
+                            @error('email') <span class="text-danger"> {{$message}} </span> @enderror
                         </div>
                         <div class="mb-3 form-password-toggle">
                             <label class="form-label" for="password">Password</label>
                             <div class="input-group input-group-merge">
-                                <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                             </div>
+                            @error('password') <span class="text-danger"> {{$message}} </span> @enderror
                         </div>
 
                         <div class="mb-3">
@@ -70,5 +74,5 @@
         <!-- Register Card -->
     </div>
 </div>
-</div>
+
 @endsection
