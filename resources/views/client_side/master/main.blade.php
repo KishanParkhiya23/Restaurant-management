@@ -54,7 +54,7 @@
     </div>
 
     <script src="{{asset('client_side/js/jquery.min.js')}}"></script>
-    <!-- <script src="{{asset('client_side/js/jquery-migrate-3.0.1.min.js')}}"></script> -->
+    <script src="{{asset('client_side/js/jquery-migrate-3.0.1.min.js')}}"></script>
     <script src="{{asset('client_side/js/popper.min.js')}}"></script>
     <script src="{{asset('client_side/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('client_side/js/jquery.easing.1.3.js')}}"></script>

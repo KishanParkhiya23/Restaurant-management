@@ -29,6 +29,6 @@ class AdminAuthController extends Controller
 
     public function forgetPassword()
     {
-        return view('admin_side.forget_password');
+        return view('admin_side.auth.forget_password');
     }
 }

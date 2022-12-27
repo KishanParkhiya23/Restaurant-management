@@ -29,7 +29,6 @@ use Illuminate\Support\Facades\Route;
 $controller_path = 'App\Http\Controllers';
 
 // Admin Side Route
-Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
 
 
 Route::get('/layouts/fluid', [Fluid::class, 'index'])->name('layouts-fluid');
@@ -40,18 +39,19 @@ Route::get('/layouts/container', [Container::class, 'index'])->name('layouts-con
 Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
 
 Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
+    Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
 
     Route::get('/login', [AdminAuthController::class, 'login'])->name('.login');
     Route::get('/registration', [AdminAuthController::class, 'registration'])->name('.registration');
-    Route::get('/registration/sttore', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
+    Route::get('/registration/store', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
     Route::get('/forget-password', [AdminAuthController::class, 'forgetPassword'])->name('.forget-password');
 });
 
 
 // Client Side Routes
 
+Route::get('/', [HomeController::class, 'home']);
 Route::group(['prefix' => '/user', 'as' => 'user'], function () {
-    Route::get('/', [HomeController::class, 'home']);
     Route::get('/about', [AboutController::class, 'about'])->name('.about');
     Route::get('/menu', [MenuController::class, 'menu'])->name('.menu');
     Route::get('/stories', [StoriesController::class, 'stories'])->name('.stories');
