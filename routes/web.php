@@ -7,6 +7,7 @@ use App\Http\Controllers\Client_side\MenuController;
 use App\Http\Controllers\Client_side\StoriesController;
 use App\Http\Controllers\Client_side\ContactController;
 use App\Http\Controllers\Client_side\ReservationController;
+use App\Http\Controllers\Client_side\RegistrationController;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\layouts\Blank;
 use App\Http\Controllers\layouts\Container;
@@ -57,4 +58,5 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/stories', [StoriesController::class, 'stories'])->name('.stories');
     Route::get('/contact', [ContactController::class, 'contact'])->name('.contact');
     Route::get('/reservation', [ReservationController::class, 'reservation'])->name('.reservation');
+    Route::get('/registration', [RegistrationController::class, 'registration'])->name('.registration');
 });
