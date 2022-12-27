@@ -28,14 +28,7 @@
     <link rel="stylesheet" href="{{asset('client_side/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('client_side/css/style.css')}}">
 
-    <!-- Toastr CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    
-    <!-- Toastr CDN -->
-   
+    @yield('extra-css')
 </head>
 
 <body>
@@ -52,6 +45,9 @@
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
         </svg>
     </div>
+    
+    @yield('extra-js')
+
 
     <script src="{{asset('client_side/js/jquery.min.js')}}"></script>
     <script src="{{asset('client_side/js/jquery-migrate-3.0.1.min.js')}}"></script>
