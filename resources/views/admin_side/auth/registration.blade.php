@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <!-- Logo -->
                     <div class="app-brand justify-content-center">
-                        <a href="{{url('/')}}" class="app-brand-link gap-2">
+                        <a href="javascript:void(0)" class="app-brand-link gap-2">
                             @include('layouts.sections.logo')
                         </a>
                     </div>
@@ -28,11 +28,12 @@
                     <h4 class="mb-2 text-center">Register Your Self</h4>
                     <p class="mb-4 text-center">Join with us and enjoy life every day</p>
 
-                    <form id="formAuthentication" class="mb-3" action="{{ route('admin.registration.store') }}" method="GET">
+                    <form id="formAuthentication" class="mb-3" action="{{ route('admin.registration.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="mb-3">
                             <label for="username" class="form-label">Name</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Enter your username" autofocus>
-                            
+
                             @error('name') <span class="text-danger"> {{$message}} </span> @enderror
                         </div>
                         <div class="mb-3">
@@ -47,6 +48,10 @@
                                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                             </div>
                             @error('password') <span class="text-danger"> {{$message}} </span> @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="profile_img" class="form-label">Upload your profile image </label>
+                            <input class="form-control" type="file" id="profile_img" name="profile_img">
                         </div>
 
                         <div class="mb-3">

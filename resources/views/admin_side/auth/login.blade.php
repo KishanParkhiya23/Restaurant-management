@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <!-- Logo -->
                     <div class="app-brand justify-content-center">
-                        <a href="{{url('/')}}" class="app-brand-link gap-2">
+                        <a href="javascript:void(0)" class="app-brand-link gap-2">
                             <span class="app-brand-logo demo">@include('layouts.sections.logo')</span>
                         </a>
                     </div>
@@ -24,7 +24,8 @@
                     <h4 class="mb-2 text-center">Log in Your Self</h4>
                     <p class="mb-4 text-center">Please log in yourself for more information</p>
 
-                    <form id="formAuthentication" class="mb-3" action="{{ route('admin.login.check') }}" method="GET">
+                    <form id="formAuthentication" class="mb-3" action="{{ route('admin.login.check') }}" method="POST">
+                        @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email or username" autofocus>

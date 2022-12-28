@@ -7,19 +7,9 @@
 
     </div>
     <div>
-      <!-- <div class="dropdown dropup footer-link me-3">
-        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Currency
-        </button>
-        <div class="dropdown-menu dropdown-menu-end">
-          <a class="dropdown-item" href="javascript:void(0);"><i class='bx bx-dollar'></i> USD</a>
-          <a class="dropdown-item" href="javascript:void(0);"><i class='bx bx-euro'></i> Euro</a>
-          <a class="dropdown-item" href="javascript:void(0);"><i class='bx bx-pound'></i> Pound</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="javascript:void(0);"><i class='bx bx-bitcoin'></i> Bitcoin</a>
-        </div>
-      </div> -->
-      <a href="javascript:void(0)" class="btn btn-sm btn-outline-danger"><i class='bx bx-log-out-circle'></i> Logout</a>
+      <span>
+        Copyright &#169; by Fork & Spoon in 2022
+      </span>
     </div>
   </div>
 </footer>
