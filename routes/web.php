@@ -40,9 +40,11 @@ Route::get('/layouts/container', [Container::class, 'index'])->name('layouts-con
 Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
 
 Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
-    Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
+    Route::get('/', [Analytics::class, 'index']);
 
     Route::get('/login', [AdminAuthController::class, 'login'])->name('.login');
+    Route::get('/login/check', [AdminAuthController::class, 'loginCheck'])->name('.login.check');
+    Route::get('/logout', [AdminAuthController::class, 'logOut'])->name('.logou');
     Route::get('/registration', [AdminAuthController::class, 'registration'])->name('.registration');
     Route::get('/registration/store', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
     Route::get('/forget-password', [AdminAuthController::class, 'forgetPassword'])->name('.forget-password');
