@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin_side\AdminAuthController;
+use App\Http\Controllers\admin_side\AdminProfileController;
 use App\Http\Controllers\Client_side\HomeController;
 use App\Http\Controllers\Client_side\AboutController;
 use App\Http\Controllers\Client_side\MenuController;
@@ -50,6 +51,8 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
     Route::get('/registration', [AdminAuthController::class, 'registration'])->name('.registration');
     Route::post('/registration/store', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
     Route::get('/forget-password', [AdminAuthController::class, 'forgetPassword'])->name('.forget-password');
+
+    Route::get('/profile',[AdminProfileController::class,'index'])->name('.profile');
 });
 
 

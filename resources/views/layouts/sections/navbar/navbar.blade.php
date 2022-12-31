@@ -35,6 +35,9 @@ $navbarDetached = ($navbarDetached ?? '');
         </a>
       </div>
       @endif
+      @php
+       $id = Auth::user();
+      @endphp
 
       <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <ul class="navbar-nav flex-row align-items-center ms-auto">
@@ -42,7 +45,8 @@ $navbarDetached = ($navbarDetached ?? '');
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
               <div class="avatar avatar-online">
-                <img src="{{ asset('assets/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle">
+                <!-- {{$id->profile_img}} -->
+                <img src="{{url(Storage::url( $id->profile_img != null ? $id->profile_img : 'images/no-image.png'))}}" alt class="rounded-circle">
               </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
@@ -51,18 +55,17 @@ $navbarDetached = ($navbarDetached ?? '');
                   <div class="d-flex">
                     <div class="flex-shrink-0 me-3">
                       <div class="avatar avatar-online">
-                        <img src="{{ asset('assets/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle">
+                        <img src="{{url(Storage::url( $id->profile_img != null ? $id->profile_img : 'images/no-image.png'))}}" alt class="rounded-circle">
                       </div>
                     </div>
                     <div class="flex-grow-1">
-                      <span class="fw-semibold d-block">John Doe</span>
-                      <small class="text-muted">Admin</small>
+                      <span class="fw-semibold d-block mt-2">{{ $id->name }}</span>
                     </div>
                   </div>
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="javascript:void(0);">
+                <a class="dropdown-item" href="{{ route('admin.profile') }}">
                   <i class="bx bx-user me-2"></i>
                   <span class="align-middle">My Profile</span>
                 </a>

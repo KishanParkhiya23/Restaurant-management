@@ -26,6 +26,7 @@ class RegistrationRequest extends FormRequest
         return [
             'name' => "required",
             'email' => "required|email|unique:users,email",
+            'profile_img' => "",
             'email_verified_at' => "",
             'password' => "required",
             'remember_token	' => "",

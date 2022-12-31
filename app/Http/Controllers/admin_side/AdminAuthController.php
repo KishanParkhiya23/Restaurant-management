@@ -50,6 +50,8 @@ class AdminAuthController extends Controller
     public function registrationStore(RegistrationRequest $request)
     {
         $data = $request->validated();
+        $image = $request->profile_img->store('images', ["disk" => "public"]);
+        $data['profile_img'] != null ? $data['profile_img'] = $image : '';
         User::create($data);
         return redirect(route('admin.login'));
     }
