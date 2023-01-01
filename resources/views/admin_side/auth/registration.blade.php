@@ -37,6 +37,11 @@
                             @error('name') <span class="text-danger"> {{$message}} </span> @enderror
                         </div>
                         <div class="mb-3">
+                            <label for="contact" class="form-label">Contact no.</label>
+                            <input type="text" class="form-control @error('contact') is-invalid @enderror" id="contact" name="contact" placeholder="Enter your contact" autofocus>
+                            @error('contact') <span class="text-danger"> {{$message}} </span> @enderror
+                        </div>
+                        <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email">
                             @error('email') <span class="text-danger"> {{$message}} </span> @enderror

@@ -45,7 +45,6 @@ $navbarDetached = ($navbarDetached ?? '');
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
               <div class="avatar avatar-online">
-                <!-- {{$id->profile_img}} -->
                 <img src="{{url(Storage::url( $id->profile_img != null ? $id->profile_img : 'images/no-image.png'))}}" alt class="rounded-circle">
               </div>
             </a>
