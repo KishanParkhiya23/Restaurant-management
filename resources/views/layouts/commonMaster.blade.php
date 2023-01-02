@@ -15,7 +15,8 @@
   <link rel="canonical" href="{{ config('variables.productPage') ? config('variables.productPage') : '' }}">
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
-
+  
+  @yield('extraa-css')
   <!-- Include Styles -->
   @include('layouts.sections.styles')
 
@@ -31,6 +32,8 @@
 
   <!-- Include Scripts -->
   @include('layouts.sections.scripts')
+  @yield('extraa-js')
+
 
 </body>
 

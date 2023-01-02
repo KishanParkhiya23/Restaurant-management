@@ -16,6 +16,7 @@ yarn-error.log
 # /public/assets/js
 # /public/assets/css
 # /public/assets/vendor
+/public/storage/images
 
 # /public/css
 # /public/js

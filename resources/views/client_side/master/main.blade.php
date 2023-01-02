@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{{asset('client_side/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('client_side/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('client_side/css/style.css')}}">
+
+    @yield('extra-css')
 </head>
 
 <body>
@@ -43,9 +45,12 @@
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
         </svg>
     </div>
+    
+    @yield('extra-js')
+
 
     <script src="{{asset('client_side/js/jquery.min.js')}}"></script>
-    <!-- <script src="{{asset('client_side/js/jquery-migrate-3.0.1.min.js')}}"></script> -->
+    <script src="{{asset('client_side/js/jquery-migrate-3.0.1.min.js')}}"></script>
     <script src="{{asset('client_side/js/popper.min.js')}}"></script>
     <script src="{{asset('client_side/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('client_side/js/jquery.easing.1.3.js')}}"></script>

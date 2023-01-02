@@ -17,8 +17,8 @@
                         </p>
                     </div>
                     <div class="col-lg-3 text-right">
-                        <a href="login.html" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
-                        <a href="register.html" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Register</a>
+                        <a href="{{ route('user.registration') }}" class="small mr-3"><span class="icon-users"> </span>Register </a>
+                        <a href="{{ route('user.login') }}" class="small btn btn-sm btn-primary px-4 py-2 rounded-0"><span class="icon-unlock-alt"> </span>Log In </a>
                       </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item {{ Request::is('user') ? 'active' : '' }}"><a href="{{ url('/user/') }}" class="nav-link">Home</a></li>
+                <li class="nav-item {{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
                 <li class="nav-item {{ Request::is('user/about') ? 'active' : ''}}"><a href="{{route('user.about')}}" class="nav-link">About</a></li>
                 <li class="nav-item {{ Request::is('user/menu') ? 'active' : ''}}"><a href="{{route('user.menu')}}" class="nav-link">Menu</a></li>
                 <li class="nav-item {{ Request::is('user/stories') ? 'active' : ''}}"><a href="{{route('user.stories')}}" class="nav-link">Stories</a></li>

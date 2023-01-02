@@ -26,7 +26,9 @@ class RegistrationRequest extends FormRequest
         return [
             'name' => "required",
             'email' => "required|email|unique:users,email",
+            'profile_img' => "",
             'email_verified_at' => "",
+            'contact' => "required|min:10|max:10",
             'password' => "required",
             'remember_token	' => "",
         ];
@@ -42,6 +44,9 @@ class RegistrationRequest extends FormRequest
         return [
             'name.required' => 'Name Field is required',
             'email.required' => "Email Id Field is required",
+            'email.unique' => "Email id has already been taken please enter unique email id",
+            'contact.required' => "Contact Field is required",
+            'contact.min , contact.max' => "Contact number must be 10 digits",
             'password.required' => "Password Field is required",
         ];
     }
