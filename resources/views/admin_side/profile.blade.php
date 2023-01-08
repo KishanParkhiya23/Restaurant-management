@@ -29,7 +29,8 @@
                             <img src="{{url(Storage::url( $data['profile_img'] != null ? $data['profile_img'] : 'images/no-image.png'))}}" alt="Admin" class="rounded-circle" width="150px" height="150px">
                             <div class="mt-3">
 
-                                <h4>{{$data['name']}}</h4>
+                                <h4 class="mb-2">{{$data['firstname']}}</h4>
+                                <p>{{$data->email}}</p>
                             </div>
                         </div>
                     </div>
@@ -44,7 +45,7 @@
                                 <h6 class="mb-0">Name</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                {{$data['name']}}
+                                {{$data['firstname']}} {{$data['lastname']}}
                             </div>
                         </div>
                         <hr>
@@ -67,8 +68,35 @@
                         </div>
                         <hr>
                         <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">City</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{$data['city']}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Date Of Birth</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{$data['dob']}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Gender</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{$data['gender']}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
                             <div class="col-sm-12">
-                                <a class="btn btn-primary" href="javascript:void(0)">Edit</a>
+                                <a class="btn btn-primary d-block w-25" href="javascript:void(0)" style="margin-left: auto;">Edit</a>
                             </div>
                         </div>
                     </div>

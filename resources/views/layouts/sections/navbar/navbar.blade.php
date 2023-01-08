@@ -58,7 +58,7 @@ $navbarDetached = ($navbarDetached ?? '');
                       </div>
                     </div>
                     <div class="flex-grow-1">
-                      <span class="fw-semibold d-block mt-2">{{ $id->name }}</span>
+                      <span class="fw-semibold d-block mt-2">{{ $id->firstname}}{{ $id->lastname }}</span>
                     </div>
                   </div>
                 </a>
