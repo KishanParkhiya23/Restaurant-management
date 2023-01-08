@@ -1,83 +1,146 @@
 @extends('layouts.contentNavbarLayout')
 
-@section('title', 'Profile Page ')
+@section('title', 'Profile settings')
 
-@section('extraa-css')
-<link rel="stylesheet" href="{{asset('assets/css/admin-profile.css')}}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+@section('page-script')
+<script src="{{asset('assets/js/pages-account-settings-account.js')}}"></script>
+
+<style>
+    .ui-widget-header {
+        border: 1px solid #bbbbbb;
+        background: none;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    .ui-widget-header .ui-icon {
+        filter: invert(1) !important;
+    }
+
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default,
+    .ui-button,
+    html .ui-button.ui-state-disabled:hover,
+    html .ui-button.ui-state-disabled:active {
+        color: #000000;
+    }
+
+    .ui-widget-content {
+        border: 1px solid #dddddd;
+        background: #ffffff;
+        color: #333333;
+    }
+
+    .ui-state-hover,
+    .ui-widget-content .ui-state-hover,
+    .ui-widget-header .ui-state-hover,
+    .ui-state-focus,
+    .ui-widget-content .ui-state-focus,
+    .ui-widget-header .ui-state-focus,
+    .ui-button:hover,
+    .ui-button:focus {
+        border: none;
+        background: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active,
+    a.ui-button:active,
+    .ui-button:active,
+    .ui-button.ui-state-active:hover {
+        border: 1px solid #000000;
+
+    }
+</style>
+
 @endsection
 
 @section('content')
+<!-- <h4 class="fw-bold py-3 mb-4">
+    <span class="text-muted fw-light">Profile Settings /</span> Account
+</h4> -->
 
-
-<div class="container">
-    <div class="main-body">
-
-        <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" class="main-breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{route('admin')}}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Admin Profile</li>
-            </ol>
-        </nav>
-        <!-- /Breadcrumb -->
-
-        <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex flex-column align-items-center text-center">
-                            <img src="{{url(Storage::url( $data['profile_img'] != null ? $data['profile_img'] : 'images/no-image.png'))}}" alt="Admin" class="rounded-circle" width="150px" height="150px">
-                            <div class="mt-3">
-
-                                <h4>{{$data['name']}}</h4>
-                            </div>
-                        </div>
+<div class="row">
+    <div class="col-md-12">
+        <ul class="nav nav-pills flex-column flex-md-row mb-3">
+            <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Account</a></li>
+        </ul>
+        <div class="card mb-4">
+            <h5 class="card-header">Profile Details</h5>
+            <!-- Account -->
+            <div class="card-body">
+                <div class="d-flex align-items-start align-items-sm-center gap-4">
+                    <img src="{{url(Storage::url( $data['profile_img'] != null ? $data['profile_img'] : 'images/no-image.png'))}}" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
+                    <div class="button-wrapper">
+                        <label for="upload" class="btn btn-secondary me-2 mb-4" tabindex="0">
+                            <span class="d-none d-sm-block">Upload new photo</span>
+                            <i class="bx bx-upload d-block d-sm-none"></i>
+                            <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg" />
+                        </label>
+                        <p class="text-muted mb-0" style="font-size: 13px;">Allowed JPG, GIF or PNG. Max size of 800K</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <!-- <hr> -->
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Name</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                {{$data['name']}}
-                            </div>
+            <hr class="my-0">
+            <div class="card-body">
+                <form id="formAccountSettings" method="POST" onsubmit="return false">@csrf
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="firstname" class="form-label">First Name</label>
+                            <input class="form-control" type="text" id="firstname" name="firstname" value="{{$data['firstname']}}" />
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Email</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                {{$data['email']}}
-                            </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastname" class="form-label">Last Name</label>
+                            <input class="form-control" type="text" name="lastname" id="lastname" value="{{$data['lastname']}}" />
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Contact</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                {{$data['contact']}}
-                            </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input class="form-control" type="text" id="email" name="email" value="{{$data['email']}}" placeholder="john.doe@example.com" readonly />
+                            <p class="text-muted mb-0" style="font-size: 10px;">You can not modified your email id</p>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <a class="btn btn-primary" href="javascript:void(0)">Edit</a>
-                            </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="contact" class="form-label">Contact</label>
+                            <input type="text" class="form-control" id="contact" name="contact" value="{{$data['contact']}}" />
                         </div>
+                        <div class="mb-3 col-md-4">
+                            <label class="form-label" for="gender">Gender</label>
+                            <select id="gender" class="select2 form-select" name="gender">
+                                <option value="">Select Gender</option>
+                                <option value="Male" {{ $data['gender'] == 'Male' ? 'selected' : ''}}>Male</option>
+                                <option value="Female" {{ $data['gender'] == 'Female' ? 'selected' : ''}}>Female</option>
+                                <option value="Other" {{ $data['gender'] == 'Other' ? 'selected' : ''}}>Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" name="city" value="{{$data['city']}}" />
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="dob" class="form-label">Date of birth</label>
+                            <input type="text" value="{{$data['dob']}}" id="my_date_picker" class="form-control @error('dob') is-invalid @enderror" id="dob" name="dob">
+                            @error('dob') <span class="text-danger"> {{$message}} </span> @enderror
+                        </div>
+                        </div>
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-primary me-2 d-block" style="margin-left: auto;">Save profile</button>
+                        <!-- <button type="reset" class="btn btn-outline-secondary">Cancel</button> -->
                     </div>
-                </div>
+                </form>
             </div>
+            <!-- /Account -->
         </div>
-
     </div>
 </div>
-
-
+<script>
+    $("#my_date_picker").datepicker({
+        maxDate: '-1d',
+    });
+</script>
 @endsection
