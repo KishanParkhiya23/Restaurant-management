@@ -55,6 +55,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
         Route::get('/', [Analytics::class, 'index']);
         Route::get('/logout', [AdminAuthController::class, 'logOut'])->name('.logout');
         Route::get('/profile',[AdminProfileController::class,'index'])->name('.profile');
+        Route::post('/profile/save',[AdminProfileController::class,'profileSave'])->name('.profile.save');
     });
     
 
