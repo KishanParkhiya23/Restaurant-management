@@ -32,9 +32,6 @@ class ProfileSaveRequest extends FormRequest
             'gender' => "required",
             'email' => "required|email",
             'profile_img' => "",
-            // 'email_verified_at' => "",
-            // 'password' => "required",
-            // 'remember_token	' => "",
         ];
     }
     
@@ -46,17 +43,15 @@ class ProfileSaveRequest extends FormRequest
     public function messages()
     {
         return [
-            'firstname.required' => 'firstname Field is required',
-            'lastname.required' => 'lastname Field is required',
-            'contact.required' => "Contact Field is required",
+            'firstname.required' => 'First name  is required',
+            'lastname.required' => 'Last name  is required',
+            'contact.required' => "Contact  is required",
             'contact.min , contact.max' => "Contact number must be 10 digits",
-            'city.required' => 'City Field is required',
-            'dob.required' => 'Date of birth Field is required',
-            'gender.required' => 'Gender Field is required',
-            // 'email.unique' => "Email id has already been taken please enter unique email id",
-            'email.required' => "Email Id Field is required",
-            'city.required' => 'Name Field is required',
-            // 'password.required' => "Password Field is required",
+            'city.required' => 'City  is required',
+            'dob.required' => 'Date of birth  is required',
+            'gender.required' => 'Gender  is required',
+            'email.required' => "Email Id  is required",
+            'city.required' => 'City  is required',
         ];
     }
 }
