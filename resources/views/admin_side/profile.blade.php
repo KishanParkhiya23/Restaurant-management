@@ -56,24 +56,26 @@
     .ui-button:active,
     .ui-button.ui-state-active:hover {
         border: 1px solid #000000;
-
+    }
+    .form-control[readonly]{
+        background-color: #fff;
+    }
+    #my_date_picker{
+        cursor: pointer;
     }
 </style>
 
 @endsection
 
 @section('content')
-<!-- <h4 class="fw-bold py-3 mb-4">
-    <span class="text-muted fw-light">Profile Settings /</span> Account
-</h4> -->
-
+ 
 <div class="row">
     <div class="col-md-12">
         <ul class="nav nav-pills flex-column flex-md-row mb-3">
             <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Account</a></li>
         </ul>
         <div class="card mb-4">
-            <h5 class="card-header">Profile Details</h5>
+            <h5 class="card-header pb-1">Profile Details</h5>
             <!-- Account -->
             <form id="formAccountSettings" action="{{route('admin.profile.save')}}" method="POST" enctype="multipart/form-data">@csrf
 
@@ -86,7 +88,7 @@
                                 <i class="bx bx-upload d-block d-sm-none"></i>
                                 <input type="file" id="upload" name="profile_img" class="account-file-input" hidden accept="image/png, image/jpeg" />
                             </label>
-                            <p class="text-muted mb-0" style="font-size: 13px;">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                            <p class="text-muted mb-0" style="font-size: 13px; margin-bottom: -24px!important;">Allowed JPG, GIF or PNG. Max size of 800K</p>
                         </div>
                     </div>
                 </div>
@@ -95,13 +97,15 @@
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label for="firstname" class="form-label">First Name</label>
-                            <input class="form-control" type="text" id="firstname" name="firstname" value="{{$data['firstname']}}" />
+                            <input class="form-control  @error('firstname') is-invalid @enderror" type="text" id="firstname" name="firstname" value="{{$data['firstname']}}" />
                             @error('firstname') <span class="text-danger"> {{$message}} </span> @enderror
 
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="lastname" class="form-label">Last Name</label>
-                            <input class="form-control" type="text" name="lastname" id="lastname" value="{{$data['lastname']}}" />
+                            <input class="form-control  @error('lastname') is-invalid @enderror" type="text" name="lastname" id="lastname" value="{{$data['lastname']}}" />
+                            @error('lastname') <span class="text-danger"> {{$message}} </span> @enderror
+
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="email" class="form-label">E-mail</label>
@@ -110,24 +114,29 @@
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="contact" class="form-label">Contact</label>
-                            <input type="text" class="form-control" id="contact" name="contact" value="{{$data['contact']}}" />
+                            <input type="text" class="form-control  @error('contact') is-invalid @enderror" id="contact" name="contact" value="{{$data['contact']}}" />
+                            @error('contact') <span class="text-danger"> {{$message}} </span> @enderror
                         </div>
                         <div class="mb-3 col-md-4">
                             <label class="form-label" for="gender">Gender</label>
-                            <select id="gender" class="select2 form-select" name="gender">
-                                <option value="">Select Gender</option>
+                            <select id="gender" class="select2 form-select  @error('gender') is-invalid @enderror" name="gender">
+                                <option value="" disabled>Select Gender</option>
                                 <option value="Male" {{ $data['gender'] == 'Male' ? 'selected' : ''}}>Male</option>
                                 <option value="Female" {{ $data['gender'] == 'Female' ? 'selected' : ''}}>Female</option>
                                 <option value="Other" {{ $data['gender'] == 'Other' ? 'selected' : ''}}>Other</option>
                             </select>
+                            @error('gender') <span class="text-danger"> {{$message}} </span> @enderror
+
                         </div>
                         <div class="mb-3 col-md-4">
                             <label for="city" class="form-label">City</label>
-                            <input type="text" class="form-control" id="city" name="city" value="{{$data['city']}}" />
+                            <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" value="{{$data['city']}}" />
+                            @error('city') <span class="text-danger"> {{$message}} </span> @enderror
+
                         </div>
                         <div class="mb-3 col-md-4">
                             <label for="dob" class="form-label">Date of birth</label>
-                            <input type="text" value="{{$data['dob']}}" id="my_date_picker" class="form-control @error('dob') is-invalid @enderror" id="dob" name="dob">
+                            <input type="text" value="{{$data['dob']}}" id="my_date_picker" class="form-control @error('dob') is-invalid @enderror" id="dob" name="dob" readonly>
                             @error('dob') <span class="text-danger"> {{$message}} </span> @enderror
                         </div>
                     </div>
