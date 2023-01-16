@@ -71,6 +71,9 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/contact', [ContactController::class, 'contact'])->name('.contact');
     Route::get('/reservation', [ReservationController::class, 'reservation'])->name('.reservation');
     Route::get('/login', [LoginController::class, 'login'])->name('.login');
+
     Route::get('/registration', [RegistrationController::class, 'registration'])->name('.registration');
+    Route::post('/regdatasave', [RegistrationController::class, 'regdatasave'])->name('.regdatasave');
+
     Route::get('/forget_password', [ForgetPasswordController::class, 'forget_password'])->name('.forget_password');
 });

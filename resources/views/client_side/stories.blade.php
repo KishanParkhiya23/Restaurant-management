@@ -145,11 +145,3 @@
 
 @endsection
 
-
-@extends('client_side.master.main')
-
-@section('title', 'login Page')
-
-@section('extra-css')
-
-@endsection
