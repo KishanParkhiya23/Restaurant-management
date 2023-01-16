@@ -12,7 +12,7 @@
                     data-scrollax-parent="true">
 
                     <div class="col-md-12 col-sm-12 text-center ftco-animate">
-                        <span class="subheading">Feliciano</span>
+                        <span class="subheading">Fork & Spoon</span>
                         <h1 class="mb-4">Best Restaurant</h1>
                     </div>
 
@@ -27,7 +27,7 @@
                     data-scrollax-parent="true">
 
                     <div class="col-md-12 col-sm-12 text-center ftco-animate">
-                        <span class="subheading">Feliciano</span>
+                        <span class="subheading">Fork & Spoon</span>
                         <h1 class="mb-4">Nutritious &amp; Tasty</h1>
                     </div>
 
@@ -41,7 +41,7 @@
                 <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
                     <div class="col-md-12 col-sm-12 text-center ftco-animate">
-                        <span class="subheading">Feliciano</span>
+                        <span class="subheading">Fork & Spoon</span>
                         <h1 class="mb-4">Delicious Specialties</h1>
                     </div>
 
@@ -126,7 +126,7 @@
                 <div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
                     <div class="heading-section mb-4 my-5 my-md-0">
                         <span class="subheading">About</span>
-                        <h2 class="mb-4">Feliciano Restaurant</h2>
+                        <h2 class="mb-4">Fork & Spoon Restaurant</h2>
                     </div>
                     <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
                         is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
@@ -471,7 +471,7 @@
         </div>
     </section>
 
-    <section class="ftco-section img" style="background-image: url({{ asset('client_side/images/bg_3.jpg')}})"
+    {{-- <section class="ftco-section img" style="background-image: url({{ asset('client_side/images/bg_3.jpg')}})"
         data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row d-flex">
@@ -538,7 +538,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="ftco-section testimony-section img">
         <div class="overlay"></div>

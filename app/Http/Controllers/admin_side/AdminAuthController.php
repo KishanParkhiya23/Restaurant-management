@@ -24,7 +24,7 @@ class AdminAuthController extends Controller
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
 
-            return redirect(route('admin'))->with("success" , "You logged in succesfully");
+            return redirect(route('admin'))->with("success", "You logged in succesfully");
         }
 
         return back()->withErrors([
@@ -35,11 +35,11 @@ class AdminAuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
- 
+
         $request->session()->invalidate();
-     
+
         $request->session()->regenerateToken();
-     
+
         return redirect()->route('admin.login');
     }
 
@@ -52,11 +52,14 @@ class AdminAuthController extends Controller
     {
         $data = $request->validated();
 
-        // $image = $request->profile_img->store('images', ["disk" => "public"]);
-        if(isset($data['profile_img'])){
+        // dd($data['profile_img']);
+        if (isset($data['profile_img'])) {
             $image = $request->profile_img;
             $imageName = 'images/' . time() . '.' . $image->extension();
             $image->move(public_path('storage/images'), $imageName);
+
+            // $image = $request->profile_img->store('images', ["disk" => "public"]);
+
             $data['profile_img'] != null ? $data['profile_img'] = $imageName : '';
         }
 

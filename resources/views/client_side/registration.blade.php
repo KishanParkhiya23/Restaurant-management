@@ -9,6 +9,16 @@
         nav {
             display: none !important;
         }
+
+        .is-invalid {
+            color: 1px solid red !important;
+        }
+
+        .error-text {
+            font-size: 0.8rem;
+            color: red;
+            text-align: left;
+        }
     </style>
 
 @endsection
@@ -18,7 +28,8 @@
 @endsection
 
 @section('content')
-    <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('client_side/images/bg_3.jpg') }});height:315px !important;"
+    <section class="hero-wrap hero-wrap-2"
+        style="background-image: url({{ asset('client_side/images/bg_3.jpg') }});height:315px !important;"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -49,24 +60,40 @@
                             <h4 class="login-title">Registration</h4>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form id="contactForm" method="POST"
-                                        action="http://rockstheme.com/rocks/aievari-live/contact.php" class="log-form">
+                                    <form id="contactForm" method="POST" action="{{ route('user.regdatasave') }}"
+                                        class="log-form">
+                                        @csrf
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="text" id="name" class="form-control" placeholder="Name"
-                                                required data-error="Please enter your name">
+                                            <input type="text" id="name" name="fullname"
+                                                class=" @error('fullname') is-invalid @enderror form-control"
+                                                placeholder="Full Name">
+                                            @error('fullname')
+                                                <div class="error-text">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="number" id="contactno" class="form-control" placeholder="Contact No"
-                                                required data-error="Please enter your contact no">
+                                            <input type="number" name="contact" id="contactno"
+                                                class="form-control @error('contact') is-invalid @enderror"
+                                                placeholder="Contact No">
+                                                @error('contact')
+                                                    <div class="error-text">{{ $message }}</div>
+                                                @enderror
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="email" id="email" class="form-control" placeholder="Email"
-                                                required data-error="Please enter your email">
+                                            <input type="email" name="email" id="email"
+                                                class=" @error('email') is-invalid @enderror form-control"
+                                                placeholder="Email">
+                                                @error('email')
+                                                    <div class="error-text">{{ $message }}</div>
+                                                @enderror
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="password" id="msg_subject" class="form-control"
-                                                placeholder="Password" required
-                                                data-error="Please enter your message subject">
+                                            <input type="password" name="password" id="msg_subject"
+                                                class="@error('password') is-invalid @enderror form-control"
+                                                placeholder="Password">
+                                                @error('password')
+                                                    <div class="error-text">{{ $message }}</div>
+                                                @enderror
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="check-group flexbox">
