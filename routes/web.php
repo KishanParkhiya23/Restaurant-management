@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin_side\AdminAuthController;
 use App\Http\Controllers\admin_side\AdminProfileController;
+use App\Http\Controllers\admin_side\ChefController;
 use App\Http\Controllers\Client_side\HomeController;
 use App\Http\Controllers\Client_side\AboutController;
 use App\Http\Controllers\Client_side\MenuController;
@@ -57,8 +58,12 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
         Route::get('/profile',[AdminProfileController::class,'index'])->name('.profile');
         Route::post('/profile/save',[AdminProfileController::class,'profileSave'])->name('.profile.save');
     });
-    
 
+    Route::group(['prefix' => '/chef', 'as' => '.chef'], function () {
+        Route::get('/dashboard',[ChefController::class,'index'])->name('.dashboard');
+        Route::get('/edit/{id}',[ChefController::class,'edit'])->name('.edit');
+        Route::post('/edit/save/{id}',[ChefController::class,'editSave'])->name('.edit.save');
+    });    
 });
 
 

@@ -23,15 +23,17 @@ class AdminProfileController extends Controller
     {
         $data = $request->validated();
         if(isset($data['profile_img'])){
-
+            
+            // return($request->profile_img);
+            
             // Delete old profile image from our storage
             $delete_img = User::where('email','=', $data['email'])->first();
             $delete_img = $delete_img['profile_img'];
             File::delete('storage/'.$delete_img);
-
+            
             // Save new image
             $image = $request->profile_img;
-            $imageName = 'images/' . time() . '.' . $image->extension();
+            $imageName = 'images/' . time(). "-" . date("dmY") .  '.' . $image->extension();
             $image->move(public_path('storage/images'), $imageName);
             $data['profile_img'] != null ? $data['profile_img'] = $imageName : '';
         }

@@ -55,7 +55,7 @@ class AdminAuthController extends Controller
         // $image = $request->profile_img->store('images', ["disk" => "public"]);
         if(isset($data['profile_img'])){
             $image = $request->profile_img;
-            $imageName = 'images/' . time() . '.' . $image->extension();
+            $imageName = 'images/' . time(). "-" . date("dmY") .  '.' . $image->extension();
             $image->move(public_path('storage/images'), $imageName);
             $data['profile_img'] != null ? $data['profile_img'] = $imageName : '';
         }

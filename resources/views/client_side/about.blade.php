@@ -2,6 +2,12 @@
 
 @section('title', 'About Us Page')
 
+<style>
+    .secondary{
+        color: #bbbbbb;
+    }
+</style>
+
 @section('content')
 
 <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('client_side/images/bg_3.jpg')}});" data-stellar-background-ratio="0.5">
@@ -39,10 +45,12 @@
                 </div>
                 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
                     is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                <pc class="time">
+                <p class="time">
                     <span>Mon - Fri <strong>8 AM - 11 PM</strong></span>
-                    <span><a href="#">+ 1-978-123-4567</a></span>
-                    </p>
+                    <span>
+                        <a href="#">+ 1-978-123-4567</a>
+                    </span>
+                </p>
             </div>
         </div>
     </div>
@@ -152,13 +160,15 @@
             </div>
         </div>
         <div class="row">
+
+            @foreach ($chefs as $chef)
             <div class="col-md-6 col-lg-3 ftco-animate">
                 <div class="staff">
-                    <div class="img" style="background-image: url({{ asset('client_side/images/chef-4.jpg')}});"></div>
+                    <div class="img" style="background-image: url({{asset($chef['image'])}});"></div>
                     <div class="text pt-4">
-                        <h3>John Smooth</h3>
-                        <span class="position mb-2">Restaurant Owner</span>
-                        <!-- <p>A small river named Duden flows by their place and supplies</p> -->
+                        <h3>{{$chef['name']}}</h3>
+                        <span class="position mb-2">{{$chef['speciality']}}</span>
+                        <p class="secondary">{{$chef['discription']}}</p>
                         <div class="faded">
                             <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
                             <ul class="ftco-social d-flex">
@@ -172,66 +182,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img" style="background-image: url({{asset('client_side/images/chef-2.jpg')}});"></div>
-                    <div class="text pt-4">
-                        <h3>Rebeca Welson</h3>
-                        <span class="position mb-2">Head Chef</span>
-                        <!-- <p>A small river named Duden flows by their place and supplies</p> -->
-                        <div class="faded">
-                            <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-                            <ul class="ftco-social d-flex">
-                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a>
-                                </li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img" style="background-image: url({{asset('client_side/images/chef-3.jpg')}});"></div>
-                    <div class="text pt-4">
-                        <h3>Kharl Branyt</h3>
-                        <span class="position mb-2">Chef</span>
-                        <!-- <p>A small river named Duden flows by their place and supplies</p> -->
-                        <div class="faded">
-                            <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-                            <ul class="ftco-social d-flex">
-                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a>
-                                </li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img" style="background-image: url({{asset('client_side/images/chef-1.jpg')}});"></div>
-                    <div class="text pt-4">
-                        <h3>Luke Simon</h3>
-                        <span class="position mb-2">Chef</span>
-                        <!-- <p>A small river named Duden flows by their place and supplies</p> -->
-                        <div class="faded">
-                            <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-                            <ul class="ftco-social d-flex">
-                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a>
-                                </li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

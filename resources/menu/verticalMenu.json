@@ -38,6 +38,12 @@
           "target": "_blank"
         }
       ]
+    },
+    {
+      "url": "/admin/chef/dashboard",
+      "name": "Chef Management",
+      "icon": "menu-icon tf-icons fa-solid fa-chess-king",
+      "slug": "chef-management"
     }
   ]
 }
