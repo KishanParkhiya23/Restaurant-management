@@ -9004,7 +9004,7 @@ button.list-group-item-gray.active {
   flex-wrap: nowrap !important;
 }
 
-.flex-wrap-reverse {
+.ex-wrap-reverse {
   flex-wrap: wrap-reverse !important;
 }
 
@@ -15379,4 +15379,9 @@ html:not(.layout-footer-fixed) .content-wrapper {
 }
 .footer.bg-light hr {
   border-color: rgba(105, 122, 141, 0.0783835294);
+}
+
+.text-error{
+  color: red;
+  font-size: 0.8rem;
 }

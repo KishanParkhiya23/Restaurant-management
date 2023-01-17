@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title> Feliciano | @yield('title')  </title>
+  <title> Fork & Spoon | @yield('title')  </title>
   <meta name="description" content="{{ config('variables.templateDescription') ? config('variables.templateDescription') : '' }}" />
   <meta name="keywords" content="{{ config('variables.templateKeyword') ? config('variables.templateKeyword') : '' }}">
   <!-- laravel CRUD token -->
@@ -16,10 +16,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/logo.png  ') }}"/>
   
-  @yield('extraa-css')
   <!-- Include Styles -->
+  @yield('extraa-css')
   @include('layouts.sections.styles')
-
+  
   <!-- Include Scripts for customizer, helper, analytics, config -->
   @include('layouts.sections.scriptsIncludes')
 </head>
