@@ -65,6 +65,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
         Route::post('/add/save',[ChefController::class,'saveAddChef'])->name('.add.save');
         Route::get('/edit/{id}',[ChefController::class,'edit'])->name('.edit');
         Route::post('/edit/save/{id}',[ChefController::class,'editSave'])->name('.edit.save');
+        Route::delete('/delete/{id}',[ChefController::class,'deleteChef'])->name('.delete');
     });    
 });
 

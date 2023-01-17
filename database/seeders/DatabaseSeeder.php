@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
                 "name" => $chef['name'],
                 "speciality" => $chef['speciality'],
                 "image" => $chef['image'],
-                "discription" => $chef['discription']
+                "discription" => $chef['discription'],
+                "is_set" => 1
             ]);
         }
     }

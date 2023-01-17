@@ -48,7 +48,7 @@
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('admin.chef.edit',$chef['id']) }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                <a class="dropdown-item" id="deleteRecord"><i class="bx bx-trash me-1"></i> Delete</a>
+                                <a class="dropdown-item" onclick="deleteRecord(this)" id="{{$chef['id']}}"><i class="bx bx-trash me-1"></i> Delete</a>
                             </div>
                         </div>
                     </td>
@@ -67,12 +67,29 @@
 @section('extraa-js')
 
 <script>
-    $('#deleteRecord').click(function() {
-        swal("Delete chef", "Are you sure to delete this chef details ? ", "error", {
-            confirmButtonText: 'Yes',
+    function deleteRecord(data) {
+        swal({
+            title: `Are you sure you want to delete this record?`,
+            text: "If you delete this, it will be gone forever.",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                let id = data.id;
+                $.ajax({
+                    type: 'DELETE',
+                    url: `/admin/chef/delete/${data.id}`,
+                    data: {
+                        "id":id,
+                        "_token": "{{ csrf_token() }}"
+                    },success:function(response){
+                        location.replace('/admin/chef/dashboard');
+                    }
+                })
+            }
         });
-
-    });
+    }
 </script>
 @endsection
 <!--/ Basic Bootstrap Table -->
