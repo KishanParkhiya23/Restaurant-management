@@ -9,6 +9,11 @@
         nav {
             display: none !important;
         }
+        .error-text {
+            font-size: 0.8rem;
+            color: red;
+            text-align: left;
+        }
     </style>
 
 @endsection
@@ -18,7 +23,8 @@
 @endsection
 
 @section('content')
-    <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('client_side/images/bg_3.jpg') }}); height:315px !important; "
+    <section class="hero-wrap hero-wrap-2"
+        style="background-image: url({{ asset('client_side/images/bg_3.jpg') }}); height:315px !important; "
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -49,16 +55,24 @@
                             <h4 class="login-title">LOGIN</h4>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form id="contactForm" method="POST"
-                                        action="http://rockstheme.com/rocks/aievari-live/contact.php" class="log-form">
+                                    <form id="LoginForm" method="POST" action="{{ route('user.login.check') }}"
+                                        class="log-form">
+                                        @csrf
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="text" id="name" class="form-control" placeholder="Username"
-                                                required data-error="Please enter your name">
+                                            <input type="text" id="name" name="email"
+                                                class="form-control @error('email') is-invalid @enderror"
+                                                placeholder="Username">
+                                            @error('email')
+                                                <div class="error-text">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="password" id="msg_subject" class="form-control"
-                                                placeholder="Password" required
-                                                data-error="Please enter your message subject">
+                                            <input type="password" id="msg_subject" name="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                placeholder="Password">
+                                            @error('password')
+                                                <div class="error-text">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="check-group flexbox">
@@ -67,7 +81,8 @@
                                                     <span class="remember-text">Remember me</span>
                                                 </label>
 
-                                                <a class="text-muted" href="{{ route('user.forget_password') }}">Forgot password?</a>
+                                                <a class="text-muted" href="{{ route('user.forget_password') }}">Forgot
+                                                    password?</a>
                                             </div>
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -84,8 +99,8 @@
                                                     <li><a class="twitter" href="#">twitter</a></li>
                                                     <li><a class="google" href="#">google+</a></li>
                                                 </ul>
-                                                <div class="acc-not">Don't have an account <a href="signup.html"> Sign
-                                                        up</a></div>
+                                                <div class="acc-not">New on our platform?<a
+                                                        href="{{ route('user.registration') }}">Create an account</a></div>
                                             </div>
                                         </div>
                                     </form>

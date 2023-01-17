@@ -71,7 +71,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
 
 // Client Side Routes
 
-Route::get('/', [HomeController::class, 'home']);
+Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/about', [AboutController::class, 'about'])->name('.about');
     Route::get('/menu', [MenuController::class, 'menu'])->name('.menu');
@@ -79,6 +79,7 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/contact', [ContactController::class, 'contact'])->name('.contact');
     Route::get('/reservation', [ReservationController::class, 'reservation'])->name('.reservation');
     Route::get('/login', [LoginController::class, 'login'])->name('.login');
+    Route::post('/logincheck', [LoginController::class, 'logincheck'])->name('.login.check');
 
     Route::get('/registration', [RegistrationController::class, 'registration'])->name('.registration');
     Route::post('/regdatasave', [RegistrationController::class, 'regdatasave'])->name('.regdatasave');

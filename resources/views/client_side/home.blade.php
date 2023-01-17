@@ -49,7 +49,6 @@
             </div>
         </div>
     </section>
-
     <section class="ftco-section ftco-no-pt ftco-no-pb">
         <div class="container-fluid">
             <div class="row">
@@ -62,10 +61,8 @@
                                         style="background-image: url({{ asset('client_side/images/breakfast-1.jpg')}});">
                                     </div>
                                     <div class="text text-center">
-                                        <h3>Grilled Beef with potatoes</h3>
-                                        <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>,
-                                            <span>Tomatoe</span>
-                                        </p>
+                                        <h3>Bibingka</h3>
+                                        <p><span>Pice flour</span>, <span>eggs</span>, <span>coconut milk</span>, <span>butter</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -75,10 +72,8 @@
                                         style="background-image: url({{ asset('client_side/images/breakfast-2.jpg')}});">
                                     </div>
                                     <div class="text text-center">
-                                        <h3>Grilled Beef with potatoes</h3>
-                                        <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>,
-                                            <span>Tomatoe</span>
-                                        </p>
+                                        <h3>Venezolano</h3>
+                                        <p><span>Egg</span>, <span>onion</span>, <span>tomato</span>, <span>annatto powder</span>, <span>coriander</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -88,10 +83,8 @@
                                         style="background-image: url({{ asset('client_side/images/breakfast-3.jpg')}});">
                                     </div>
                                     <div class="text text-center">
-                                        <h3>Grilled Beef with potatoes</h3>
-                                        <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>,
-                                            <span>Tomatoe</span>
-                                        </p>
+                                        <h3>Champorado</h3>
+                                        <p><span>Rice</span>, <span>cocoa beans</span>, <span>sugar</span>, <span>condensed milk</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -101,9 +94,8 @@
                                         style="background-image: url({{ asset('client_side/images/breakfast-4.jpg')}});">
                                     </div>
                                     <div class="text text-center">
-                                        <h3>Grilled Beef with potatoes</h3>
-                                        <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>,
-                                            <span>Tomatoe</span>
+                                        <h3>Eggs benedict</h3>
+                                        <p><span>rggs</span>, <span>butter</span>, <span>bacon</span>, <span>salt</span>,<span>white wine vinegar</span></p>
                                         </p>
                                     </div>
                                 </div>
@@ -256,14 +248,14 @@
                             <div>
                                 <div class="d-flex">
                                     <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
+                                        <h3>Bibingka</h3>
                                     </div>
-                                    <div class="one-forth">
+                                    {{-- <div class="one-forth">
                                         <span class="price">$29</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                <p><span>Pice flour</span>, <span>eggs</span>, <span>coconut milk</span>, <span>butter</span></p>
+                                {{-- <p><a href="#" class="btn btn-primary">Order now</a></p> --}}
                             </div>
                         </div>
                     </div>
@@ -276,14 +268,14 @@
                             <div>
                                 <div class="d-flex">
                                     <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
+                                        <h3>Venezolano</h3>
                                     </div>
-                                    <div class="one-forth">
+                                    {{-- <div class="one-forth">
                                         <span class="price">$29</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                <p><span>Egg</span>, <span>onion</span>, <span>tomato</span>, <span>annatto powder</span>, <span>coriander</span></p>
+                                {{-- <p><a href="#" class="btn btn-primary">Order now</a></p> --}}
                             </div>
                         </div>
                     </div>
@@ -297,14 +289,14 @@
                             <div>
                                 <div class="d-flex">
                                     <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
+                                        <h3>Champorado</h3>
                                     </div>
-                                    <div class="one-forth">
+                                    {{-- <div class="one-forth">
                                         <span class="price">$29</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                <p><span>Rice</span>, <span>cocoa beans</span>, <span>sugar</span>, <span>condensed milk</span></p>
+                                {{-- <p><a href="#" class="btn btn-primary">Order now</a></p> --}}
                             </div>
                         </div>
                     </div>
@@ -317,14 +309,14 @@
                             <div>
                                 <div class="d-flex">
                                     <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
+                                        <h3>Champorado</h3>
                                     </div>
-                                    <div class="one-forth">
+                                    {{-- <div class="one-forth">
                                         <span class="price">$29</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                <p><span>Rice</span>, <span>cocoa beans</span>, <span>sugar</span>, <span>condensed milk</span></p>
+                                {{-- <p><a href="#" class="btn btn-primary">Order now</a></p> --}}
                             </div>
                         </div>
                     </div>
@@ -338,34 +330,34 @@
                             <div>
                                 <div class="d-flex">
                                     <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
+                                        <h3>Eggs benedict</h3>
                                     </div>
-                                    <div class="one-forth">
+                                    {{-- <div class="one-forth">
                                         <span class="price">$29</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                <p><span>rggs</span>, <span>butter</span>, <span>bacon</span>, <span>salt</span>,<span>white wine vinegar</span></p>
+                                {{-- <p><a href="#" class="btn btn-primary">Order now</a></p> --}}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img" style="background-image: url({{ asset('client_side/images/breakfast-2.jpg')}});">
+                        <div class="menu-img img" style="background-image: url({{ asset('client_side/images/breakfast-4.jpg')}});">
                         </div>
                         <div class="text d-flex align-items-center">
                             <div>
                                 <div class="d-flex">
                                     <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
+                                        <h3>Lugaw</h3>
                                     </div>
-                                    <div class="one-forth">
+                                    {{-- <div class="one-forth">
                                         <span class="price">$29</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                <p><span>Roce</span>, <span>chicken</span>, <span>ginger</span>, <span>eggs</span>, <span>fish sauce</span></p>
+                                {{-- <p><a href="#" class="btn btn-primary">Order now</a></p> --}}
                             </div>
                         </div>
                     </div>
