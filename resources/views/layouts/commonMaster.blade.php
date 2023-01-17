@@ -14,7 +14,7 @@
   <!-- Canonical SEO -->
   <link rel="canonical" href="{{ config('variables.productPage') ? config('variables.productPage') : '' }}">
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/icon.png  ') }}"/>
+  <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/logo.png  ') }}"/>
   
   <!-- Include Styles -->
   @yield('extraa-css')
