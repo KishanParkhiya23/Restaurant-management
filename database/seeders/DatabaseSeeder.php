@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
             Chef::create([
                 "name" => $chef['name'],
                 "speciality" => $chef['speciality'],
-                "image" => $chef['image']
+                "image" => $chef['image'],
+                "discription" => $chef['discription']
             ]);
         }
     }
