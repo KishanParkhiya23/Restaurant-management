@@ -10,7 +10,8 @@ class AboutController extends Controller
 {
     public function about()
     {
-        $chefs = Chef::all();
+        $chefs = Chef::all()->take(4);
+        // dd($chefs);
         return view('Client_side.about',compact('chefs'));
     }
 }

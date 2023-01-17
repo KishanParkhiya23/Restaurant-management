@@ -61,6 +61,8 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
 
     Route::group(['prefix' => '/chef', 'as' => '.chef'], function () {
         Route::get('/dashboard',[ChefController::class,'index'])->name('.dashboard');
+        Route::get('/add/show',[ChefController::class,'showAddChef'])->name('.add.show');
+        Route::post('/add/save',[ChefController::class,'saveAddChef'])->name('.add.save');
         Route::get('/edit/{id}',[ChefController::class,'edit'])->name('.edit');
         Route::post('/edit/save/{id}',[ChefController::class,'editSave'])->name('.edit.save');
     });    

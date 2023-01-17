@@ -18,6 +18,26 @@ class ChefController extends Controller
         return view('admin_side.chef-dashboard', compact('chefs'));
     }
 
+    public function showAddChef()
+    {
+        return view('admin_side.edit-chef');
+    }
+
+    public function saveAddChef(EditChefRequest $request)
+    {
+        $data = $request->validated();
+        if (isset($data['image'])) {
+            // Save new image
+            $image = $request->image;
+            $imageName = 'client_side/images/' . time() . "-" . date("dmY") .  '.' . $image->extension();
+            $image->move(public_path('client_side/images'), $imageName);
+            $data['image'] != null ? $data['image'] = $imageName : '';
+        };
+        // dd($data);
+        Chef::create($data);
+        return redirect(route('admin.chef.dashboard'))->with("success","Record added succefully");
+ 
+    }
     public function edit($id)
     {
         $data = Chef::find($id);
