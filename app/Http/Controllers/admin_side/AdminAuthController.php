@@ -14,6 +14,7 @@ class AdminAuthController extends Controller
 {
     public function login()
     {
+        session()->pull('password_data');
         return view('admin_side.auth.login');
     }
 
@@ -23,7 +24,6 @@ class AdminAuthController extends Controller
 
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
-
             return redirect(route('admin'))->with("success", "You logged in succesfully");
         }
 
@@ -35,11 +35,8 @@ class AdminAuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
         return redirect()->route('admin.login');
     }
 
@@ -52,7 +49,6 @@ class AdminAuthController extends Controller
     {
         $data = $request->validated();
 
-        // dd($data['profile_img']);
         if (isset($data['profile_img'])) {
             $image = $request->profile_img;
             $imageName = 'images/' . time(). "-" . date("dmY") .  '.' . $image->extension();

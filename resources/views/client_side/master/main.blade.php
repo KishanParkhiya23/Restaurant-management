@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="{{asset('client_side/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('client_side/css/style.css')}}">
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/logo.png  ') }}"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/icon.png  ') }}"/>
 
     @yield('extra-css')
 </head>

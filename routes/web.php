@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin_side\AdminAuthController;
 use App\Http\Controllers\admin_side\AdminProfileController;
 use App\Http\Controllers\admin_side\ChefController;
+use App\Http\Controllers\admin_side\PasswordManageController;
 use App\Http\Controllers\Client_side\HomeController;
 use App\Http\Controllers\Client_side\AboutController;
 use App\Http\Controllers\Client_side\MenuController;
@@ -44,29 +45,43 @@ Route::get('/layouts/container', [Container::class, 'index'])->name('layouts-con
 Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
 
 Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
-    
-    
+
+
     Route::get('/login', [AdminAuthController::class, 'login'])->name('.login');
     Route::post('/login/check', [AdminAuthController::class, 'loginCheck'])->name('.login.check');
     Route::get('/registration', [AdminAuthController::class, 'registration'])->name('.registration');
     Route::post('/registration/store', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
     Route::get('/forget-password', [AdminAuthController::class, 'forgetPassword'])->name('.forget-password');
-    
-    Route::group(['middleware' => 'adminLogin'] , function(){
+
+    Route::post('/send-mail', [PasswordManageController::class, 'sendMail'])->name('.send.mail');
+
+    Route::group(['middleware' => 'changePassword'], function () {
+        Route::get('/change/password', [PasswordManageController::class, 'showChangePassword'])->name('.change.password');
+        Route::post('/change/save/password', [PasswordManageController::class, 'saveChangePassword'])->name('.change.save.password');
+    });
+
+    Route::get('/404',function(){
+        return view('errors.404');
+    });
+
+    Route::group(['middleware' => 'adminLogin'], function () {
         Route::get('/', [Analytics::class, 'index']);
         Route::get('/logout', [AdminAuthController::class, 'logOut'])->name('.logout');
-        Route::get('/profile',[AdminProfileController::class,'index'])->name('.profile');
-        Route::post('/profile/save',[AdminProfileController::class,'profileSave'])->name('.profile.save');
+        Route::get('/profile', [AdminProfileController::class, 'index'])->name('.profile');
+        Route::post('/profile/save', [AdminProfileController::class, 'profileSave'])->name('.profile.save');
+        Route::get('/profile/change/password', [AdminProfileController::class, 'changePassword'])->name('.profile.change.password');
+        Route::post('/profile/check/password', [AdminProfileController::class, 'checkPassword'])->name('.profile.check.password');
+
     });
 
     Route::group(['prefix' => '/chef', 'as' => '.chef'], function () {
-        Route::get('/dashboard',[ChefController::class,'index'])->name('.dashboard');
-        Route::get('/add/show',[ChefController::class,'showAddChef'])->name('.add.show');
-        Route::post('/add/save',[ChefController::class,'saveAddChef'])->name('.add.save');
-        Route::get('/edit/{id}',[ChefController::class,'edit'])->name('.edit');
-        Route::post('/edit/save/{id}',[ChefController::class,'editSave'])->name('.edit.save');
-        Route::delete('/delete/{id}',[ChefController::class,'deleteChef'])->name('.delete');
-    });    
+        Route::get('/dashboard', [ChefController::class, 'index'])->name('.dashboard');
+        Route::get('/add/show', [ChefController::class, 'showAddChef'])->name('.add.show');
+        Route::post('/add/save', [ChefController::class, 'saveAddChef'])->name('.add.save');
+        Route::get('/edit/{id}', [ChefController::class, 'edit'])->name('.edit');
+        Route::post('/edit/save/{id}', [ChefController::class, 'editSave'])->name('.edit.save');
+        Route::delete('/delete/{id}', [ChefController::class, 'deleteChef'])->name('.delete');
+    });
 });
 
 

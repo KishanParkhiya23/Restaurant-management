@@ -21,7 +21,7 @@
                         </a>
                     </div>
                     <!-- /Logo -->
-                    <h4 class="mb-2 text-center">Log in Your Self</h4>
+                    <h4 class="mb-2 text-center fw-bold">Log in Your Self</h4>
                     <p class="mb-4 text-center">Please log in yourself for more information</p>
 
                     <form id="formAuthentication" class="mb-3" action="{{ route('admin.login.check') }}" method="POST">
