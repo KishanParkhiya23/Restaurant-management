@@ -18,18 +18,19 @@
                     <!-- Logo -->
                     <div class="app-brand justify-content-center">
                         <a href="javascript:void(0)" class="app-brand-link gap-2">
-                             @include('layouts.sections.logo')
+                            @include('layouts.sections.logo')
                         </a>
                     </div>
                     <!-- /Logo -->
-                    <h4 class="mb-2 text-center">Forgot Password?</h4>
+                    <h4 class="mb-2 text-center fw-bold">Forgot Password?</h4>
                     <p class="mb-4 text-center">Enter your email and we'll send you instructions to reset your password</p>
-                    <form id="formAuthentication" class="mb-3" action="javascript:void(0)" method="GET">
+                    <form class="mb-3" action="{{route('admin.send.mail')}}" method="post">
+                        @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" autofocus>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required autofocus>
                         </div>
-                        <button class="btn btn-primary d-grid w-100">Send Reset Link</button>
+                        <button type="submit" class="btn btn-primary d-grid w-100">Send Reset Link</button>
                     </form>
                     <div class="text-center">
                         <a href="{{ route('admin.login') }}" class="d-flex align-items-center justify-content-center">
@@ -43,4 +44,13 @@
         </div>
     </div>
 </div>
+
+@section('extraa-js')
+<script>
+    $('button[type="submit"]').click(function(){
+        $(this).html("Please wait ...");
+    });
+</script>
+@endsection
+
 @endsection

@@ -38,7 +38,7 @@
                         </a>
                     </div>
                     <!-- /Logo -->
-                    <h4 class="mb-2 text-center">Register Your Self</h4>
+                    <h4 class="mb-2 text-center fw-bold">Register Your Self</h4>
                     <p class="mb-4 text-center">Join with us and enjoy life every day</p>
 
                     <form id="formAuthentication" class="mb-3" action="{{ route('admin.registration.store') }}" method="POST" enctype="multipart/form-data">
