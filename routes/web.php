@@ -3,16 +3,17 @@
 use App\Http\Controllers\admin_side\AdminAuthController;
 use App\Http\Controllers\admin_side\AdminProfileController;
 use App\Http\Controllers\admin_side\ChefController;
+use App\Http\Controllers\admin_side\MenuController as Admin_sideMenuController;
 use App\Http\Controllers\admin_side\PasswordManageController;
 use App\Http\Controllers\Client_side\HomeController;
 use App\Http\Controllers\Client_side\AboutController;
-use App\Http\Controllers\Client_side\MenuController;
 use App\Http\Controllers\Client_side\StoriesController;
 use App\Http\Controllers\Client_side\ContactController;
 use App\Http\Controllers\Client_side\ReservationController;
 use App\Http\Controllers\Client_side\LoginController;
 use App\Http\Controllers\Client_side\RegistrationController;
 use App\Http\Controllers\Client_side\ForgetPasswordController;
+use App\Http\Controllers\Client_side\MenuController;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\layouts\Blank;
 use App\Http\Controllers\layouts\Container;
@@ -71,6 +72,22 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
         Route::post('/profile/save', [AdminProfileController::class, 'profileSave'])->name('.profile.save');
         Route::get('/profile/change/password', [AdminProfileController::class, 'changePassword'])->name('.profile.change.password');
         Route::post('/profile/check/password', [AdminProfileController::class, 'checkPassword'])->name('.profile.check.password');
+
+        Route::group(['prefix' => '/menu', 'as' => '.menu'], function () {
+            Route::get('/breakfast',[Admin_sideMenuController::class,'breakfastShow'])->name('.breakfast.show');
+            Route::get('/lunch',[Admin_sideMenuController::class,'lunchShow'])->name('.lunch.show');
+            Route::get('/dinner',[Admin_sideMenuController::class,'dinnerShow'])->name('.dinner.show');
+            Route::get('/drinks',[Admin_sideMenuController::class,'drinksShow'])->name('.drinks.show');
+            Route::get('/desserts',[Admin_sideMenuController::class,'dessertsShow'])->name('.desserts.show');
+            Route::get('/wine',[Admin_sideMenuController::class,'wineShow'])->name('.wine.show');
+
+            // edit food menu
+            Route::get('/add/food/show/{type}',[Admin_sideMenuController::class,'addFoodShow'])->name('.add.food.show');
+            Route::post('/add/food/save/{type}',[Admin_sideMenuController::class,'addFoodSave'])->name('.add.food.save');
+            Route::delete('/delete/food/{id}',[Admin_sideMenuController::class,'deleteFood'])->name('.delete.food');
+            Route::get('/edit/food/show/{id}',[Admin_sideMenuController::class,'editFoodShow'])->name('.edit.food.show');
+            Route::post('/edit/food/save/{id}',[Admin_sideMenuController::class,'editFoodSave'])->name('.edit.food.save');
+        });
 
     });
 
