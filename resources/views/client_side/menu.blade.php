@@ -44,7 +44,6 @@
                         <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
                             <div class="row no-gutters d-flex align-items-stretch">
                                 @foreach ($breakfast as $item)
-                                @if ($item['type'] == 1)
                                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                         <div class="menu-img img {{ $loop->iteration % 4 == 3 || $loop->iteration % 4 == 0  ? 'order-md-last' : '' }}" style="background-image: url({{ asset(isset($item['image']) ? $item['image'] : 'client_side/images/menu/no-menu-image.jpg')}});"></div>
@@ -65,7 +64,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
                                 @endforeach
                             </div>
                         </div>
@@ -74,7 +72,6 @@
                             <div class="row no-gutters d-flex align-items-stretch">
 
                                 @foreach ($lunch as $item)
-                                @if ($item['type'] == 2)
                                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                         <div class="menu-img img {{ $loop->iteration % 4 == 3 || $loop->iteration % 4 == 0  ? 'order-md-last' : '' }}" style="background-image: url({{ asset(isset($item['image']) ? $item['image'] : 'client_side/images/menu/no-menu-image.jpg')}});"></div>
@@ -95,7 +92,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
                                 @endforeach
                             </div>
                         </div>
@@ -103,7 +99,6 @@
                         <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
                             <div class="row no-gutters d-flex align-items-stretch">
                                 @foreach ($dinner as $item)
-                                @if ($item['type'] == 3)
                                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                         <div class="menu-img img {{ $loop->iteration % 4 == 3 || $loop->iteration % 4 == 0  ? 'order-md-last' : '' }}" style="background-image: url({{ asset(isset($item['image']) ? $item['image'] : 'client_side/images/menu/no-menu-image.jpg')}});"></div>
@@ -124,7 +119,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
                                 @endforeach
                             </div>
                         </div>
@@ -132,7 +126,6 @@
                         <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
                             <div class="row no-gutters d-flex align-items-stretch">
                                 @foreach ($drinks as $item)
-                                @if ($item['type'] == 4)
                                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                         <div class="menu-img img {{ $loop->iteration % 4 == 3 || $loop->iteration % 4 == 0  ? 'order-md-last' : '' }}" style="background-image: url({{ asset(isset($item['image']) ? $item['image'] : 'client_side/images/menu/no-menu-image.jpg')}});"></div>
@@ -153,7 +146,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
                                 @endforeach
                             </div>
                         </div>
@@ -161,7 +153,6 @@
                         <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-day-5-tab">
                             <div class="row no-gutters d-flex align-items-stretch">
                                 @foreach ($desserts as $item)
-                                @if ($item['type'] == 5)
                                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                         <div class="menu-img img {{ $loop->iteration % 4 == 3 || $loop->iteration % 4 == 0  ? 'order-md-last' : '' }}" style="background-image: url({{ asset(isset($item['image']) ? $item['image'] : 'client_side/images/menu/no-menu-image.jpg')}});"></div>
@@ -182,7 +173,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
                                 @endforeach
                             </div>
                         </div>
@@ -190,7 +180,6 @@
                         <div class="tab-pane fade" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-day-6-tab">
                             <div class="row no-gutters d-flex align-items-stretch">
                                 @foreach ($wine as $item)
-                                @if ($item['type'] == 6)
                                 <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
                                     <div class="menus d-sm-flex ftco-animate align-items-stretch">
                                         <div class="menu-img img {{ $loop->iteration % 4 == 3 || $loop->iteration % 4 == 0 ? 'order-md-last' : '' }}" style="background-image: url({{ asset(isset($item['image']) ? $item['image'] : 'client_side/images/menu/no-menu-image.jpg')}});"></div>
@@ -211,7 +200,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
                                 @endforeach
                             </div>
                         </div>
