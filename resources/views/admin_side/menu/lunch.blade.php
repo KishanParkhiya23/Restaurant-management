@@ -2,18 +2,6 @@
 
 @section('title', 'Lunch menu')
 
-<style>
-    .table> :not(caption)>*>* {
-        padding: 0.8rem 1.8rem !important;
-    }
-
-    .rounded-circle {
-        width: 2rem;
-        height: 2rem;
-        margin-right: 1vw;
-    }
-</style>
-
 @section('content')
 <h4 class="fw-bold py-3 mb-4">
     <span class="text-muted fw-light">Menu /</span> Lunch
