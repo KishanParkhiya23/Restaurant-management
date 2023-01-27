@@ -1,3 +1,16 @@
+@section('extraa-css')
+<style>
+    .table> :not(caption)>*>* {
+        padding: 0.8rem 1.8rem !important;
+    }
+
+    .rounded-circle {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1vw;
+    }
+</style>
+@endsection
 
 <script>
     let token = "{{ csrf_token() }}";
