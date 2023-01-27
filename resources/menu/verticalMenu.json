@@ -4,7 +4,7 @@
       "url": "/admin",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons fa-solid fa-house",
-      "slug": "admin"
+      "slug": "/dashboard"
     },    
     {
       "url": "/admin/chef/dashboard",
