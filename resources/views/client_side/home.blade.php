@@ -65,48 +65,6 @@
                             </div>
                         </div>
                         @endforeach
-
-                        <!-- <div class="col-md-2">
-                            <div class="featured-menus ftco-animate">
-                                <div class="menu-img img" style="background-image: url({{ asset('client_side/images/menu/breakfast-1.jpg')}});">
-                                </div>
-                                <div class="text text-center">
-                                    <h3>Bibingka</h3>
-                                    <p><span>Pice flour</span>, <span>eggs</span>, <span>coconut milk</span>, <span>butter</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="featured-menus ftco-animate">
-                                <div class="menu-img img" style="background-image: url({{ asset('client_side/images/menu/breakfast-2.jpg')}});">
-                                </div>
-                                <div class="text text-center">
-                                    <h3>Venezolano</h3>
-                                    <p><span>Egg</span>, <span>onion</span>, <span>tomato</span>, <span>annatto powder</span>, <span>coriander</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="featured-menus ftco-animate">
-                                <div class="menu-img img" style="background-image: url({{ asset('client_side/images/menu/breakfast-3.jpg')}});">
-                                </div>
-                                <div class="text text-center">
-                                    <h3>Champorado</h3>
-                                    <p><span>Rice</span>, <span>cocoa beans</span>, <span>sugar</span>, <span>condensed milk</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="featured-menus ftco-animate">
-                                <div class="menu-img img" style="background-image: url({{ asset('client_side/images/menu/breakfast-4.jpg')}});">
-                                </div>
-                                <div class="text text-center">
-                                    <h3>Eggs benedict</h3>
-                                    <p><span>rggs</span>, <span>butter</span>, <span>bacon</span>, <span>salt</span>,<span>white wine vinegar</span></p>
-                                    </p>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
