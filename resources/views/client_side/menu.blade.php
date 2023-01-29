@@ -59,7 +59,7 @@
                                                 </div>
                                                 <p>{{$item['poppings']}}
                                                 </p>
-                                                <p><a href="{{ route('user.forder') }}" class="btn btn-primary">Order now</a></p>
+                                                <p><a href="{{ route('user.forder',$item['id']) }}" class="btn btn-primary">Order now</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@
                                                 </div>
                                                 <p>{{$item['poppings']}}
                                                 </p>
-                                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                                <p><a href="{{ route('user.forder',$item['id']) }}" class="btn btn-primary">Order now</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +114,7 @@
                                                 </div>
                                                 <p>{{$item['poppings']}}
                                                 </p>
-                                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                                <p><a href="{{ route('user.forder',$item['id']) }}" class="btn btn-primary">Order now</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -141,7 +141,7 @@
                                                 </div>
                                                 <p>{{$item['poppings']}}
                                                 </p>
-                                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                                <p><a href="{{ route('user.forder',$item['id']) }}" class="btn btn-primary">Order now</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -168,7 +168,7 @@
                                                 </div>
                                                 <p>{{$item['poppings']}}
                                                 </p>
-                                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                                <p><a href="{{ route('user.forder',$item['id']) }}" class="btn btn-primary">Order now</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -195,7 +195,7 @@
                                                 </div>
                                                 <p>{{$item['poppings']}}
                                                 </p>
-                                                <p><a href="#" class="btn btn-primary">Order now</a></p>
+                                                <p><a href="{{ route('user.forder',$item['id']) }}" class="btn btn-primary">Order now</a></p>
                                             </div>
                                         </div>
                                     </div>

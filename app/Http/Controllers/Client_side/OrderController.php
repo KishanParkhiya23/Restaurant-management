@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Client_side;
 
 use App\Http\Controllers\Controller;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    public function order()
+    public function order($id)
     {
-    return view('client_side.order');
+        $item = Menu::find($id);
+        return view('client_side.order',compact('item'));
     }
 }

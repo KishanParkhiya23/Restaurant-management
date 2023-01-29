@@ -429,7 +429,7 @@ data-stellar-background-ratio="0.5">
         </div>
         <div class="row">
             <div class="col-md-4 ftco-animate">
-                <div class="blog-entry">
+                <div class="blog-entry p-3">
                     <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('client_side/images/image_1.jpg')}}');">
                     </a>
                     <div class="text pt-3 pb-4 px-4">
@@ -446,7 +446,7 @@ data-stellar-background-ratio="0.5">
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
-                <div class="blog-entry">
+                <div class="blog-entry p-3">
                     <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('client_side/images/image_2.jpg')}}');">
                     </a>
                     <div class="text pt-3 pb-4 px-4">
@@ -463,7 +463,7 @@ data-stellar-background-ratio="0.5">
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
-                <div class="blog-entry">
+                <div class="blog-entry p-3">
                     <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('client_side/images/image_3.jpg')}}');">
                     </a>
                     <div class="text pt-3 pb-4 px-4">
