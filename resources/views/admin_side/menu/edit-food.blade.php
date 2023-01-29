@@ -14,12 +14,10 @@
     }
 </style>
 
-
 @section('content')
+
 @php
-
 $url = 'admin.menu.edit.food.save';
-
 if(isset($data)){
 if ($data['type'] == 1) {
 $urlData = 'breakfast';
@@ -35,7 +33,6 @@ $urlData = 'desserts';
 $urlData = 'wine';
 }
 }
-
 @endphp
 
 <div class="col-xxl mt-2">
@@ -99,7 +96,7 @@ $urlData = 'wine';
                 </div>
                 <div class="row justify-content-end">
                     <div class="col-sm-10" style="text-align: right;">
-                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.menu.' . $urlData . '.show')}}">Cancle</a>
+                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.menu.' . $urlData . '.show')}}">Cancel</a>
                         <button type="submit" class="btn btn-primary" style="margin-left: auto;">Save</button>
                     </div>
                 </div>
@@ -160,7 +157,7 @@ $urlData = 'wine';
                 </div>
                 <div class="row justify-content-end">
                     <div class="col-sm-10" style="text-align: right;">
-                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.menu.'. $foodType . '.show')}}">Cancle</a>
+                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.menu.'. $foodType . '.show')}}">Cancel</a>
                         <button type="submit" class="btn btn-primary" style="margin-left: auto;">Save</button>
                     </div>
                 </div>

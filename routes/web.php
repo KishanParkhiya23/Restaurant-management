@@ -49,7 +49,6 @@ Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
 
 Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
 
-
     Route::get('/login', [AdminAuthController::class, 'login'])->name('.login');
     Route::post('/login/check', [AdminAuthController::class, 'loginCheck'])->name('.login.check');
     Route::get('/registration', [AdminAuthController::class, 'registration'])->name('.registration');
@@ -65,7 +64,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
 
     Route::get('/404',function(){
         return view('errors.404');
-    })->name('/404');
+    })->name('/404')->name('.404');
 
     Route::group(['middleware' => 'adminLogin'], function () {
         Route::get('/', [Analytics::class, 'index']);
@@ -101,6 +100,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
         Route::post('/edit/save/{id}', [ChefController::class, 'editSave'])->name('.edit.save');
         Route::delete('/delete/{id}', [ChefController::class, 'deleteChef'])->name('.delete');
     });
+
 });
 
 

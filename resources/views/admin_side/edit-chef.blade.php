@@ -78,7 +78,7 @@
                 </div>
                 <div class="row justify-content-end">
                     <div class="col-sm-10" style="text-align: right;">
-                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.chef.dashboard')}}">Cancle</a>
+                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.chef.dashboard')}}">Cancel</a>
                         <button type="submit" class="btn btn-primary" style="margin-left: auto;">Save</button>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                 </div>
                 <div class="row justify-content-end">
                     <div class="col-sm-10" style="text-align: right;">
-                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.chef.dashboard')}}">Cancle</a>
+                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.chef.dashboard')}}">Cancel</a>
                         <button type="submit" class="btn btn-primary" style="margin-left: auto;">Save</button>
                     </div>
                 </div>
