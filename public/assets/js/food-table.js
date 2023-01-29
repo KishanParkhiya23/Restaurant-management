@@ -1,3 +1,4 @@
+
 function deleteRecord(data, token, type) {
     swal({
         title: `Are you sure you want to delete this record?`,

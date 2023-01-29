@@ -113,7 +113,7 @@
                     <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18">
                             <div class="text">
-                                <strong class="number" data-number="100">0</strong>
+                                <strong class="number" data-number="{{count($totalMenuItem)}}">0</strong>
                                 <span>Menus/Dish</span>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                     <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18">
                             <div class="text">
-                                <strong class="number" data-number="50">0</strong>
+                                <strong class="number" data-number="{{count($chefs)}}">0</strong>
                                 <span>Staffs</span>
                             </div>
                         </div>
@@ -242,13 +242,12 @@
                         <span class="position mb-2">{{$chef['speciality']}}</span>
                         <p class="secondary">{{$chef['discription']}}</p>
                         <div class="faded">
-                            <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
                             <ul class="ftco-social d-flex">
-                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a>
+                                <li class="ftco-animate"><a href="javascript:void(0)"><span class="icon-twitter"></span></a>
                                 </li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                                <li class="ftco-animate"><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="javascript:void(0)"><span class="icon-google-plus"></span></a></li>
+                                <li class="ftco-animate"><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -259,7 +258,7 @@
     </div>
 </section>
 
-{{-- <section class="ftco-section img" style="background-image: url({{ asset('client_side/images/bg_3.jpg')}})"
+<!-- <section class="ftco-section img" style="background-image: url({{ asset('client_side/images/bg_3.jpg')}})"
 data-stellar-background-ratio="0.5">
 <div class="container">
     <div class="row d-flex">
@@ -325,7 +324,7 @@ data-stellar-background-ratio="0.5">
         </div>
     </div>
 </div>
-</section> --}}
+</section> -->
 
 <section class="ftco-section testimony-section img">
     <div class="overlay"></div>
