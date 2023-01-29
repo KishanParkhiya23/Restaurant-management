@@ -121,7 +121,7 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
 
     Route::get('/fprofile', [ProfileController::class,'fprofile'])->name('.fprofile');
 
-    Route::get('/order', [OrderController::class,'order'])->name('.forder');
+    Route::get('/order/{id}', [OrderController::class,'order'])->name('.forder');
 
     Route::get('/forget_password', [ForgetPasswordController::class, 'forget_password'])->name('.forget_password');
 });
