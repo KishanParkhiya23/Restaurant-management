@@ -22,7 +22,21 @@
                         <a href="{{ route('user.login') }}" class="small mr-3"><span class="icon-users"> </span>Log
                             In</a>
                         <div class="d-inline-block">
-                            <a href=""><img src="{{ asset('client_side\images\user.png') }}" width="30" class="user-pic"></a>
+                            <div class="dropdown dropleft">
+                                <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="{{ asset('client_side\images\user.png') }}" width="30" class="user-pic" style="cursor: pointer;">
+                                </span>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">
+                                        <img src="{{ asset('client_side\images\user.png') }}" width="40" class="user-pic mr-2" style="cursor: pointer;">
+                                        User</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-pen mr-2"></i> Edit Profile</a>
+                                    <a class="dropdown-item" href="#"><i class='fas fa-cocktail mr-2'></i> Your order</a>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket mr-2"></i> Logout</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

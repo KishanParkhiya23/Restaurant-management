@@ -54,7 +54,7 @@ $navbarDetached = ($navbarDetached ?? '');
                   <div class="d-flex">
                     <div class="flex-shrink-0 me-3">
                       <div class="avatar avatar-online">
-                        <img src="" alt class="rounded-circle">
+                        <img src="{{url(Storage::url( $id->profile_img != null ? $id->profile_img : 'images/no-image.png'))}}" alt class="rounded-circle">
                       </div>
                     </div>
                     <div class="flex-grow-1">

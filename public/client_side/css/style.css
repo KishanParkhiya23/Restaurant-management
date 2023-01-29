@@ -11625,7 +11625,7 @@ a.text-dark:focus {
   }
 
   abbr[title]::after {
-    content: " (" attr(title) ")";
+    content: " ("attr(title) ")";
   }
 
   pre {
@@ -14103,4 +14103,10 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
+}
+
+
+.dropleft .dropdown-menu {
+  transform: translate3d(-170px, 34px, 0px) !important;
+  min-width: 13vw!important;
 }
