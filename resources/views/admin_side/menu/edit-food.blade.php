@@ -18,6 +18,21 @@
 
 @php
 $url = 'admin.menu.edit.food.save';
+if(isset($data)){
+if ($data['type'] == 1) {
+$urlData = 'breakfast';
+} elseif ($data['type'] == 2) {
+$urlData = 'lunch';
+} elseif ($data['type'] == 3) {
+$urlData = 'dinner';
+} elseif ($data['type'] == 4) {
+$urlData = 'drinks';
+} elseif ($data['type'] == 5) {
+$urlData = 'desserts';
+} else {
+$urlData = 'wine';
+}
+}
 @endphp
 
 <div class="col-xxl mt-2">
