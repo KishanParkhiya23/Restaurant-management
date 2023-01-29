@@ -13,7 +13,9 @@ use App\Http\Controllers\Client_side\ReservationController;
 use App\Http\Controllers\Client_side\LoginController;
 use App\Http\Controllers\Client_side\RegistrationController;
 use App\Http\Controllers\Client_side\ForgetPasswordController;
+use App\Http\Controllers\Client_side\ProfileController;
 use App\Http\Controllers\Client_side\MenuController;
+use App\Http\Controllers\Client_side\OrderController;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\layouts\Blank;
 use App\Http\Controllers\layouts\Container;
@@ -63,7 +65,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
 
     Route::get('/404',function(){
         return view('errors.404');
-    });
+    })->name('/404');
 
     Route::group(['middleware' => 'adminLogin'], function () {
         Route::get('/', [Analytics::class, 'index']);
@@ -116,6 +118,10 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
 
     Route::get('/registration', [RegistrationController::class, 'registration'])->name('.registration');
     Route::post('/regdatasave', [RegistrationController::class, 'regdatasave'])->name('.regdatasave');
+
+    Route::get('/fprofile', [ProfileController::class,'fprofile'])->name('.fprofile');
+
+    Route::get('/order', [OrderController::class,'order'])->name('.forder');
 
     Route::get('/forget_password', [ForgetPasswordController::class, 'forget_password'])->name('.forget_password');
 });
