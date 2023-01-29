@@ -14,7 +14,7 @@ class ChefController extends Controller
 {
     public function index()
     {
-        $chefs = Chef::all();
+        $chefs = Chef::where('is_set',1)->get();
         return view('admin_side.chef-dashboard', compact('chefs'));
     }
 
@@ -33,7 +33,6 @@ class ChefController extends Controller
             $image->move(public_path('client_side/images'), $imageName);
             $data['image'] != null ? $data['image'] = $imageName : '';
         };
-        // dd($data);
         Chef::create($data);
         return redirect(route('admin.chef.dashboard'))->with("success","Record added succefully");
  
@@ -64,5 +63,12 @@ class ChefController extends Controller
 
         Chef::whereId($id)->update($data);
         return redirect(route('admin.chef.dashboard'))->with("success","Record updated succefully");
+    }
+
+    public function deleteChef($id){
+        Chef::whereId($id)->update(['is_set' => 0]);
+
+        return response()->json(['success' => true]);
+
     }
 }

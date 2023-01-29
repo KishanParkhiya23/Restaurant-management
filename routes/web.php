@@ -3,15 +3,19 @@
 use App\Http\Controllers\admin_side\AdminAuthController;
 use App\Http\Controllers\admin_side\AdminProfileController;
 use App\Http\Controllers\admin_side\ChefController;
+use App\Http\Controllers\admin_side\MenuController as Admin_sideMenuController;
+use App\Http\Controllers\admin_side\PasswordManageController;
 use App\Http\Controllers\Client_side\HomeController;
 use App\Http\Controllers\Client_side\AboutController;
-use App\Http\Controllers\Client_side\MenuController;
 use App\Http\Controllers\Client_side\StoriesController;
 use App\Http\Controllers\Client_side\ContactController;
 use App\Http\Controllers\Client_side\ReservationController;
 use App\Http\Controllers\Client_side\LoginController;
 use App\Http\Controllers\Client_side\RegistrationController;
 use App\Http\Controllers\Client_side\ForgetPasswordController;
+use App\Http\Controllers\Client_side\ProfileController;
+use App\Http\Controllers\Client_side\MenuController;
+use App\Http\Controllers\Client_side\OrderController;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\layouts\Blank;
 use App\Http\Controllers\layouts\Container;
@@ -44,28 +48,59 @@ Route::get('/layouts/container', [Container::class, 'index'])->name('layouts-con
 Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
 
 Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
-    
-    
+
     Route::get('/login', [AdminAuthController::class, 'login'])->name('.login');
     Route::post('/login/check', [AdminAuthController::class, 'loginCheck'])->name('.login.check');
     Route::get('/registration', [AdminAuthController::class, 'registration'])->name('.registration');
     Route::post('/registration/store', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
     Route::get('/forget-password', [AdminAuthController::class, 'forgetPassword'])->name('.forget-password');
-    
-    Route::group(['middleware' => 'adminLogin'] , function(){
+
+    Route::post('/send-mail', [PasswordManageController::class, 'sendMail'])->name('.send.mail');
+
+    Route::group(['middleware' => 'changePassword'], function () {
+        Route::get('/change/password', [PasswordManageController::class, 'showChangePassword'])->name('.change.password');
+        Route::post('/change/save/password', [PasswordManageController::class, 'saveChangePassword'])->name('.change.save.password');
+    });
+
+    Route::get('/404',function(){
+        return view('errors.404');
+    })->name('/404')->name('.404');
+
+    Route::group(['middleware' => 'adminLogin'], function () {
         Route::get('/', [Analytics::class, 'index']);
         Route::get('/logout', [AdminAuthController::class, 'logOut'])->name('.logout');
-        Route::get('/profile',[AdminProfileController::class,'index'])->name('.profile');
-        Route::post('/profile/save',[AdminProfileController::class,'profileSave'])->name('.profile.save');
+        Route::get('/profile', [AdminProfileController::class, 'index'])->name('.profile');
+        Route::post('/profile/save', [AdminProfileController::class, 'profileSave'])->name('.profile.save');
+        Route::get('/profile/change/password', [AdminProfileController::class, 'changePassword'])->name('.profile.change.password');
+        Route::post('/profile/check/password', [AdminProfileController::class, 'checkPassword'])->name('.profile.check.password');
+
+        Route::group(['prefix' => '/menu', 'as' => '.menu'], function () {
+            Route::get('/breakfast',[Admin_sideMenuController::class,'breakfastShow'])->name('.breakfast.show');
+            Route::get('/lunch',[Admin_sideMenuController::class,'lunchShow'])->name('.lunch.show');
+            Route::get('/dinner',[Admin_sideMenuController::class,'dinnerShow'])->name('.dinner.show');
+            Route::get('/drinks',[Admin_sideMenuController::class,'drinksShow'])->name('.drinks.show');
+            Route::get('/desserts',[Admin_sideMenuController::class,'dessertsShow'])->name('.desserts.show');
+            Route::get('/wine',[Admin_sideMenuController::class,'wineShow'])->name('.wine.show');
+
+            // edit food menu
+            Route::get('/add/food/show/{type}',[Admin_sideMenuController::class,'addFoodShow'])->name('.add.food.show');
+            Route::post('/add/food/save/{type}',[Admin_sideMenuController::class,'addFoodSave'])->name('.add.food.save');
+            Route::delete('/delete/food/{id}',[Admin_sideMenuController::class,'deleteFood'])->name('.delete.food');
+            Route::get('/edit/food/show/{id}',[Admin_sideMenuController::class,'editFoodShow'])->name('.edit.food.show');
+            Route::post('/edit/food/save/{id}',[Admin_sideMenuController::class,'editFoodSave'])->name('.edit.food.save');
+        });
+
     });
 
     Route::group(['prefix' => '/chef', 'as' => '.chef'], function () {
-        Route::get('/dashboard',[ChefController::class,'index'])->name('.dashboard');
-        Route::get('/add/show',[ChefController::class,'showAddChef'])->name('.add.show');
-        Route::post('/add/save',[ChefController::class,'saveAddChef'])->name('.add.save');
-        Route::get('/edit/{id}',[ChefController::class,'edit'])->name('.edit');
-        Route::post('/edit/save/{id}',[ChefController::class,'editSave'])->name('.edit.save');
-    });    
+        Route::get('/dashboard', [ChefController::class, 'index'])->name('.dashboard');
+        Route::get('/add/show', [ChefController::class, 'showAddChef'])->name('.add.show');
+        Route::post('/add/save', [ChefController::class, 'saveAddChef'])->name('.add.save');
+        Route::get('/edit/{id}', [ChefController::class, 'edit'])->name('.edit');
+        Route::post('/edit/save/{id}', [ChefController::class, 'editSave'])->name('.edit.save');
+        Route::delete('/delete/{id}', [ChefController::class, 'deleteChef'])->name('.delete');
+    });
+
 });
 
 
@@ -83,6 +118,10 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
 
     Route::get('/registration', [RegistrationController::class, 'registration'])->name('.registration');
     Route::post('/regdatasave', [RegistrationController::class, 'regdatasave'])->name('.regdatasave');
+
+    Route::get('/fprofile', [ProfileController::class,'fprofile'])->name('.fprofile');
+
+    Route::get('/order', [OrderController::class,'order'])->name('.forder');
 
     Route::get('/forget_password', [ForgetPasswordController::class, 'forget_password'])->name('.forget_password');
 });

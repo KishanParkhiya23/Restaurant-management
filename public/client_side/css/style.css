@@ -4,6 +4,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -624,8 +625,6 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
 }
 
 .no-gutters {
@@ -1731,6 +1730,8 @@ pre code {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
+    margin-top: 7%;
+    margin-bottom: 7%;
   }
 
   .col-xl-7 {
@@ -13101,6 +13102,7 @@ textarea.form-control {
   font-size: 14px;
   background: #141313;
   padding: 6em 0;
+  padding-bottom: 2%;
 }
 
 .ftco-footer .ftco-footer-logo {

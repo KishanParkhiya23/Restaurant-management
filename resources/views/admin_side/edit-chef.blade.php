@@ -20,7 +20,7 @@
 <div class="col-xxl mt-2">
     <div class="card mb-4">
         <div class="card-header d-flex align-items-center justify-content-between">
-            <h5 class="mb-0">Edit John Smooth</h5> <small class="text-muted float-end">Edit chef personal details </small>
+            <h5 class="mb-0"> {{ (isset($data)) ? "Edit ". $data['name'] : "Add New Chef" }}</h5> <small class="text-muted float-end">{{ (isset($data)) ? "Edit chef personal details" : "Add New Chef" }} </small>
         </div>
         <div class="card-body">
             @if (isset($data))
@@ -45,7 +45,7 @@
                     <div class="col-sm-10">
                         <div class="input-group input-group-merge ">
                             <span id="basic-icon-default-fullname2" class="input-group-text @error('name') is-invalid @enderror"><i class="bx bx-user"></i></span>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"  value="{{$data['name']}}"placeholder="John Doe" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" name="name" />
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" value="{{$data['name']}}" placeholder="John Doe" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" name="name" />
                         </div>
                         @error('name')
                         <div class="text-error">{{$message}}</div>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="row justify-content-end">
                     <div class="col-sm-10" style="text-align: right;">
-                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.chef.dashboard')}}">Cancle</a>
+                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.chef.dashboard')}}">Cancel</a>
                         <button type="submit" class="btn btn-primary" style="margin-left: auto;">Save</button>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                         <img src="{{ asset('client_side\images\no-image.png')}}" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar">
                         <div class="button-wrapper">
                             <label for="upload" class="btn btn-secondary me-2 mb-4" tabindex="0">
-                                <span class="d-none d-sm-block">Change image</span>
+                                <span class="d-none d-sm-block">Upload image</span>
                                 <i class="bx bx-upload d-block d-sm-none"></i>
                                 <input type="file" id="upload" name="image" class="account-file-input" hidden="" accept="image/png, image/jpeg">
                             </label>
@@ -138,7 +138,7 @@
                 </div>
                 <div class="row justify-content-end">
                     <div class="col-sm-10" style="text-align: right;">
-                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.chef.dashboard')}}">Cancle</a>
+                        <a type="button" class="btn btn-secondary text-white" style="margin-left: auto;" href="{{route('admin.chef.dashboard')}}">Cancel</a>
                         <button type="submit" class="btn btn-primary" style="margin-left: auto;">Save</button>
                     </div>
                 </div>

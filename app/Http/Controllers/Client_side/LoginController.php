@@ -15,19 +15,9 @@ class LoginController extends Controller
     }
 
     public function logincheck(LoginRequest $req)
-    {
+    {        
         $data = $req->validated();
-        // dd($data);
-
-        if (Auth::attempt($data)) {
-            $req->session()->regenerate();
-
-            return redirect(route('home'))->with("success", "You logged in succesfully");
-        }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
         
+        return redirect(route('home'));
     }
 }

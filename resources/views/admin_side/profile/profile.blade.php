@@ -57,10 +57,12 @@
     .ui-button.ui-state-active:hover {
         border: 1px solid #000000;
     }
-    .form-control[readonly]{
+
+    .form-control[readonly] {
         background-color: #fff;
     }
-    #my_date_picker{
+
+    #my_date_picker {
         cursor: pointer;
     }
 </style>
@@ -68,11 +70,20 @@
 @endsection
 
 @section('content')
- 
+
 <div class="row">
     <div class="col-md-12">
         <ul class="nav nav-pills flex-column flex-md-row mb-3">
-            <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Account</a></li>
+            <li class="nav-item">
+                <a class="nav-link active" href="javascript:void(0);">
+                    <i class="bx bx-user me-1"></i> Account
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.profile.change.password')}}">
+                    <i class="bx bx-key me-1"></i>Change Password
+                </a>
+            </li>
         </ul>
         <div class="card mb-4">
             <h5 class="card-header pb-1">Profile Details</h5>
