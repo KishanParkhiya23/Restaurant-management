@@ -11,4 +11,9 @@ class ForgetPasswordController extends Controller
     {
         return view('Client_side.forget_password');
     }
+
+    public function change_password()
+    {
+    return view('client_side.changepassword');
+    }
 }

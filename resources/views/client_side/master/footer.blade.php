@@ -62,4 +62,7 @@
             </div>
         </div>
     </div>
+    <div>
+      <p class="text-center">Copyright © by Fork & Spoon in 2022</p>
+    </div>
 </footer>

@@ -9,6 +9,7 @@
         nav {
             display: none !important;
         }
+
         .error-text {
             font-size: 0.8rem;
             color: red;
@@ -58,6 +59,15 @@
                                     <form id="LoginForm" method="POST" action="{{ route('user.login.check') }}"
                                         class="log-form">
                                         @csrf
+                                        @if (Session()->has('Email'))
+                                            <div class="alert alert-danger">{{ Session()->get('Email') }}</div>
+                                        @endif
+                                        @if (Session()->has('password'))
+                                            <div class="alert alert-danger">{{ Session()->get('password') }}</div>
+                                        @endif
+                                        @if (Session()->has('fail'))
+                                            <div class="alert alert-danger">{{ Session()->get('fail') }}</div>
+                                        @endif
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <input type="text" id="name" name="email"
                                                 class="form-control @error('email') is-invalid @enderror"

@@ -91,8 +91,7 @@
                         <span class="subheading">About</span>
                         <h2 class="mb-4">Fork & Spoon Restaurant</h2>
                     </div>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                        is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                    <p>A restaurant (sometimes known as a diner) is a place where cooked food is sold to the public, and where people sit down to eat it. It is also a place where people go to enjoy the time and to eat a meal.</p>
                     <pc class="time">
                         <span>Mon - Fri <strong>8 AM - 11 PM</strong></span>
                         <span><a href="#">+ 1-978-123-4567</a></span>
@@ -165,8 +164,7 @@
                         </div>
                         <div class="media-body p-2 mt-3">
                             <h3 class="heading">Birthday Party</h3>
-                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                                unorthographic.</p>
+                            <p>Plan all celebration details which include everything from appetizer trays, main dishes, drink menus, and the overall party layout.</p>
                         </div>
                     </div>
                 </div>

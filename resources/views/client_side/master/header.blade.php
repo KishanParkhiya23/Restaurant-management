@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
                         <p class="mb-0 register-link"><span>Open hours:</span> <span>Monday - Sunday</span>
-                            <span>8:00AM - 9:00PM</span>
+                            <span>8:00AM - 11:00PM</span>
                         </p>
                     </div>
                     <div class="col-lg-3 text-right">
@@ -32,7 +32,7 @@
                                         User</a>
 
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-pen mr-2"></i> Edit Profile</a>
+                                    <a class="dropdown-item" href="{{ route('user.fprofile') }}"><i class="fa-solid fa-pen mr-2"></i> Edit Profile</a>
                                     <a class="dropdown-item" href="#"><i class='fas fa-cocktail mr-2'></i> Your order</a>
                                     <a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket mr-2"></i> Logout</a>
                                 </div>

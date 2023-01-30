@@ -12,4 +12,9 @@ class ProfileController extends Controller
     {
     return view('client_side.Profile');
     }
+
+    // public function profilesave()
+    // {
+    // return view('client_side.editprofile');
+    // }
 }

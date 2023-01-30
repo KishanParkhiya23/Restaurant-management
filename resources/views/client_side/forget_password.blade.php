@@ -41,7 +41,7 @@
                                             <input type="email" id="email" class="form-control" placeholder="Email"
                                                 required data-error="Please enter your emnail">
                                         </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 mt-3">
                                             <button type="submit" id="submit" class="login-btn">Submit</button>
                                             <div id="msgSubmit" class="h3 text-center hidden"></div>
                                             <div class="clearfix"></div>
