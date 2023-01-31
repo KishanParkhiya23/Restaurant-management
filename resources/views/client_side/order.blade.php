@@ -12,6 +12,14 @@
     #quantity {
         cursor: pointer;
     }
+
+    .hero-wrap.hero-wrap-2 {
+        height: 230px;
+    }
+
+    .hero-wrap.hero-wrap-2 .slider-text {
+        height: 230px;
+    }
 </style>
 @endsection
 

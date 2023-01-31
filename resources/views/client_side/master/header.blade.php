@@ -27,10 +27,10 @@
                                     <img src="{{ asset('client_side\images\user.png') }}" width="30" class="user-pic" style="cursor: pointer;">
                                 </span>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="javascript:void(0)" style="pointer-events: none;">
                                         <img src="{{ asset('client_side\images\user.png') }}" width="40" class="user-pic mr-2" style="cursor: pointer;">
-                                        User</a>
-
+                                        User
+                                    </a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ route('user.fprofile') }}"><i class="fa-solid fa-pen mr-2"></i> Edit Profile</a>
                                     <a class="dropdown-item" href="#"><i class='fas fa-cocktail mr-2'></i> Your order</a>
