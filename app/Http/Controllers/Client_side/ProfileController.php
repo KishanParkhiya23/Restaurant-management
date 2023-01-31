@@ -13,8 +13,8 @@ class ProfileController extends Controller
     return view('client_side.Profile');
     }
 
-    // public function profilesave()
-    // {
-    // return view('client_side.editprofile');
-    // }
+    public function yourorder()
+    {
+    return view('client_side.yourorder');
+    }
 }
