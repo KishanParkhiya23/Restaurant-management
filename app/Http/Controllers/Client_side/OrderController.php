@@ -13,4 +13,9 @@ class OrderController extends Controller
         $item = Menu::find($id);
         return view('client_side.order',compact('item'));
     }
+
+    public function addtocart()
+    {
+    return view('client_side.addtocart');
+    }
 }

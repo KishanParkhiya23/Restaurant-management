@@ -120,9 +120,10 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::post('/regdatasave', [RegistrationController::class, 'regdatasave'])->name('.regdatasave');
 
     Route::get('/fprofile', [ProfileController::class,'fprofile'])->name('.fprofile');
-    // Route::get('/profilesave', [ProfileController::class,'profilesave'])->name('.profilesave');
+    Route::get('/yourorder', [ProfileController::class,'yourorder'])->name('.yourorder');
 
     Route::get('/order/{id}', [OrderController::class,'order'])->name('.forder');
+    Route::get('/addtocart', [OrderController::class,'addtocart'])->name('.addtocart');
 
     Route::get('/forget_password', [ForgetPasswordController::class, 'forget_password'])->name('.forget_password');
     Route::get('/change_password', [ForgetPasswordController::class, 'change_password'])->name('.change_password');

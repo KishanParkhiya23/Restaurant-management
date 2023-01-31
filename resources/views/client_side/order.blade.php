@@ -69,7 +69,7 @@
 
                         <div class="mt-5 text-right">
                             <a href="{{route('user.menu')}}" class="btn btn-secondary w-100" style="border-radius: 0!important;height: 3rem;padding-top:0.7rem;">Cancel</a>
-                            <button type="submit" class="btn btn-primary w-100 mt-2" style="border-radius: 0!important;height: 3rem;"> <i class="fa-solid fa-cart-plus" style="margin-right: 0.8rem;"></i> Add to cart</button>
+                            <button type="submit" class="btn btn-primary w-100 mt-2" style="border-radius: 0!important;height: 3rem;"><i class="fa-solid fa-cart-plus" style="margin-right: 0.8rem;"></i>Add to cart</button>
                         </div>
                     </form>
                 </div>
