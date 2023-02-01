@@ -33,10 +33,10 @@
                                         class="user-pic" style="cursor: pointer;">
                                 </span>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">
-                                        <img src="{{ asset('client_side\images\user.png') }}" width="40"
-                                            class="user-pic mr-2" style="cursor: pointer;">
-                                        User</a>
+                                    <a class="dropdown-item" href="javascript:void(0)" style="pointer-events: none;">
+                                        <img src="{{ asset('client_side\images\user.png') }}" width="40" class="user-pic mr-2" style="cursor: pointer;">
+                                        User
+                                    </a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ route('user.fprofile') }}"><i
                                             class="fa-solid fa-pen mr-2"></i> Edit Profile</a>

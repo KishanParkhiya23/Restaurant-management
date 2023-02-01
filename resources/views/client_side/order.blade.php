@@ -9,10 +9,18 @@
             display: none !important;
         }
 
-        #quantity {
-            cursor: pointer;
-        }
-    </style>
+    #quantity {
+        cursor: pointer;
+    }
+
+    .hero-wrap.hero-wrap-2 {
+        height: 230px;
+    }
+
+    .hero-wrap.hero-wrap-2 .slider-text {
+        height: 230px;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -34,24 +42,23 @@
     </section>
 
 
-    <section class="ftco-section">
-        <div class="container">
-            <div class="ftco-search">
-                <div class="row p-4">
-                    <div class="col-lg-6">
-                        <img src="{{ asset(isset($item['image']) ? $item['image'] : 'client_side/images/menu/no-menu-image.jpg') }}"
-                            width="90%" class="img-thumbnail d-block" alt="" style="margin: auto auto;">
-                    </div>
-                    <div class="col-lg-6">
-                        <form action="#" method="get">
-                            @csrf
-                            <h4 class="mt-4">
-                                <strong>
-                                    <li>{{ $item['name'] }}</li>
-                                </strong>
-                            </h4>
-                            <p style="font-size: 0.8rem;" class="mb-0 mt-3">Poppings of item :</p>
-                            <p>{{ $item['poppings'] }}</p>
+<section class="ftco-section">
+    <div class="container">
+        <div class="ftco-search">
+            <div class="row p-4">
+                <div class="col-lg-6">
+                    <img src="{{ asset( isset($item['image']) ? $item['image'] : 'client_side/images/menu/no-menu-image.jpg')}}" width="90%" class="img-thumbnail d-block" alt="" style="margin: auto auto;">
+                </div>
+                <div class="col-lg-6">
+                    <form action="{{route('user.addtocart')}}" method="post">
+                        @csrf
+                        <h4 class="mt-4">
+                            <strong>
+                                <li>{{$item['name']}}</li>
+                            </strong>
+                        </h4>
+                        <p style="font-size: 0.8rem;" class="mb-0 mt-3">Poppings of item :</p>
+                        <p>{{$item['poppings']}}</p>
 
                             <p id="amount">${{ $item['prize'] }}</p>
                             <div class="d-flex justify-content-between mt-4">
