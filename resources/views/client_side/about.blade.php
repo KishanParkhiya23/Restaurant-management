@@ -18,7 +18,7 @@
                 <h1 class="mb-2 bread">About</h1>
                 <p class="breadcrumbs">
                     <span class="mr-2">
-                        <a href="index.html">Home
+                        <a href="{{ route('home') }}">Home
                             <i class="ion-ios-arrow-forward"></i>
                         </a>
                     </span>

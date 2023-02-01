@@ -11,7 +11,7 @@
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate text-center mb-4">
                     <h1 class="mb-2 bread">Book a Table</h1>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home') }}">Home <i
                                     class="ion-ios-arrow-forward"></i></a></span> <span>Reservation <i
                                 class="ion-ios-arrow-forward"></i></span></p>
                 </div>
@@ -50,8 +50,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="">Phone</label>
-                                        <input type="text" class="form-control" id="book_date" placeholder="Date">
+                                        <label for="">Date</label>
+                                        <input type="Date" class="form-control" id="book_date" placeholder="Date">
                                     </div>
                                 </div>
                                 <div class="col-md-6">

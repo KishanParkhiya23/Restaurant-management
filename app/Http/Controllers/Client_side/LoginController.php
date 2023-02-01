@@ -32,4 +32,15 @@ class LoginController extends Controller
       return back()->with('Email', 'Email is not matched');
     }
   }
+
+  public function Ulogout()
+  {
+      if (Session()->has('Ulogin')) {
+          Session()->pull('Ulogin');
+          return redirect(route('home'));
+      } else {
+          return "Please login account!!";
+      }
+  }
+
 }

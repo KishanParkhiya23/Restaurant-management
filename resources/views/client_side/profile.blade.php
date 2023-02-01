@@ -36,7 +36,7 @@
                     <h1 class="mb-2 bread">Profile</h1>
                     <p class="breadcrumbs" style="margin:0 0 210px">
                         <span class="mr-2">
-                            <a href="index.html">Home
+                            <a href="{{ route('home') }}">Home
                                 <i class="ion-ios-arrow-forward"></i>
                             </a>
                         </span>

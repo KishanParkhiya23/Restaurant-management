@@ -19,10 +19,12 @@
                         </p>
                     </div>
                     <div class="col-lg-3 text-right">
+                      @if(!session()->has('Ulogin'))
                         <a href="{{ route('user.registration') }}" class="small mr-3"><span class="icon-users">
                             </span>Register</a>
                         <a href="{{ route('user.login') }}" class="small mr-3"><span class="icon-users"> </span>Log
                             In</a>
+                      @else
                         <div class="d-inline-block">
                             <div class="dropdown dropleft">
                                 <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
@@ -40,11 +42,12 @@
                                             class="fa-solid fa-pen mr-2"></i> Edit Profile</a>
                                     <a class="dropdown-item" href="{{ route('user.yourorder') }}"><i class='fas fa-cocktail mr-2'></i> Your
                                         order</a>
-                                    <a class="dropdown-item" href="#"><i
+                                    <a class="dropdown-item" href="{{ route('user.Ulogout') }}"><i
                                             class="fa-solid fa-arrow-right-from-bracket mr-2"></i>Logout</a>
                                 </div>
                             </div>
                         </div>
+                      @endif
                     </div>
                 </div>
             </div>

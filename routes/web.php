@@ -49,82 +49,84 @@ Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
 
 Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
 
-    Route::get('/login', [AdminAuthController::class, 'login'])->name('.login');
-    Route::post('/login/check', [AdminAuthController::class, 'loginCheck'])->name('.login.check');
-    Route::get('/registration', [AdminAuthController::class, 'registration'])->name('.registration');
-    Route::post('/registration/store', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
-    Route::get('/forget-password', [AdminAuthController::class, 'forgetPassword'])->name('.forget-password');
+  Route::get('/login', [AdminAuthController::class, 'login'])->name('.login');
+  Route::post('/login/check', [AdminAuthController::class, 'loginCheck'])->name('.login.check');
+  Route::get('/registration', [AdminAuthController::class, 'registration'])->name('.registration');
+  Route::post('/registration/store', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
+  Route::get('/forget-password', [AdminAuthController::class, 'forgetPassword'])->name('.forget-password');
 
-    Route::post('/send-mail', [PasswordManageController::class, 'sendMail'])->name('.send.mail');
+  Route::post('/send-mail', [PasswordManageController::class, 'sendMail'])->name('.send.mail');
 
-    Route::group(['middleware' => 'changePassword'], function () {
-        Route::get('/change/password', [PasswordManageController::class, 'showChangePassword'])->name('.change.password');
-        Route::post('/change/save/password', [PasswordManageController::class, 'saveChangePassword'])->name('.change.save.password');
+  Route::group(['middleware' => 'changePassword'], function () {
+    Route::get('/change/password', [PasswordManageController::class, 'showChangePassword'])->name('.change.password');
+    Route::post('/change/save/password', [PasswordManageController::class, 'saveChangePassword'])->name('.change.save.password');
+  });
+
+  Route::get('/404', function () {
+    return view('errors.404');
+  })->name('/404')->name('.404');
+
+  Route::group(['middleware' => 'adminLogin'], function () {
+    Route::get('/', [Analytics::class, 'index']);
+    Route::get('/logout', [AdminAuthController::class, 'logOut'])->name('.logout');
+    Route::get('/profile', [AdminProfileController::class, 'index'])->name('.profile');
+    Route::post('/profile/save', [AdminProfileController::class, 'profileSave'])->name('.profile.save');
+    Route::get('/profile/change/password', [AdminProfileController::class, 'changePassword'])->name('.profile.change.password');
+    Route::post('/profile/check/password', [AdminProfileController::class, 'checkPassword'])->name('.profile.check.password');
+
+    Route::group(['prefix' => '/menu', 'as' => '.menu'], function () {
+      Route::get('/breakfast', [Admin_sideMenuController::class, 'breakfastShow'])->name('.breakfast.show');
+      Route::get('/lunch', [Admin_sideMenuController::class, 'lunchShow'])->name('.lunch.show');
+      Route::get('/dinner', [Admin_sideMenuController::class, 'dinnerShow'])->name('.dinner.show');
+      Route::get('/drinks', [Admin_sideMenuController::class, 'drinksShow'])->name('.drinks.show');
+      Route::get('/desserts', [Admin_sideMenuController::class, 'dessertsShow'])->name('.desserts.show');
+      Route::get('/wine', [Admin_sideMenuController::class, 'wineShow'])->name('.wine.show');
+
+      // edit food menu
+      Route::get('/add/food/show/{type}', [Admin_sideMenuController::class, 'addFoodShow'])->name('.add.food.show');
+      Route::post('/add/food/save/{type}', [Admin_sideMenuController::class, 'addFoodSave'])->name('.add.food.save');
+      Route::delete('/delete/food/{id}', [Admin_sideMenuController::class, 'deleteFood'])->name('.delete.food');
+      Route::get('/edit/food/show/{id}', [Admin_sideMenuController::class, 'editFoodShow'])->name('.edit.food.show');
+      Route::post('/edit/food/save/{id}', [Admin_sideMenuController::class, 'editFoodSave'])->name('.edit.food.save');
     });
+  });
 
-    Route::get('/404',function(){
-        return view('errors.404');
-    })->name('/404')->name('.404');
-
-    Route::group(['middleware' => 'adminLogin'], function () {
-        Route::get('/', [Analytics::class, 'index']);
-        Route::get('/logout', [AdminAuthController::class, 'logOut'])->name('.logout');
-        Route::get('/profile', [AdminProfileController::class, 'index'])->name('.profile');
-        Route::post('/profile/save', [AdminProfileController::class, 'profileSave'])->name('.profile.save');
-        Route::get('/profile/change/password', [AdminProfileController::class, 'changePassword'])->name('.profile.change.password');
-        Route::post('/profile/check/password', [AdminProfileController::class, 'checkPassword'])->name('.profile.check.password');
-
-        Route::group(['prefix' => '/menu', 'as' => '.menu'], function () {
-            Route::get('/breakfast',[Admin_sideMenuController::class,'breakfastShow'])->name('.breakfast.show');
-            Route::get('/lunch',[Admin_sideMenuController::class,'lunchShow'])->name('.lunch.show');
-            Route::get('/dinner',[Admin_sideMenuController::class,'dinnerShow'])->name('.dinner.show');
-            Route::get('/drinks',[Admin_sideMenuController::class,'drinksShow'])->name('.drinks.show');
-            Route::get('/desserts',[Admin_sideMenuController::class,'dessertsShow'])->name('.desserts.show');
-            Route::get('/wine',[Admin_sideMenuController::class,'wineShow'])->name('.wine.show');
-
-            // edit food menu
-            Route::get('/add/food/show/{type}',[Admin_sideMenuController::class,'addFoodShow'])->name('.add.food.show');
-            Route::post('/add/food/save/{type}',[Admin_sideMenuController::class,'addFoodSave'])->name('.add.food.save');
-            Route::delete('/delete/food/{id}',[Admin_sideMenuController::class,'deleteFood'])->name('.delete.food');
-            Route::get('/edit/food/show/{id}',[Admin_sideMenuController::class,'editFoodShow'])->name('.edit.food.show');
-            Route::post('/edit/food/save/{id}',[Admin_sideMenuController::class,'editFoodSave'])->name('.edit.food.save');
-        });
-
-    });
-
-    Route::group(['prefix' => '/chef', 'as' => '.chef'], function () {
-        Route::get('/dashboard', [ChefController::class, 'index'])->name('.dashboard');
-        Route::get('/add/show', [ChefController::class, 'showAddChef'])->name('.add.show');
-        Route::post('/add/save', [ChefController::class, 'saveAddChef'])->name('.add.save');
-        Route::get('/edit/{id}', [ChefController::class, 'edit'])->name('.edit');
-        Route::post('/edit/save/{id}', [ChefController::class, 'editSave'])->name('.edit.save');
-        Route::delete('/delete/{id}', [ChefController::class, 'deleteChef'])->name('.delete');
-    });
-
+  Route::group(['prefix' => '/chef', 'as' => '.chef'], function () {
+    Route::get('/dashboard', [ChefController::class, 'index'])->name('.dashboard');
+    Route::get('/add/show', [ChefController::class, 'showAddChef'])->name('.add.show');
+    Route::post('/add/save', [ChefController::class, 'saveAddChef'])->name('.add.save');
+    Route::get('/edit/{id}', [ChefController::class, 'edit'])->name('.edit');
+    Route::post('/edit/save/{id}', [ChefController::class, 'editSave'])->name('.edit.save');
+    Route::delete('/delete/{id}', [ChefController::class, 'deleteChef'])->name('.delete');
+  });
 });
 
 
 // Client Side Routes
 
+
 Route::get('/', [HomeController::class, 'home'])->name('home');
+
 Route::group(['prefix' => '/user', 'as' => 'user'], function () {
-    Route::get('/about', [AboutController::class, 'about'])->name('.about');
+
+  Route::get('/about', [AboutController::class, 'about'])->name('.about');
+  Route::get('/stories', [StoriesController::class, 'stories'])->name('.stories');
+  Route::get('/contact', [ContactController::class, 'contact'])->name('.contact');
+  Route::get('/login', [LoginController::class, 'login'])->name('.login');
+  Route::post('/logincheck', [LoginController::class, 'logincheck'])->name('.login.check');
+  Route::get('/registration', [RegistrationController::class, 'registration'])->name('.registration');
+  Route::post('/regdatasave', [RegistrationController::class, 'regdatasave'])->name('.regdatasave');
+  Route::get('/forget_password', [ForgetPasswordController::class, 'forget_password'])->name('.forget_password');
+
+  Route::group(['middleware' => ['Ulogin']], function () {
+
     Route::get('/menu', [MenuController::class, 'menu'])->name('.menu');
-    Route::get('/stories', [StoriesController::class, 'stories'])->name('.stories');
-    Route::get('/contact', [ContactController::class, 'contact'])->name('.contact');
     Route::get('/reservation', [ReservationController::class, 'reservation'])->name('.reservation');
-    Route::get('/login', [LoginController::class, 'login'])->name('.login');
-    Route::post('/logincheck', [LoginController::class, 'logincheck'])->name('.login.check');
-
-    Route::get('/registration', [RegistrationController::class, 'registration'])->name('.registration');
-    Route::post('/regdatasave', [RegistrationController::class, 'regdatasave'])->name('.regdatasave');
-
-    Route::get('/fprofile', [ProfileController::class,'fprofile'])->name('.fprofile');
-    Route::get('/yourorder', [ProfileController::class,'yourorder'])->name('.yourorder');
-
-    Route::get('/order/{id}', [OrderController::class,'order'])->name('.forder');
-    Route::get('/addtocart', [OrderController::class,'addtocart'])->name('.addtocart');
-
-    Route::get('/forget_password', [ForgetPasswordController::class, 'forget_password'])->name('.forget_password');
+    Route::get('/fprofile', [ProfileController::class, 'fprofile'])->name('.fprofile');
+    Route::get('/Ulogout', [LoginController::class, 'Ulogout'])->name('.Ulogout');
+    Route::get('/yourorder', [ProfileController::class, 'yourorder'])->name('.yourorder');
+    Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
+    Route::get('/addtocart', [OrderController::class, 'addtocart'])->name('.addtocart');
     Route::get('/change_password', [ForgetPasswordController::class, 'change_password'])->name('.change_password');
+  });
 });

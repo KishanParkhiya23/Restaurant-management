@@ -29,6 +29,9 @@
         .input-group>.form-control{
           border-radius: 0%!important
         }
+        .input-group-btn{
+          border: none!important
+        }
     </style>
 
 @endsection
@@ -45,7 +48,7 @@
                     <h1 class="mb-2 bread">Order</h1>
                     <p class="breadcrumbs" style="margin:0 0 210px">
                         <span class="mr-2">
-                            <a href="index.html">Home
+                            <a href="{{ route('home') }}">Home
                                 <i class="ion-ios-arrow-forward"></i>
                             </a>
                         </span>
@@ -205,11 +208,11 @@
                         </div>
                     </div>
                 </form>
-                <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0" style="background-color:#c8a97e!important">
+                <div class="card border-secondary mb-5" style="border: 1px solid rgba(0, 0, 0, 0.1)!important">
+                    <div class="card-header bg-secondary" style="background-color:#c8a97e!important">
                         <h4 class="font-weight-semi-bold m-0" style="color: white">Cart Summary</h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" >
                         <div class="d-flex justify-content-between mb-3 pt-1">
                             <h6 class="font-weight-medium">Subtotal</h6>
                             <h6 class="font-weight-medium">$150</h6>
@@ -219,7 +222,7 @@
                             <h6 class="font-weight-medium">$10</h6>
                         </div>
                     </div>
-                    <div class="card-footer border-secondary bg-transparent">
+                    <div class="card-footer border-secondary bg-transparent" style="border:1px solid rgba(0, 0, 0, 0.1)!important">
                         <div class="d-flex justify-content-between mt-2">
                             <h5 class="font-weight-bold">Total</h5>
                             <h5 class="font-weight-bold">$160</h5>
