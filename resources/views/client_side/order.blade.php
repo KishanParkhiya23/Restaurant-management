@@ -47,7 +47,7 @@
                     <img src="{{ asset( isset($item['image']) ? $item['image'] : 'client_side/images/menu/no-menu-image.jpg')}}" width="90%" class="img-thumbnail d-block" alt="" style="margin: auto auto;">
                 </div>
                 <div class="col-lg-6">
-                    <form action="#" method="get">
+                    <form action="{{route('user.addtocart')}}" method="post">
                         @csrf
                         <h4 class="mt-4">
                             <strong>
