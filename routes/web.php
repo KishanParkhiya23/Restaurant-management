@@ -126,7 +126,7 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/Ulogout', [LoginController::class, 'Ulogout'])->name('.Ulogout');
     Route::get('/yourorder', [ProfileController::class, 'yourorder'])->name('.yourorder');
     Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
-    Route::post('/addtocart', [OrderController::class, 'addtocart'])->name('.addtocart');
+    Route::post('/addtocart/{id}', [OrderController::class, 'addtocart'])->name('.addtocart');
     Route::get('/change_password', [ForgetPasswordController::class, 'change_password'])->name('.change_password');
   });
 });

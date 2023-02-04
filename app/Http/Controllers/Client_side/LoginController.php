@@ -18,7 +18,6 @@ class LoginController extends Controller
 
   public function logincheck(LoginRequest $req)
   {
-    // $data = $req->validated();
     $CheckLogin = DB::table('fusers')->whereEmail($req->email)->get()->first();
 
     if ($CheckLogin) {

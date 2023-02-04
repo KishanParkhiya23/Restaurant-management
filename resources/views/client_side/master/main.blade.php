@@ -43,14 +43,13 @@
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4"
-                stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4"
-                stroke-miterlimit="10" stroke="#F96D00" />
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
         </svg>
     </div>
 
-    @yield('extra-js')
+
+
 
     <script src="https://kit.fontawesome.com/88bf84b9d4.js" crossorigin="anonymous"></script>
     <script src="{{ asset('client_side/js/jquery.min.js') }}"></script>
@@ -70,6 +69,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="{{ asset('client_side/js/google-map.js') }}"></script>
     <script src="{{ asset('client_side/js/main.js') }}"></script>
+    @yield('extra-js')
 
 </body>
 
