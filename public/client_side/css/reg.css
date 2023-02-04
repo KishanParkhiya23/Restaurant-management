@@ -366,3 +366,8 @@ div#preloader {
     max-height: 588px;
     object-fit: cover;
 }
+@media only screen and (width: 1000)  {
+    .login-page {
+        width: 60%;
+    }
+}
