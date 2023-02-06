@@ -74,7 +74,7 @@ class MenuController extends Controller
 
     public function deleteFood($id)
     {
-        // Menu::whereId($id)->update(['is_set' => 0]);
+        Menu::whereId($id)->update(['is_set' => 0]);
         return response()->json(['success' => true,'message'=> "Deleted succesfully"]);
     }
 

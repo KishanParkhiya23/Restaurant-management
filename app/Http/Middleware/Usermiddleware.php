@@ -17,7 +17,7 @@ class Usermiddleware
   public function handle(Request $request, Closure $next)
   {
     if (!Session()->has('Ulogin')) {
-      return redirect(route('user.login'))->with('fail', 'You have to log in first');
+      return redirect(route('user.login'))->with('error', 'You have to log in first');
     }
     return $next($request);
   }
