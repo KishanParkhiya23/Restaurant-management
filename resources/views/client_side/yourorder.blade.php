@@ -3,37 +3,25 @@
 @section('title', 'login Page')
 
 @section('extra-css')
-
     <style>
-        nav {
-            display: none !important;
+        .hero-wrap.hero-wrap-2 .slider-text {
+            height: 500px;
         }
 
-        .table-responsive {
-            display: block;
-            width: 100%;
-            overflow-x: auto;
+        .order {
+            background-color: gray;
+            border-radius: 5px;
         }
 
-        .mb-5,
-        .my-5 {
-            margin-bottom: 3rem !important;
+        .card-body {
+            padding: 1rem
         }
 
-        td {
-            display: table-cell;
-        }
-        .input-group>.form-control{
-          height: 0%!important;
-        }
-        .input-group>.form-control{
-          border-radius: 0%!important
-        }
-        .input-group-btn{
-          border: none!important
+        table th,
+        table td {
+            text-align: center
         }
     </style>
-
 @endsection
 
 @section('content')
@@ -45,195 +33,125 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate text-center mb-4">
-                    <h1 class="mb-2 bread">Order</h1>
+                    <h1 class="mb-2 bread" style="font-size:40px">Previous Order</h1>
                     <p class="breadcrumbs" style="margin:0 0 210px">
                         <span class="mr-2">
                             <a href="{{ route('home') }}">Home
                                 <i class="ion-ios-arrow-forward"></i>
                             </a>
                         </span>
-                        <span>Order
-                            <i class="ion-ios-arrow-forward"></i>
-                        </span>
+                        <span>Order</span>
                     </p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Cart Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5">
-            <div class="col-lg-8 table-responsive mb-5">
-                <table class="table table-bordered text-center mb-0">
-                    <thead class="bg-secondary text-dark">
-                        <tr style="background-color:#c8a97e;color:white">
-                            <th>Products</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Remove</th>
-                        </tr>
-                    </thead>
-                    <tbody class="align-middle">
-                        <tr>
-                            <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;">
-                                Colorful Stylish Shirt</td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center"
-                                        value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i
-                                        class="fa fa-times"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-2.jpg" alt="" style="width: 50px;">
-                                Colorful Stylish Shirt</td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center"
-                                        value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i
-                                        class="fa fa-times"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-3.jpg" alt="" style="width: 50px;">
-                                Colorful Stylish Shirt</td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center"
-                                        value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i
-                                        class="fa fa-times"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-4.jpg" alt="" style="width: 50px;">
-                                Colorful Stylish Shirt</td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center"
-                                        value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i
-                                        class="fa fa-times"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-5.jpg" alt="" style="width: 50px;">
-                                Colorful Stylish Shirt</td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center"
-                                        value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i
-                                        class="fa fa-times"></i></button></td>
-                        </tr>
-                    </tbody>
-                </table>
+    <section id="order-table" class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table align-middle mb-0 bg-white ">
+                        <thead class="bg-light">
+                            <tr>
+                                <th>Order id</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Item</th>
+                                <th>Total</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    #order0025
+                                </td>
+                                <td>
+                                    20th jan , 2002
+                                </td>
+                                <td>12:35 AM</td>
+                                <td>
+                                    <span class="badge badge-success rounded-pill d-inline">3</span>
+                                </td>
+                                <td>
+                                    <span>$6835</span>
+                                </td>
+                                <td>
+                                    <a href="{{ route('user.vieworder') }}"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    #order0025
+                                </td>
+                                <td>
+                                    20th jan , 2002
+                                </td>
+                                <td>12:35 AM</td>
+                                <td>
+                                    <span class="badge badge-success rounded-pill d-inline">3</span>
+                                </td>
+                                <td>
+                                    <span>$6835</span>
+                                </td>
+                                <td>
+                                    <a href="{{ route('user.vieworder') }}"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    #order0025
+                                </td>
+                                <td>
+                                    20th jan , 2002
+                                </td>
+                                <td>12:35 AM</td>
+                                <td>
+                                    <span class="badge badge-success rounded-pill d-inline">3</span>
+                                </td>
+                                <td>
+                                    <span>$6835</span>
+                                </td>
+                                <td>
+                                    <a href="{{ route('user.vieworder') }}"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <form class="mb-5" action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control p-4" placeholder="Coupon Code">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary">Apply Coupon</button>
+        </div>
+
+    </section>
+    {{-- <section>
+        <div class="container order mt-5">
+            <h2>Order History</h2>
+            <div class="card shadow-0 border mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p>Order ID</p>
                         </div>
-                    </div>
-                </form>
-                <div class="card border-secondary mb-5" style="border: 1px solid rgba(0, 0, 0, 0.1)!important">
-                    <div class="card-header bg-secondary" style="background-color:#c8a97e!important">
-                        <h4 class="font-weight-semi-bold m-0" style="color: white">Cart Summary</h4>
-                    </div>
-                    <div class="card-body" >
-                        <div class="d-flex justify-content-between mb-3 pt-1">
-                            <h6 class="font-weight-medium">Subtotal</h6>
-                            <h6 class="font-weight-medium">$150</h6>
+                        <div class="col-md-2">
+                            <p>Date</p>
                         </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
+                        <div class="col-md-2">
+                            <p>Time</p>
                         </div>
-                    </div>
-                    <div class="card-footer border-secondary bg-transparent" style="border:1px solid rgba(0, 0, 0, 0.1)!important">
-                        <div class="d-flex justify-content-between mt-2">
-                            <h5 class="font-weight-bold">Total</h5>
-                            <h5 class="font-weight-bold">$160</h5>
+                        <div class="col-md-2">
+                            <p>Item</p>
                         </div>
-                        <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
+                        <div class="col-md-2">
+                            <p>Total</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>Action</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Cart End -->
 
+    </section> --}}
 
 @endsection

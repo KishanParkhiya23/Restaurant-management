@@ -109,8 +109,7 @@
                                                     <li><a class="twitter" href="#">twitter</a></li>
                                                     <li><a class="google" href="#">google+</a></li>
                                                 </ul>
-                                                <div class="acc-not">New on our platform?<a
-                                                        href="{{ route('user.registration') }}">Create an account</a></div>
+                                                <div class="acc-not">New on our platform?<a href="{{ route('user.registration') }}" style="color:#E6922E">Create an account</a></div>
                                             </div>
                                         </div>
                                     </form>

@@ -71,6 +71,7 @@
     <script src="{{ asset('client_side/js/google-map.js') }}"></script>
     <script src="{{ asset('client_side/js/main.js') }}"></script>
 
+
 </body>
 
 </html>

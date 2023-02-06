@@ -1,4 +1,20 @@
+@php
+    $data = session()->get('loginData');
+@endphp
+
+@section('extra-js')
+    <script>
+        function myFunction() {
+            $('#myName').css('display', 'none');
+            $('.dropdown .fa-pen').css('display', 'none');
+            $('#editName').removeClass('d-none');
+        }
+    </script>
+@endsection
+
+
 <div class="py-1 bg-black top">
+
     <div class="container">
         <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
             <div class="col-lg-12 d-block">
@@ -19,35 +35,43 @@
                         </p>
                     </div>
                     <div class="col-lg-3 text-right">
-                      @if(!session()->has('Ulogin'))
-                        <a href="{{ route('user.registration') }}" class="small mr-3"><span class="icon-users">
-                            </span>Register</a>
-                        <a href="{{ route('user.login') }}" class="small mr-3"><span class="icon-users"> </span>Log
-                            In</a>
-                      @else
-                        <div class="d-inline-block">
-                            <div class="dropdown dropleft">
-                                <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <img src="{{ asset('client_side\images\user.png') }}" width="30"
-                                        class="user-pic" style="cursor: pointer;">
-                                </span>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="javascript:void(0)" style="pointer-events: none;">
-                                        <img src="{{ asset('client_side\images\user.png') }}" width="40" class="user-pic mr-2" style="cursor: pointer;">
-                                        User
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ route('user.fprofile') }}"><i
-                                            class="fa-solid fa-pen mr-2"></i> Edit Profile</a>
-                                    <a class="dropdown-item" href="{{ route('user.yourorder') }}"><i class='fas fa-cocktail mr-2'></i> Your
-                                        order</a>
-                                    <a class="dropdown-item" href="{{ route('user.Ulogout') }}"><i
-                                            class="fa-solid fa-arrow-right-from-bracket mr-2"></i>Logout</a>
+                        @if (!session()->has('Ulogin'))
+                            <a href="{{ route('user.registration') }}" class="small mr-3"><span class="icon-users">
+                                </span>Register</a>
+                            <a href="{{ route('user.login') }}" class="small mr-3"><span class="icon-users"> </span>Log
+                                In</a>
+                        @else
+                            <div class="d-inline-block">
+                                <div class="dropdown dropleft">
+                                    <i onclick="myFunction()" class="fa-solid fa-pen mr-2 ml-3"
+                                        style="font-size:.8rem;cursor: pointer;"></i>
+                                    <span id="myName">
+                                        <span class="myP" style="font-size: .9rem">
+                                            {{ $data->fullname }}
+                                        </span>
+                                    </span>
+                                    <span id="editName" class="d-none">
+                                        <i class="fa-solid fa-floppy-disk  mr-2 ml-1"
+                                            style="font-size:1.2rem;cursor: pointer;"></i>
+                                        <input type="text" value="{{ $data->fullname }}" autofocus
+                                            style="background: none; color: white;">
+                                    </span>
+                                    <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <i class="fa-solid fa-user ml-2" style="font-size:1.15rem;cursor: pointer;"></i>
+                                    </span>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="{{ route('user.pchange_password') }}"><i
+                                        class='fa-solid fa-key mr-2'></i>Change password</a>
+                                        <a class="dropdown-item" href="{{ route('user.yourorder') }}"><i
+                                                class='fas fa-cocktail mr-2'></i>Your
+                                            order</a>
+                                        <a class="dropdown-item" href="{{ route('user.Ulogout') }}"><i
+                                                class="fa-solid fa-arrow-right-from-bracket mr-2"></i>Logout</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                      @endif
+                        @endif
                     </div>
                 </div>
             </div>
@@ -66,8 +90,8 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item {{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}"
                         class="nav-link">Home</a></li>
-                <li class="nav-item {{ Request::is('user/about') ? 'active' : '' }}"><a href="{{ route('user.about') }}"
-                        class="nav-link">About</a></li>
+                <li class="nav-item {{ Request::is('user/about') ? 'active' : '' }}"><a
+                        href="{{ route('user.about') }}" class="nav-link">About</a></li>
                 <li class="nav-item {{ Request::is('user/menu') ? 'active' : '' }}"><a href="{{ route('user.menu') }}"
                         class="nav-link">Menu</a></li>
                 <li class="nav-item {{ Request::is('user/stories') ? 'active' : '' }}"><a

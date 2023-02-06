@@ -75,25 +75,25 @@
                                             <input type="number" name="contact" id="contactno"
                                                 class="form-control @error('contact') is-invalid @enderror"
                                                 placeholder="Contact No">
-                                                @error('contact')
-                                                    <div class="error-text">{{ $message }}</div>
-                                                @enderror
+                                            @error('contact')
+                                                <div class="error-text">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <input type="email" name="email" id="email"
                                                 class=" @error('email') is-invalid @enderror form-control"
                                                 placeholder="Email">
-                                                @error('email')
-                                                    <div class="error-text">{{ $message }}</div>
-                                                @enderror
+                                            @error('email')
+                                                <div class="error-text">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <input type="password" name="password" id="msg_subject"
                                                 class="@error('password') is-invalid @enderror form-control"
                                                 placeholder="Password">
-                                                @error('password')
-                                                    <div class="error-text">{{ $message }}</div>
-                                                @enderror
+                                            @error('password')
+                                                <div class="error-text">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="check-group flexbox">
@@ -108,7 +108,7 @@
                                             <div id="msgSubmit" class="h3 text-center hidden"></div>
                                             <div class="clearfix"></div>
                                         </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                        {{-- <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="clear"></div>
                                             <div class="sign-icon">
                                                 <ul>
@@ -118,14 +118,18 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                    </form>
+                                        <div> --}}
+                                        <div class="acc-not">Already have an account? <a href="{{ route('user.login') }}"
+                                                style="color:#E6922E">Log in instead</a></div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 @endsection

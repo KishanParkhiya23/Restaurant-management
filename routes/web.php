@@ -122,11 +122,15 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
 
     Route::get('/menu', [MenuController::class, 'menu'])->name('.menu');
     Route::get('/reservation', [ReservationController::class, 'reservation'])->name('.reservation');
-    Route::get('/fprofile', [ProfileController::class, 'fprofile'])->name('.fprofile');
     Route::get('/Ulogout', [LoginController::class, 'Ulogout'])->name('.Ulogout');
-    Route::get('/yourorder', [ProfileController::class, 'yourorder'])->name('.yourorder');
+    Route::get('/yourorder', [OrderController::class, 'yourorder'])->name('.yourorder');
+    Route::get('/vieworder', [OrderController::class, 'vieworder'])->name('.vieworder');
     Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
     Route::post('/addtocart', [OrderController::class, 'addtocart'])->name('.addtocart');
-    Route::get('/change_password', [ForgetPasswordController::class, 'change_password'])->name('.change_password');
+    Route::get('/pchange_password', [ForgetPasswordController::class, 'pchange_password'])->name('.pchange_password');
+    Route::post('/pcheckpassword', [ForgetPasswordController::class, 'pcheckpassword'])->name('.pcheckpassword');
+    Route::get('/changepassword', [LoginController::class, 'changepassword'])->name('.changepassword');
+
+    Route::post('/Usavechangepassword', [LoginController::class, 'Usavechangepassword'])->name('.Usavechangepassword');
   });
 });

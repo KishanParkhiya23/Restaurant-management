@@ -34,7 +34,7 @@ class ProfileSaveRequest extends FormRequest
             'profile_img' => "",
         ];
     }
-    
+
     /**
      * Get the error messages for the defined validation rules.
      *
