@@ -3,6 +3,8 @@
 @section('title', 'Home Page')
 
 @section('content')
+{{-- {{ dd(session()->get('loginData')) }} --}}
+
 
     <section class="home-slider owl-carousel js-fullheight">
         <div class="slider-item js-fullheight" style="background-image: url({{ asset('client_side/images/bg_1.jpg') }});">

@@ -47,4 +47,14 @@ class OrderController extends Controller
 
         return view('client_side.addtocart', compact('food'));
     }
+
+    public function yourorder()
+    {
+    return view('client_side.yourorder');
+    }
+    public function vieworder()
+    {
+    return view('client_side.vieworder');
+    }
+
 }

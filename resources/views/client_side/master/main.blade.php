@@ -71,6 +71,7 @@
     <script src="{{ asset('client_side/js/main.js') }}"></script>
     @yield('extra-js')
 
+
 </body>
 
 </html>
