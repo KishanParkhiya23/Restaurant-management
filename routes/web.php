@@ -127,6 +127,9 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/yourorder', [ProfileController::class, 'yourorder'])->name('.yourorder');
     Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
     Route::post('/addtocart/{id}', [OrderController::class, 'addtocart'])->name('.addtocart');
+
+    Route::get('/your-cart', [OrderController::class,'yourCart'])->name('.your-cart');
+
     Route::get('/change_password', [ForgetPasswordController::class, 'change_password'])->name('.change_password');
   });
 });

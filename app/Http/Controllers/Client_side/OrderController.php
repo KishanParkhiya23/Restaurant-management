@@ -17,22 +17,34 @@ class OrderController extends Controller
 
     public function addtocart(Request $request, $id)
     {
-        // $userId = session()->get('Ulogin');
+        $userId = session()->get('Ulogin');
+        $foodId = $id;
+        $quantity = $request->quantity;
 
-        // $foodId = $id;
-        // $quantity = $request->quantity;
+        $data = Cart::where('food_id', $foodId)
+            ->where('user_id', $userId)
+            ->where('confirmed', 0)
+            ->where('is_set', 1)
+            ->first();
 
-        // $data = Cart::where('user_id', $userId)->where('confirmed', 0)->first();
+        if (!empty($data) && isset($data)) {
+            Cart::whereId($data['id'])->update(['food_id' => $foodId, 'quantity' => $data['quantity'] += $quantity, 'user_id' => $userId]);
+        } else {
+            Cart::create(['food_id' => $foodId, 'quantity' => $quantity, 'user_id' => $userId]);
+        }
 
-        return view('client_side.addtocart');
+        return redirect(route('user.your-cart'));
+    }
 
-        // $orderData = json_decode($data['order']);
+    public function yourCart()
+    {
+        $userId = session()->get('Ulogin');
 
-        // $order = array($foodId, $quantity);
-        // array_push($orderData, $order);
+        $food = Cart::where('user_id', $userId)
+            ->where('confirmed', 0)
+            ->where('is_set', 1)
+            ->get();
 
-        // $order = json_encode($order);
-
-        // Cart::create(['order' => $order, 'user_id' => $userId]);
+        return view('client_side.addtocart', compact('food'));
     }
 }

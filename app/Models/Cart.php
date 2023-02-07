@@ -9,4 +9,9 @@ class Cart extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function foods()
+    {
+        return $this->belongsTo(Menu::class,'food_id','id');
+    }
 }

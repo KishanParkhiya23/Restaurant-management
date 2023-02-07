@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->string('order')->nullable();
-            $table->string('confirmed')->default(0);
+            $table->string('food_id')->nullable();
+            $table->string('quantity')->nullable();
             $table->string('user_id')->nullable();
+            $table->string('confirmed')->default(0);
             $table->string('is_set')->default(1);
             $table->timestamps();
         });

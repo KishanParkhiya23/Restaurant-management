@@ -25,21 +25,20 @@ class LoginController extends Controller
         $req->Session()->put('Ulogin', $CheckLogin->id);
         return redirect(route('home'));
       } else {
-        return back()->with('password', 'Password is not matched');
+        return back()->with('error', 'Password is not matched');
       }
     } else {
-      return back()->with('Email', 'Email is not matched');
+      return back()->with('error', 'Email is not matched');
     }
   }
 
   public function Ulogout()
   {
-      if (Session()->has('Ulogin')) {
-          Session()->pull('Ulogin');
-          return redirect(route('home'));
-      } else {
-          return "Please login account!!";
-      }
+    if (Session()->has('Ulogin')) {
+      Session()->pull('Ulogin');
+      return redirect(route('home'));
+    } else {
+      return "Please login account!!";
+    }
   }
-
 }
