@@ -28,9 +28,10 @@
     <link rel="stylesheet" href="{{ asset('client_side/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('client_side/css/style.css') }}">
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/icon.png  ') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/icon.png') }}" />
 
     @yield('extra-css')
+
 </head>
 
 <body>
@@ -50,7 +51,33 @@
 
 
 
+    <script>
+        function myFunction() {
+            $('#myName').css('display', 'none');
+            $('.dropdown .fa-pen').css('display', 'none');
+            $('#editName').removeClass('d-none');
+        }
 
+        function changeName() {
+            let name = $('#chaneName').val();
+            let token = "{{ csrf_token() }}";
+
+            $.ajax({
+                type: 'POST',
+                url: `/user/change/name`,
+                data: {
+                    "name": name,
+                    "_token": token
+                },
+                success: function(response) {
+                    if (response.success) {
+                        location.replace('/');
+                    }
+                }
+            })
+
+        }
+    </script>
     <script src="https://kit.fontawesome.com/88bf84b9d4.js" crossorigin="anonymous"></script>
     <script src="{{ asset('client_side/js/jquery.min.js') }}"></script>
     <script src="{{ asset('client_side/js/jquery-migrate-3.0.1.min.js') }}"></script>

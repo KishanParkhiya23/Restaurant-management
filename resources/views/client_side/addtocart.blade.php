@@ -1,14 +1,18 @@
 @extends('client_side.master.main')
 
-@section('title', 'Add to cart Page')
+@section('title', 'Your cart Page')
 
 @section('extra-css')
 <link rel="stylesheet" href="{{asset('client_side/css/addToCart.css')}}">
+<style>
+    .submit-order:hover {
+        color: #eee!important;
+    }
+</style>
 @endsection
 
 @section('extra-js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <script>
     function deleteItem(data) {
         swal({
@@ -19,33 +23,18 @@
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                let foodData = data.id;
-                $(`#food_${foodData}`).remove();
-                let id = data.id;
-
-                if (type == 1) {
-                    type = "breakfast";
-                } else if (type == 2) {
-                    type = "lunch";
-                } else if (type == 3) {
-                    type = "dinner";
-                } else if (type == 4) {
-                    type = "drinks";
-                } else if (type == 5) {
-                    type = "desserts";
-                } else {
-                    type = "wine";
-                }
+                let token = "{{ csrf_token() }}";
 
                 $.ajax({
                     type: 'DELETE',
-                    url: `/admin/menu/delete/food/${data.id}`,
+                    url: `/user/remove/item/${data.id}`,
                     data: {
-                        "id": id,
+                        "id": data.id,
                         "_token": token
                     },
                     success: function(response) {
-                        location.replace('/admin/menu/' + type);
+
+                        location.replace('/user/your-cart');
                     }
                 })
             }
@@ -69,9 +58,8 @@
         </div>
     </div>
 </section>
-
+@if (count($food) > 0)
 <div class="container bg-white rounded-top mt-5" id="zero-pad">
-
     <section class="h-100 mb-5" style="background-color: #eee;">
         <div class="container h-100 py-5">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -90,34 +78,34 @@
 
                     @php $total += $item->foods->prize * $item->quantity; @endphp
 
-                    <div class="card rounded-3 mb-4" id="food_{{$item->id}}">
+                    <div class="card rounded-3 mb-4" id="food_{{$item->foods->id}}">
                         <div class="card-body p-4">
                             <div class="row d-flex justify-content-between align-items-center">
-                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                <div class="col-md-2 col-lg-2 col-xl-2 p-0">
                                     <img src="{{asset(isset($item->foods->image) ? $item->foods->image : 'client_side/images/menu/no-menu-image.jpg')}}" class="img-fluid rounded-3" alt="Cotton T-shirt">
                                 </div>
-                                <div class="col-md-3 col-lg-3 col-xl-3">
-                                    <p class="lead fw-normal mb-2">
+                                <div class="col-md-5 col-lg-5 col-xl-5">
+                                    <p class="lead fw-normal mb-0">
                                         {{ $item->foods->name}}
                                     </p>
-                                    <p><span class="text-muted">{{ $item->foods->type}}</span></p>
+                                    <p><span class="text-muted">{{ ucfirst(get_catagory($item->foods->type))}}</span></p>
                                 </div>
-                                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                <div class="col-md-2 col-lg-2 col-xl-2 d-flex p-0">
                                     <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                         <i class="fas fa-minus"></i>
                                     </button>
 
-                                    <input id="form1" min="1" name="quantity" value="{{$item->quantity}}" type="number" class="form-control form-control-sm" readonly />
+                                    <input id="form1" min="1" name="quantity" value="{{$item->quantity}}" type="number" class="form-control form-control-sm quantity-input" readonly />
 
                                     <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
-                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                    <h5 class="mb-0">${{ $item->foods->prize}}</h5>
+                                <div class="col-md-1 col-lg-1 col-xl-1 p-0">
+                                    <h5 class="mb-0">${{ $item->foods->prize * $item->quantity}}</h5>
                                 </div>
-                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                    <a id={{$item->id}} onclick="deleteItem(this)" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                <div class="col-md-1 col-lg-1 col-xl-1 text-end p-0">
+                                    <a id={{$item->foods->id}} onclick="deleteItem(this)" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -132,39 +120,11 @@
                             <button type="button" class="btn btn-outline-primary btn-lg ms-3" style="height: 40px!important;padding:0.3rem 1.5rem!important">Apply</button>
                         </div>
                     </div>
-
-                    <!-- <div class="card mb-4">
-                        <div class="card-body d-flex flex-row justify-content-end pb-0">
-                            <p class="m-0">Subtotal :&nbsp;
-                            <h5 class="m-0"> $199.00</h5>
-                            </p><br>
-                        </div>
-                        <div class="card-body d-flex flex-row justify-content-end pb-0">
-                            <p class="text-success m-0 mr-2"> <b> - </b> </p>
-                            <p class="m-0"> Coupan :&nbsp;
-                            <h5 class="m-0"> $00.00</h5>
-                            </p>
-                        </div>
-                        <div class="card-body d-flex flex-row justify-content-end">
-                            <p class="m-0">Total :&nbsp;
-                            <h5 class="m-0"> $199.00</h5>
-                            </p>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="card">
-                        <div class="card-body">
-                            <button type="button" class="btn btn-primary btn-block btn-lg">Checkout</button>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
         </div>
     </section>
 </div>
-
-
 <div class="container bg-light rounded-bottom py-4 mb-5" id="zero-pad" style="max-width: 1110px!important;">
     <div class="row d-flex justify-content-center">
         <div class="col-lg-10 col-12">
@@ -173,13 +133,29 @@
                     <a href="{{route('user.menu')}}"><button class="btn btn-sm btn-outline-dark">GO BACK TO MENU</button></a>
                 </div>
                 <div class="px-md-0 px-1" id="footer-font">
-                    <b class="pl-md-4">SUBTOTAL<span class="pl-md-4">${{$total}}</span></b>
+                    <b class="pl-md-4">SUBTOTAL <span class="pl-md-3">$</span><span id="total">{{$total}}</span></b>
                 </div>
                 <div>
-                    <button class="btn btn-sm btn-outline-primary px-lg-5 px-3">checkout</button>
+                    <a href="{{route('user.save.order')}}" class="btn btn-sm btn-outline-primary px-lg-5 px-3 submit-order">Order</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@else
+<div class="container bg-white rounded-top mt-5" id="zero-pad">
+    <section class="h-100 mb-5" style="background-color: #eee;">
+        <div class="container h-100 py-5">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <h3 class="font-weight-bold text-secondary m-0">You don't have any item in cart</h3>
+            </div>
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <!-- <h3 class="font-weight-bold text-secondary m-0">You don't have any item in cart</h3> -->
+                <a href="{{route('user.menu')}}"><i class="fa-solid fa-utensils mr-2"></i> Go to menu <i class="fa-solid fa-utensils ml-2"></i></a>
+            </div>
+        </div>
+    </section>
+</div>
+@endif
+
 @endsection

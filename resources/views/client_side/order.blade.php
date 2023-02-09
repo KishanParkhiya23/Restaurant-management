@@ -1,6 +1,6 @@
 @extends('client_side.master.main')
 
-@section('title', 'Menu Page')
+@section('title', 'Add to cart Page')
 
 @section('extra-css')
 <style>

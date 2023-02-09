@@ -99,27 +99,10 @@
                                                 <li><a class="twitter" href="#">twitter</a></li>
                                                 <li><a class="google" href="#">google+</a></li>
                                             </ul>
-                                            <div class="acc-not">New on our platform?<a href="{{ route('user.registration') }}">Create an account</a></div>
+                                            <div class="acc-not">New on our platform? <a href="{{ route('user.registration') }}">Create an account</a></div>
                                         </div>
-<<<<<<< HEAD
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div class="clear"></div>
-                                            <div class="separetor"><span>Or with Sign</span></div>
-                                            <div class="sign-icon">
-                                                <ul>
-                                                    <li><a class="facebook" href="#">Facebook</a></li>
-                                                    <li><a class="twitter" href="#">twitter</a></li>
-                                                    <li><a class="google" href="#">google+</a></li>
-                                                </ul>
-                                                <div class="acc-not">New on our platform?<a href="{{ route('user.registration') }}" style="color:#E6922E">Create an account</a></div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-=======
                                     </div>
                                 </form>
->>>>>>> f98946ec92243569bf495d79c20290cc8ec04359
                             </div>
                         </div>
                     </div>

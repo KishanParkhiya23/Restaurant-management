@@ -61,4 +61,13 @@ class LoginController extends Controller
       return redirect(route('home'))->with('success', 'Password change succesfully');
     }
   }
+
+  public function changeName(Request $request)
+  {
+    $user = session()->get('Ulogin');
+    Fuser::whereId($user)->update(['fullname' => $request->name]);
+    $userData = Fuser::find($user);
+    session()->put('loginData', $userData);
+    return response()->json(['success' => true]);
+  }
 }

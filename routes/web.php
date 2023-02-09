@@ -126,19 +126,19 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/yourorder', [OrderController::class, 'yourorder'])->name('.yourorder');
     Route::get('/vieworder', [OrderController::class, 'vieworder'])->name('.vieworder');
     Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
-<<<<<<< HEAD
-    Route::post('/addtocart', [OrderController::class, 'addtocart'])->name('.addtocart');
+
+    Route::post('/change/name',[LoginController::class,'changeName'])->name('.change.name');
+
+
     Route::get('/pchange_password', [ForgetPasswordController::class, 'pchange_password'])->name('.pchange_password');
     Route::post('/pcheckpassword', [ForgetPasswordController::class, 'pcheckpassword'])->name('.pcheckpassword');
     Route::get('/changepassword', [LoginController::class, 'changepassword'])->name('.changepassword');
-
     Route::post('/Usavechangepassword', [LoginController::class, 'Usavechangepassword'])->name('.Usavechangepassword');
-=======
+
+    // Cart routes
     Route::post('/addtocart/{id}', [OrderController::class, 'addtocart'])->name('.addtocart');
-
-    Route::get('/your-cart', [OrderController::class,'yourCart'])->name('.your-cart');
-
-    Route::get('/change_password', [ForgetPasswordController::class, 'change_password'])->name('.change_password');
->>>>>>> f98946ec92243569bf495d79c20290cc8ec04359
+    Route::get('/your-cart', [OrderController::class, 'yourCart'])->name('.your-cart');
+    Route::delete('/remove/item/{id}',[OrderController::class,'removeItem'])->name('.remove.item');
+    Route::get('/save/order',[OrderController::class,'saveOrder'])->name('.save.order');
   });
 });

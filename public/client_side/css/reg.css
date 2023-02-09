@@ -83,7 +83,7 @@ a:active, a:hover {
   outline: 0 none;
 }
 a:hover, a:focus {
-    color: white;
+    /* color: white; */
     text-decoration: none;
 }
 body {
