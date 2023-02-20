@@ -14108,5 +14108,32 @@ textarea.form-control {
 
 .dropleft .dropdown-menu {
   transform: translate3d(77px, 34px, 0px) !important;
-  min-width: 13vw!important;
+  min-width: 13vw !important;
 }
+
+/* cart badge css  */
+
+.badge {
+  padding-left: 9px !important;
+  padding-right: 9px !important;
+  -webkit-border-radius: 9px !important;
+  -moz-border-radius: 9px !important;
+  border-radius: 9px !important;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605 !important;
+}
+
+#lblCartCount {
+  font-size: 9px !important;
+  background: #fff !important;
+  color: #000 !important;
+  padding: 3px 5px !important;
+  vertical-align: top !important;
+  margin-left: -6px !important;
+  margin-top: -4px;
+}
+
+/* cart badge css  */

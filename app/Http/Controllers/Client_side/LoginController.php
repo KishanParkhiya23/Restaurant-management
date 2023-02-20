@@ -28,10 +28,10 @@ class LoginController extends Controller
         $req->Session()->put('loginData', $CheckLogin);
         return redirect(route('home'));
       } else {
-        return back()->with('password', 'Password is not matched');
+        return back()->with('error', 'Password is not matched');
       }
     } else {
-      return back()->with('Email', 'Email is not matched');
+      return back()->with('error', 'Email is not matched');
     }
   }
 
@@ -60,5 +60,14 @@ class LoginController extends Controller
       session()->pull('passworddata');
       return redirect(route('home'))->with('success', 'Password change succesfully');
     }
+  }
+
+  public function changeName(Request $request)
+  {
+    $user = session()->get('Ulogin');
+    Fuser::whereId($user)->update(['fullname' => $request->name]);
+    $userData = Fuser::find($user);
+    session()->put('loginData', $userData);
+    return response()->json(['success' => true]);
   }
 }

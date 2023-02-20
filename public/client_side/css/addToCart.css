@@ -5,10 +5,17 @@
 .hero-wrap.hero-wrap-2 .slider-text {
     height: 330px;
 }
+
 .text-muted {
     font-size: 0.9rem;
 }
 
-/* @media only screen and (max-width: 600px) and (min-width: 400px) {
-    ...
-} */
+.text-end .fa-trash {
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 34% !important;
+    height: 35px !important;
+    padding: 0 0 0 11px !important;
+}

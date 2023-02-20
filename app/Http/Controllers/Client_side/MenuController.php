@@ -17,7 +17,6 @@ class MenuController extends Controller
         $desserts = Menu::where('is_set',1)->where('type',5)->get();
         $wine = Menu::where('is_set',1)->where('type',6)->get();
 
-        // $menu = Menu::getActualClassNameForMorph()
         return view('Client_side.Menu',compact('breakfast','lunch','dinner','drinks','desserts','wine'));
     }
 }
