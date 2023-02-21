@@ -104,4 +104,12 @@ class OrderController extends Controller
     {
         return view('client_side.vieworder');
     }
+
+
+    public function changeCart(Request $request, $id)
+    {
+        Cart::whereId($id)->update(['quantity' => $request->value]);
+
+        return response()->json(['success' => true]);
+    }
 }
