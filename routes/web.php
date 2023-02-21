@@ -126,6 +126,7 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/yourorder', [OrderController::class, 'yourorder'])->name('.yourorder');
     Route::get('/vieworder', [OrderController::class, 'vieworder'])->name('.vieworder');
     Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
+    Route::post('/change/cart/{id}', [OrderController::class, 'changeCart'])->name('.change.cart');
 
     Route::post('/change/name',[LoginController::class,'changeName'])->name('.change.name');
 

@@ -2,6 +2,9 @@
 
 @section('title', 'Food edit page')
 
+@section('extraa-css')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="{{asset('assets/css/multiSelect.css')}}">
 <style>
     .table> :not(caption)>*>* {
         padding: 0.8rem 1.8rem !important;
@@ -13,6 +16,12 @@
         margin-right: 1vw;
     }
 </style>
+@endsection
+
+@section('extraa-js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+<script src="{{asset('assets/js/multiSelect.js')}}"></script>
+@endsection
 
 @section('content')
 
@@ -145,12 +154,10 @@ $urlData = 'wine';
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-2 form-label" for="basic-icon-default-message">Poppings</label>
-
                     <div class="col-sm-10">
                         <div class="input-group input-group-merge">
                             <span id="basic-icon-default-message2" class="input-group-text @error('poppings') is-invalid @enderror"><i class='bx bx-cookie' style="font-size: 1.2rem;opacity:0.85"></i></span>
-
-                            <textarea id="poppings" class="form-control @error('poppings') is-invalid @enderror" placeholder="poppings" aria-label="poppings" aria-describedby="basic-icon-default-message2" rows="2" name="poppings"></textarea>
+                            <textarea id="poppings" class="form-control @error('poppings') is-invalid @enderror" placeholder="Enter Poppings" aria-label="poppings" aria-describedby="basic-icon-default-message2" rows="2" name="poppings"></textarea>
                         </div>
                         @error('poppings')
                         <div class="text-error">{{$message}}</div>

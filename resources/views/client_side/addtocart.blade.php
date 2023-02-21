@@ -6,14 +6,17 @@
 <link rel="stylesheet" href="{{asset('client_side/css/addToCart.css')}}">
 <style>
     .submit-order:hover {
-        color: #eee!important;
+        color: #eee !important;
     }
 </style>
 @endsection
 
 @section('extra-js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
+    let token = "{{ csrf_token() }}";
+
     function deleteItem(data) {
         swal({
             title: `Are you sure for remove this item?`,
@@ -23,8 +26,6 @@
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                let token = "{{ csrf_token() }}";
-
                 $.ajax({
                     type: 'DELETE',
                     url: `/user/remove/item/${data.id}`,
@@ -33,17 +34,32 @@
                         "_token": token
                     },
                     success: function(response) {
-
-                        location.replace('/user/your-cart');
+                        location.reload();
                     }
                 })
             }
         });
+    }
 
+    function changeCart(data) {
+        // let id = data.id;
+        let value = $(`#${data.id}`).val();
+
+        $.ajax({
+            type: 'POST',
+            url: `/user/change/cart/${data.id}`,
+            data: {
+                "id": data.id,
+                "value": value,
+                "_token": token
+            },
+            success: function(response) {
+                location.reload();
+            }
+        })
     }
 </script>
 @endsection
-
 
 @section('content')
 
@@ -90,7 +106,7 @@
                                     </p>
                                     <p><span class="text-muted">{{ ucfirst(get_catagory($item->foods->type))}}</span></p>
                                 </div>
-                                <div class="col-md-2 col-lg-2 col-xl-2 d-flex p-0">
+                                <!-- <div class="col-md-2 col-lg-2 col-xl-2 d-flex p-0">
                                     <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                         <i class="fas fa-minus"></i>
                                     </button>
@@ -100,6 +116,20 @@
                                     <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                         <i class="fas fa-plus"></i>
                                     </button>
+                                </div> -->
+                                <div class="d-flex justify-content-between">
+                                    <select class="form-control w-100 d-inline-block" name="quantity" id="{{$item->id}}" onchange="changeCart(this)">
+                                        <option value="1" {{$item->quantity == 1 ? 'selected' : '' }}>1</option>
+                                        <option value="2" {{$item->quantity == 2 ? 'selected' : '' }}>2</option>
+                                        <option value="3" {{$item->quantity == 3 ? 'selected' : '' }}>3</option>
+                                        <option value="4" {{$item->quantity == 4 ? 'selected' : '' }}>4</option>
+                                        <option value="5" {{$item->quantity == 5 ? 'selected' : '' }}>5</option>
+                                        <option value="6" {{$item->quantity == 6 ? 'selected' : '' }}>6</option>
+                                        <option value="7" {{$item->quantity == 7 ? 'selected' : '' }}>7</option>
+                                        <option value="8" {{$item->quantity == 8 ? 'selected' : '' }}>8</option>
+                                        <option value="9" {{$item->quantity == 9 ? 'selected' : '' }}>9</option>
+                                        <option value="10" {{$item->quantity == 10 ? 'selected' : '' }}>10</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-1 col-lg-1 col-xl-1 p-0">
                                     <h5 class="mb-0">${{ $item->foods->prize * $item->quantity}}</h5>

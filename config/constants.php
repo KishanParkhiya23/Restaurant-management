@@ -362,5 +362,5 @@ return [
             "catagory" => "wine"
         ],
 
-    ]
+    ],
 ];
