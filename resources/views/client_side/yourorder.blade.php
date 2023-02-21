@@ -1,6 +1,6 @@
 @extends('client_side.master.main')
 
-@section('title', 'login Page')
+@section('title', 'Your order Page')
 
 @section('extra-css')
 
