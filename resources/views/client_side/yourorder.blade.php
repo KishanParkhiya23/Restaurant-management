@@ -68,9 +68,31 @@
                         <span class="badge badge-success rounded-pill d-inline">116 <i class="fa-solid fa-indian-rupee-sign"></i></span>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                        <a href="{{ route('user.vieworder') }}"><button type="button" class="btn btn-link btn-sm btn-rounded">
                           <i class="fa-solid fa-eye"></i>
-                        </button>
+                        </button></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      <p>order25460</p>
+                    </td>
+                    <td>
+                      <p>21-02-2023</p>
+                    </td>
+                    <td>
+                      <p>04:44pm</p>
+                    </td>
+                    <td>
+                      <p>1</p>
+                    </td>
+                    <td>
+                        <span class="badge badge-success rounded-pill d-inline">58 <i class="fa-solid fa-indian-rupee-sign"></i></span>
+                    </td>
+                    <td>
+                        <a href="{{ route('user.vieworder') }}"><button type="button" class="btn btn-link btn-sm btn-rounded">
+                          <i class="fa-solid fa-eye"></i>
+                        </button></a>
                     </td>
                 </tr>
                 <tr>
@@ -90,31 +112,9 @@
                         <span class="badge badge-success rounded-pill d-inline">116 <i class="fa-solid fa-indian-rupee-sign"></i></span>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                        <a href="{{ route('user.vieworder') }}"><button type="button" class="btn btn-link btn-sm btn-rounded">
                           <i class="fa-solid fa-eye"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                      <p>order31788</p>
-                    </td>
-                    <td>
-                      <p>20-02-2023</p>
-                    </td>
-                    <td>
-                      <p>04:02pm</p>
-                    </td>
-                    <td>
-                      <p>2</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">116 <i class="fa-solid fa-indian-rupee-sign"></i></span>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded">
-                          <i class="fa-solid fa-eye"></i>
-                        </button>
+                        </button></a>
                     </td>
                 </tr>
             </tbody>
