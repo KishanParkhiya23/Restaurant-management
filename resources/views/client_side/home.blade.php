@@ -453,7 +453,7 @@
                         <a href="blog-single.html" class="block-20"
                             style="background-image: url('{{ asset('client_side/images/image_1.jpg') }}');">
                         </a>
-                        <div class="text pt-3 pb-4 px-4">
+                        <div class="text p-3">
                             <div class="meta">
                                 <div><a href="#">Sept. 06, 2019</a></div>
                                 <div><a href="#">Admin</a></div>
@@ -471,7 +471,7 @@
                         <a href="blog-single.html" class="block-20"
                             style="background-image: url('{{ asset('client_side/images/image_2.jpg') }}');">
                         </a>
-                        <div class="text pt-3 pb-4 px-4">
+                        <div class="text p-3">
                             <div class="meta">
                                 <div><a href="#">Sept. 06, 2019</a></div>
                                 <div><a href="#">Admin</a></div>
@@ -489,7 +489,7 @@
                         <a href="blog-single.html" class="block-20"
                             style="background-image: url('{{ asset('client_side/images/image_3.jpg') }}');">
                         </a>
-                        <div class="text pt-3 pb-4 px-4">
+                        <div class="text p-3">
                             <div class="meta">
                                 <div><a href="#">Sept. 06, 2019</a></div>
                                 <div><a href="#">Admin</a></div>
