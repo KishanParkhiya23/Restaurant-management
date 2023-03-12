@@ -106,17 +106,6 @@
                                     </p>
                                     <p><span class="text-muted">{{ ucfirst(get_catagory($item->foods->type))}}</span></p>
                                 </div>
-                                <!-- <div class="col-md-2 col-lg-2 col-xl-2 d-flex p-0">
-                                    <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-
-                                    <input id="form1" min="1" name="quantity" value="{{$item->quantity}}" type="number" class="form-control form-control-sm quantity-input" readonly />
-
-                                    <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div> -->
                                 <div class="d-flex justify-content-between">
                                     <select class="form-control w-100 d-inline-block" name="quantity" id="{{$item->id}}" onchange="changeCart(this)">
                                         <option value="1" {{$item->quantity == 1 ? 'selected' : '' }}>1</option>
@@ -166,7 +155,8 @@
                     <b class="pl-md-4">SUBTOTAL <span class="pl-md-3">$</span><span id="total">{{$total}}</span></b>
                 </div>
                 <div>
-                    <a href="{{route('user.save.order')}}" class="btn btn-sm btn-outline-primary px-lg-5 px-3 submit-order">Order</a>
+                    <!-- <a href="{{route('user.save.order')}}" class="btn btn-sm btn-outline-primary px-lg-5 px-3 submit-order">Order</a> -->
+                    <a href="#" class="btn btn-sm btn-outline-primary px-lg-5 px-3 submit-order">Order</a>
                 </div>
             </div>
         </div>
