@@ -5,6 +5,7 @@ use App\Http\Controllers\admin_side\AdminProfileController;
 use App\Http\Controllers\admin_side\ChefController;
 use App\Http\Controllers\admin_side\MenuController as Admin_sideMenuController;
 use App\Http\Controllers\admin_side\PasswordManageController;
+use App\Http\Controllers\admin_side\ChefAdminController;
 use App\Http\Controllers\Client_side\HomeController;
 use App\Http\Controllers\Client_side\AboutController;
 use App\Http\Controllers\Client_side\StoriesController;
@@ -46,6 +47,8 @@ Route::get('/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layout
 Route::get('/layouts/without-navbar', [WithoutNavbar::class, 'index'])->name('layouts-without-navbar');
 Route::get('/layouts/container', [Container::class, 'index'])->name('layouts-container');
 Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
+
+// Admin routes starts from here
 
 Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
 
@@ -99,7 +102,20 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
     Route::post('/edit/save/{id}', [ChefController::class, 'editSave'])->name('.edit.save');
     Route::delete('/delete/{id}', [ChefController::class, 'deleteChef'])->name('.delete');
   });
+
+  Route::group(['prefix' => '/chef-admin', 'as' => '.chef-management'], function () {
+    Route::get('/dashboard', [ChefAdminController::class, 'index'])->name('.dashboard');
+    Route::get('/pending',[ChefAdminController::class,'pendingShow'])->name('.pending.show');
+    Route::get('/processing',[ChefAdminController::class,'processingShow'])->name('.processing.show');
+    Route::get('/completed',[ChefAdminController::class,'completedShow'])->name('.completed.show');
+
+    Route::get('/order/accept/{id}',[ChefAdminController::class,'acceptOrder'])->name('.accept.order');
+    Route::get('/order/complete/{id}',[ChefAdminController::class,'completeOrder'])->name('.complete.order');
+  });
 });
+
+// Admin routes ends here
+
 
 
 // Client Side Routes
@@ -124,11 +140,11 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/reservation', [ReservationController::class, 'reservation'])->name('.reservation');
     Route::get('/Ulogout', [LoginController::class, 'Ulogout'])->name('.Ulogout');
     Route::get('/yourorder', [OrderController::class, 'yourorder'])->name('.yourorder');
-    Route::get('/vieworder', [OrderController::class, 'vieworder'])->name('.vieworder');
+    Route::get('/vieworder/{id}', [OrderController::class, 'vieworder'])->name('.vieworder');
     Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
     Route::post('/change/cart/{id}', [OrderController::class, 'changeCart'])->name('.change.cart');
 
-    Route::post('/change/name',[LoginController::class,'changeName'])->name('.change.name');
+    Route::post('/change/name', [LoginController::class, 'changeName'])->name('.change.name');
 
 
     Route::get('/pchange_password', [ForgetPasswordController::class, 'pchange_password'])->name('.pchange_password');
@@ -139,7 +155,7 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     // Cart routes
     Route::post('/addtocart/{id}', [OrderController::class, 'addtocart'])->name('.addtocart');
     Route::get('/your-cart', [OrderController::class, 'yourCart'])->name('.your-cart');
-    Route::delete('/remove/item/{id}',[OrderController::class,'removeItem'])->name('.remove.item');
-    Route::get('/save/order',[OrderController::class,'saveOrder'])->name('.save.order');
+    Route::delete('/remove/item/{id}', [OrderController::class, 'removeItem'])->name('.remove.item');
+    Route::get('/save/order', [OrderController::class, 'saveOrder'])->name('.save.order');
   });
 });

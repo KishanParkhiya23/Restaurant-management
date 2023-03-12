@@ -10,4 +10,9 @@ class OrderItem extends Model
     use HasFactory;
     
     protected $guarded = [];
+
+    public function orderFoods()
+    {
+        return $this->belongsTo(Menu::class,'product_id','id');
+    }
 }

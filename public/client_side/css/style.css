@@ -14114,11 +14114,11 @@ textarea.form-control {
 /* cart badge css  */
 
 .badge {
-  padding-left: 9px !important;
-  padding-right: 9px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
   -webkit-border-radius: 9px !important;
   -moz-border-radius: 9px !important;
-  border-radius: 9px !important;
+  border-radius: 4px !important;
 }
 
 .label-warning[href],
