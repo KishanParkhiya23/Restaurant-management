@@ -65,9 +65,12 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
     Route::post('/change/save/password', [PasswordManageController::class, 'saveChangePassword'])->name('.change.save.password');
   });
 
-  Route::get('/404', function () {
-    return view('errors.404');
-  })->name('/404')->name('.404');
+  Route::get(
+    '/404',
+    function () {
+      return view('errors.404');
+    }
+  )->name('/404')->name('.404');
 
   Route::group(['middleware' => 'adminLogin'], function () {
     Route::get('/', [Analytics::class, 'index']);
@@ -105,12 +108,12 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
 
   Route::group(['prefix' => '/chef-admin', 'as' => '.chef-management'], function () {
     Route::get('/dashboard', [ChefAdminController::class, 'index'])->name('.dashboard');
-    Route::get('/pending',[ChefAdminController::class,'pendingShow'])->name('.pending.show');
-    Route::get('/processing',[ChefAdminController::class,'processingShow'])->name('.processing.show');
-    Route::get('/completed',[ChefAdminController::class,'completedShow'])->name('.completed.show');
+    Route::get('/pending', [ChefAdminController::class, 'pendingShow'])->name('.pending.show');
+    Route::get('/processing', [ChefAdminController::class, 'processingShow'])->name('.processing.show');
+    Route::get('/completed', [ChefAdminController::class, 'completedShow'])->name('.completed.show');
 
-    Route::get('/order/accept/{id}',[ChefAdminController::class,'acceptOrder'])->name('.accept.order');
-    Route::get('/order/complete/{id}',[ChefAdminController::class,'completeOrder'])->name('.complete.order');
+    Route::get('/order/accept/{id}', [ChefAdminController::class, 'acceptOrder'])->name('.accept.order');
+    Route::get('/order/complete/{id}', [ChefAdminController::class, 'completeOrder'])->name('.complete.order');
   });
 });
 
@@ -142,7 +145,13 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/yourorder', [OrderController::class, 'yourorder'])->name('.yourorder');
     Route::get('/vieworder/{id}', [OrderController::class, 'vieworder'])->name('.vieworder');
     Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
+    Route::get('/confirm-order',[OrderController::class,'confirmOrder'])->name('.confirm-order');
     Route::post('/change/cart/{id}', [OrderController::class, 'changeCart'])->name('.change.cart');
+
+    Route::get('/delivery',[OrderController::class,'delivery'])->name('.delivery');
+    Route::get('/take-away',[OrderController::class,'takeaway'])->name('.take-away');
+    Route::get('/ontableorder',[OrderController::class,'ontableorder'])->name('.ontableorder');
+
 
     Route::post('/change/name', [LoginController::class, 'changeName'])->name('.change.name');
 

@@ -24,7 +24,7 @@
 
     .notify-badge {
         position: relative;
-        background: rgb(113 221 55);
+        background: #c8a97e;
         padding: 2px 8px;
         height: 2rem;
         top: 1.5rem;
@@ -36,7 +36,7 @@
         font-size: 1rem;
         border-radius: 50%;
         color: white;
-        border: 1px solid #78df41;
+        border: 1px solid #c8a97e;
         z-index: 1;
     }
 </style>
@@ -60,7 +60,7 @@
                     <img src="{{asset(isset($item->orderFoods->image) ? $item->orderFoods->image : 'client_side/images/menu/no-menu-image.jpg')}}" alt="" class="card-image img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                     <h5 class="mb-0">{{$item->orderFoods->name}}</h5><span class="small text-uppercase text-muted mt-2">{{$item->orderFoods->poppings}}</span>
                 </div>
-                <a href="{{route('admin.chef-management.accept.order',$item->id)}}" class="btn btn-success d-block w-50 m-auto mt-2">Accept</a>
+                <a href="{{route('admin.chef-management.accept.order',$item->id)}}" class="btn btn-primary d-block w-50 m-auto mt-2">Accept</a>
             </div>
         </div>
         @endforeach

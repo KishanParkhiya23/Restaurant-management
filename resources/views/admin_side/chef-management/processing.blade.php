@@ -3,7 +3,7 @@
 @section('title', 'Processing orders')
 
 @section('extraa-css')
-<meta http-equiv="refresh" content="5">
+<!-- <meta http-equiv="refresh" content="5"> -->
 <style>
     .table> :not(caption)>*>* {
         padding: 0.8rem 1.8rem !important;
@@ -23,7 +23,7 @@
 
     .notify-badge {
         position: relative;
-        background: rgb(255 171 0);
+        background: #c8a97e;
         padding: 2px 8px;
         height: 2rem;
         top: 1.5rem;
@@ -35,7 +35,7 @@
         font-size: 1rem;
         border-radius: 50%;
         color: white;
-        border: 1px solid rgb(255 171 0);
+        border: 1px solid #c8a97e;
         z-index: 1;
     }
 </style>
@@ -56,7 +56,7 @@
                 <span class="notify-badge">{{$item->quantity}}</span>
                 <img src="{{asset(isset($item->orderFoods->image) ? $item->orderFoods->image : 'client_side/images/menu/no-menu-image.jpg')}}" alt="" width="10" class="card-image img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                 <h5 class="mb-0">{{$item->orderFoods->name}}</h5><span class="small text-uppercase text-muted mt-2">{{$item->orderFoods->poppings}}</span>
-                <a href="{{route('admin.chef-management.complete.order',$item->id)}}" class="btn btn-warning d-block w-50 m-auto mt-2">Complete</a>
+                <a href="{{route('admin.chef-management.complete.order',$item->id)}}" class="btn btn-primary d-block w-50 m-auto mt-2">Complete</a>
             </div>
         </div>
         @endforeach

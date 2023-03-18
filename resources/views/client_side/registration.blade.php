@@ -120,7 +120,7 @@
                                         </div>
                                         <div> --}}
                                         <div class="acc-not">Already have an account? <a href="{{ route('user.login') }}"
-                                                style="color:#E6922E">Log in instead</a></div>
+                                                style="color:#c8a97e">Log in instead</a></div>
                                 </div>
                                 </form>
                             </div>

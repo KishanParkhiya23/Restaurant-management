@@ -59,7 +59,7 @@ class OrderController extends Controller
     public function saveOrder(Request $request)
     {
         // create unique order id
-        
+
         // do {
         //     $orderId = 'order' . rand(10000, 99999);
         //     $checkId = Order::where('orderId', $orderId)->first();
@@ -115,7 +115,7 @@ class OrderController extends Controller
 
     public function yourorder()
     {
-        $orders = Order::where('user_id', session()->get('Ulogin'))->orderBy('id','desc')->get();
+        $orders = Order::where('user_id', session()->get('Ulogin'))->orderBy('id', 'desc')->get();
         return view('client_side.yourorder', compact('orders'));
     }
     public function vieworder($id)
@@ -129,5 +129,27 @@ class OrderController extends Controller
     {
         Cart::whereId($id)->update(['quantity' => $request->value]);
         return response()->json(['success' => true]);
+    }
+
+    public function confirmOrder()
+    {
+        $food = get_cart();
+        return view('client_side.confirm-order', compact('food'));
+    }
+
+    public function delivery()
+    {
+        $food = get_cart();
+        return view('client_side.confirm-order.delivery', compact('food'));
+    }
+    public function takeaway()
+    {
+        $food = get_cart();
+        return view('client_side.confirm-order.take-away', compact('food'));
+    }
+    public function ontableorder()
+    {
+        $food = get_cart();
+        return view('client_side.confirm-order.ontableorder', compact('food'));
     }
 }
