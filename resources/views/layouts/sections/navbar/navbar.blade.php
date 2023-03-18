@@ -50,7 +50,7 @@ $navbarDetached = ($navbarDetached ?? '');
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
-                <a class="dropdown-item" href="javascript:void(0);">
+                <span class="dropdown-item" style="cursor: default;">
                   <div class="d-flex">
                     <div class="flex-shrink-0 me-3">
                       <div class="avatar avatar-online">
@@ -61,7 +61,7 @@ $navbarDetached = ($navbarDetached ?? '');
                       <span class="fw-semibold d-block mt-2">{{ $id->firstname}} {{ $id->lastname }}</span>
                     </div>
                   </div>
-                </a>
+                </span>
               </li>
               <li>
                 <a class="dropdown-item" href="{{ route('admin.profile') }}">

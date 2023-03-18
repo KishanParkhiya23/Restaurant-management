@@ -88,11 +88,11 @@
                         </div>
                     </div>
 
-                    @php $total = 0; @endphp
+                    <!-- @php $total = 0; @endphp -->
 
                     @foreach ($food as $key => $item)
 
-                    @php $total += $item->foods->prize * $item->quantity; @endphp
+                    <!-- @php $total += $item->foods->prize * $item->quantity; @endphp -->
 
                     <div class="card rounded-3 mb-4" id="food_{{$item->foods->id}}">
                         <div class="card-body p-4">
@@ -152,11 +152,11 @@
                     <a href="{{route('user.menu')}}"><button class="btn btn-sm btn-outline-dark">GO BACK TO MENU</button></a>
                 </div>
                 <div class="px-md-0 px-1" id="footer-font">
-                    <b class="pl-md-4">SUBTOTAL <span class="pl-md-3">$</span><span id="total">{{$total}}</span></b>
+                    <b class="pl-md-4">SUBTOTAL <span class="pl-md-3">$</span><span id="total">{{get_cart_total()}}</span></b>
                 </div>
                 <div>
                     <!-- <a href="{{route('user.save.order')}}" class="btn btn-sm btn-outline-primary px-lg-5 px-3 submit-order">Order</a> -->
-                    <a href="#" class="btn btn-sm btn-outline-primary px-lg-5 px-3 submit-order">Order</a>
+                    <a href="{{route('user.delivery')}}" class="btn btn-sm btn-outline-primary px-lg-5 px-3 submit-order">Order</a>
                 </div>
             </div>
         </div>
