@@ -25,7 +25,7 @@
                     <h4 class="mb-4 text-center fw-bold">Change Password</h4>
                     <p class="mb-1 text-center text-secondary d-block fw-bold">Enter your new password here.</p>
                     <li class="mb-4 text-center" style="font-size: 0.85rem;">Make sure your passwrod is strongest for secure your account.</li>
-                    <form class="mb-3" action="{{ route('user.Usavechangepassword') }}" method="post">
+                    <form class="mb-3" action="{{ route('admin.change.save.password') }}" method="post">
                         @csrf
                         <div class="mb-3 form-password-toggle">
                             <div class="d-flex justify-content-between">

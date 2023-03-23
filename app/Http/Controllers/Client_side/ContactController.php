@@ -17,9 +17,11 @@ class ContactController extends Controller
     public function contactSave(ContactRequest $request)
     {
         $data = $request->validated();
+        if (session()->has('Ulogin')) {
+            $data += ["user_id" => session()->get('Ulogin')];
+        }
 
-        // Contact::create($data);
-        // dd($data);
+        Contact::create($data);
         return back()->with('success', 'Your response sent succesfully');
     }
 }

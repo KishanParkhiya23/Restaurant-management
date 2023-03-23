@@ -15,6 +15,9 @@ class LoginController extends Controller
 {
   public function login()
   {
+    if (session()->has('password_data')) {
+      session()->pull('password_data');
+    }
     return view('Client_side.login');
   }
 
