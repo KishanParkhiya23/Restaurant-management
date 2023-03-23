@@ -56,60 +56,22 @@ class OrderController extends Controller
         return response()->json(['success' => true]);
     }
 
-    public function saveOrder(Request $request)
-    {
-        // create unique order id
-        do {
-            $orderId = 'order' . rand(10000, 99999);
-            $checkId = Order::where('orderId', $orderId)->first();
-        } while (isset($checkId));
-
-        date_default_timezone_set("Asia/Calcutta");     // set time zone for get current indian time
-
-        $total = 0;
-        $cartFood = get_cart();
-
-        foreach ($cartFood as $food) {
-            $total += ($food->foods->prize) * ($food['quantity']);
-
-            // set orders in order item table from cart table
-            OrderItem::create([
-                'order_id' => $orderId,
-                'product_id' => $food['food_id'],
-                'quantity' => $food['quantity'],
-                'user_id' => session()->get('Ulogin')
-            ]);
-
-            // change confirmation of items into cart table
-            Cart::where('food_id', $food['food_id'])->update(['confirmed' => 1]);
-        }
-
-        // create new order in order table
-        Order::create([
-            'orderId' => $orderId,
-            'date' => date("d-m-Y"),
-            'time' => date("h:ia"),
-            'items' => count($cartFood),
-            'totalAmount' => $total
-        ]);
-
-        return redirect(route('user.menu'))->with('success', 'Order places succesfully');
-    }
-
     public function yourorder()
     {
-        return view('client_side.yourorder');
+        $orders = Order::where('user_id', session()->get('Ulogin'))->orderBy('id', 'desc')->get();
+        return view('client_side.yourorder', compact('orders'));
     }
-    public function vieworder()
+
+    public function vieworder($id)
     {
-        return view('client_side.vieworder');
+        $food = OrderItem::where('order_id', $id)->get();
+        return view('client_side.vieworder', compact('food'));
     }
 
 
     public function changeCart(Request $request, $id)
     {
         Cart::whereId($id)->update(['quantity' => $request->value]);
-
         return response()->json(['success' => true]);
     }
 }

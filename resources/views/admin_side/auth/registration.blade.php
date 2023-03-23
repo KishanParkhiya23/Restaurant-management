@@ -79,7 +79,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="dob" class="form-label">Date of birth</label>
-                                        <input type="text" value="{{old('dob')}}" id="my_date_picker" class="form-control @error('dob') is-invalid @enderror" id="dob" name="dob" autofocus>
+                                        <input type="text" value="{{old('dob')}}" id="my_date_picker" class="form-control @error('dob') is-invalid @enderror" name="dob" autofocus autocomplete="off">
                                         @error('dob') <span class="text-danger"> {{$message}} </span> @enderror
                                     </div>
                                 </div>

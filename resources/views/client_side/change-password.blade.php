@@ -62,10 +62,10 @@
                         <button type="submit" class="btn btn-primary d-grid w-100">Change Password</button>
                     </form>
                     <div class="text-center">
-                        @if (!empty(Auth::id()))
-                        <a href="{{ route('user.fprofile') }}" class="d-flex align-items-center justify-content-center">
+                        @if (session()->has('Ulogin'))
+                        <a href="{{route('home')}}" class="d-flex align-items-center justify-content-center">
                             <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
-                            Back to profile
+                            Back to home
                         </a>
                         @else
                         <a href="{{ route('user.login') }}" class="d-flex align-items-center justify-content-center">
@@ -81,12 +81,12 @@
     </div>
 </div>
 
-<!-- @section('extraa-js')
+@section('extraa-js')
 <script>
     $('button[type="submit"]').click(function() {
         $(this).html("Pleas wait...");
     });
 </script>
-@endsection -->
+@endsection
 
 @endsection

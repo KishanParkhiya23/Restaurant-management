@@ -21,10 +21,16 @@ class AdminAuthController extends Controller
     public function loginCheck(LoginRequest $request)
     {
         $data = $request->validated();
-
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
-            return redirect(route('admin'))->with("success", "You logged in succesfully");
+
+            $admin = Auth::user();
+
+            if ($admin['role'] != 2) {
+                return redirect(route('admin'))->with("success", "You logged in succesfully");
+            } else {
+                return redirect(route('admin.chef-management.dashboard'))->with("success", "You logged in succesfully");
+            }
         }
 
         return back()->withErrors([
@@ -48,10 +54,10 @@ class AdminAuthController extends Controller
     public function registrationStore(RegistrationRequest $request)
     {
         $data = $request->validated();
-
+        $data = $data + ["role" => 1];
         if (isset($data['profile_img'])) {
             $image = $request->profile_img;
-            $imageName = 'images/' . time(). "-" . date("dmY") .  '.' . $image->extension();
+            $imageName = 'images/' . time() . "-" . date("dmY") .  '.' . $image->extension();
             $image->move(public_path('storage/images'), $imageName);
 
             // $image = $request->profile_img->store('images', ["disk" => "public"]);

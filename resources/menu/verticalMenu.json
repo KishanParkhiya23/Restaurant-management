@@ -5,7 +5,7 @@
       "name": "Dashboard",
       "icon": "menu-icon tf-icons fa-solid fa-house",
       "slug": "/dashboard"
-    },    
+    },
     {
       "url": "/admin/chef/dashboard",
       "name": "Chef Management",
@@ -49,6 +49,88 @@
           "slug": "layouts-blank"
         }
       ]
+    },
+    {
+      "name": "User details",
+      "url": "",
+      "icon": "menu-icon tf-icons fa-solid fa-user",
+      "slug": "layouts",
+      "submenu": [
+        {
+          "url": "admin/user-details/admin-data",
+          "name": "Admin",
+          "slug": "admin details"
+        },
+        {
+          "url": "admin/user-details/user-data",
+          "name": "User",
+          "slug": "user details"
+        }
+      ]
+    }
+  ],
+  "chefMenu": [
+    {
+      "url": "/admin/chef-admin/dashboard",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons fa-solid fa-house",
+      "slug": "/dashboard"
+    },
+    {
+      "name": "Food menu",
+      "url": "",
+      "icon": "menu-icon tf-icons fa-solid fa-utensils",
+      "slug": "layouts",
+      "submenu": [
+        {
+          "url": "/admin/menu/breakfast",
+          "name": "Breakfast",
+          "slug": "breakfast"
+        },
+        {
+          "url": "/admin/menu/lunch",
+          "name": "Lunch",
+          "slug": "layouts-without-navbar"
+        },
+        {
+          "url": "/admin/menu/dinner",
+          "name": "Dinner",
+          "slug": "layouts-container"
+        },
+        {
+          "url": "/admin/menu/drinks",
+          "name": "Drinks",
+          "slug": "layouts-fluid"
+        },
+        {
+          "url": "/admin/menu/desserts",
+          "name": "Desserts",
+          "slug": "layouts-blank"
+        },
+        {
+          "url": "/admin/menu/wine",
+          "name": "Wine",
+          "slug": "layouts-blank"
+        }
+      ]
+    },
+    {
+      "url": "/admin/chef-admin/pending",
+      "name": "Pending orders",
+      "icon": "menu-icon tf-icons fa-solid fa-hourglass-half",
+      "slug": "/admin/chef-admin/pending"
+    },
+    {
+      "url": "/admin/chef-admin/processing",
+      "name": "Processing orders",
+      "icon": "menu-icon tf-icons fa-solid fa-spinner",
+      "slug": "/admin/chef-admin/processing"
+    },
+    {
+      "url": "/admin/chef-admin/completed",
+      "name": "Completed orders",
+      "icon": "menu-icon tf-icons fa-regular fa-circle-check",
+      "slug": "/admin/chef-admin/completed"
     }
   ]
 }

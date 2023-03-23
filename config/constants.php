@@ -363,4 +363,39 @@ return [
         ],
 
     ],
+    "admins" => [
+        [
+            "firstname" => "Admin",
+            "lastname" => "admin",
+            "contact" => "9876543210",
+            "city" => "surat",
+            "dob" => "01/03/2003",
+            "gender" => "Female",
+            "role" => "1",
+            "email" => "admin@gmail.com",
+            "password" => "admin@123",
+            "profile_img" => "images/1677478694-27022023.jpg"
+        ],
+        [
+            "firstname" => "Chef",
+            "lastname" => "chef",
+            "contact" => "9638527410",
+            "city" => "Junagadh",
+            "dob" => "18/05/2000",
+            "gender" => "Male",
+            "role" => "2",
+            "email" => "chef@gmail.com",
+            "password" => "chef@123",
+            "profile_img" => "images/1677479981-27022023.jpg"
+        ],
+
+    ],
+    "users" => [
+        [
+            "fullname" => "User",
+            "contact" => "9652314780",
+            "email" => "user@gmail.com",
+            "password" => "user@123",
+        ]
+    ],
 ];

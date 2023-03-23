@@ -9,7 +9,4 @@ class Chef extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
-    
-
 }

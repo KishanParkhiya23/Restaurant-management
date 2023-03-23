@@ -249,7 +249,7 @@ button {
 
 button:focus {
   outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  /* outline: 5px auto -webkit-focus-ring-color; */
 }
 
 input,
@@ -4793,7 +4793,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
   color: #fff;
-  background-color: #007bff;
+  background-color: #c8a97e;
 }
 
 .nav-fill .nav-item {
@@ -14114,11 +14114,11 @@ textarea.form-control {
 /* cart badge css  */
 
 .badge {
-  padding-left: 9px !important;
-  padding-right: 9px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
   -webkit-border-radius: 9px !important;
   -moz-border-radius: 9px !important;
-  border-radius: 9px !important;
+  border-radius: 4px !important;
 }
 
 .label-warning[href],
@@ -14137,3 +14137,4 @@ textarea.form-control {
 }
 
 /* cart badge css  */
+

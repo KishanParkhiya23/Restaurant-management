@@ -20,7 +20,7 @@ class LoginController extends Controller
 
   public function logincheck(LoginRequest $req)
   {
-    $CheckLogin = DB::table('fusers')->whereEmail($req->email)->get()->first();
+    $CheckLogin = DB::table('fusers')->whereEmail($req->email)->where('is_set', 1)->get()->first();
 
     if ($CheckLogin) {
       if (Hash::check($req->password, $CheckLogin->password)) {

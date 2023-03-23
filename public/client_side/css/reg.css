@@ -76,7 +76,7 @@ a {
   /* color: #E6922E; */
 }
 a:hover {
-  color: #E6922E;
+  color: #c8a97e;
   text-decoration: none;
 }
 a:active, a:hover {
@@ -255,8 +255,8 @@ div#preloader {
 }
 .login-btn {
     padding: 10px 30px;
-    border: 1px solid #E6922E;
-    background: #E6922E;
+    border: 1px solid #c8a97e;
+    background: #c8a97e;
     color: #fff;
     transition: 0.4s;
     font-size: 15px;
@@ -267,9 +267,9 @@ div#preloader {
     width: 100%;
 }
 .login-btn:hover{
-    border: 1px solid #E6922E;
+    border: 1px solid #c8a97e;
     background: transparent;
-    color: #E6922E;
+    color: #c8a97e;
     transition: 0.4s;
 }
 .flex-box{
