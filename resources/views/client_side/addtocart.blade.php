@@ -121,7 +121,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-1 col-lg-1 col-xl-1 p-0">
-                                    <h5 class="mb-0">${{ $item->foods->prize * $item->quantity}}</h5>
+                                    <h5 class="mb-0"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>{{ $item->foods->prize * $item->quantity}}</h5>
                                 </div>
                                 <div class="col-md-1 col-lg-1 col-xl-1 text-end p-0">
                                     <a id={{$item->foods->id}} onclick="deleteItem(this)" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
@@ -152,7 +152,7 @@
                     <a href="{{route('user.menu')}}"><button class="btn btn-sm btn-outline-dark">GO BACK TO MENU</button></a>
                 </div>
                 <div class="px-md-0 px-1" id="footer-font">
-                    <b class="pl-md-4">SUBTOTAL <span class="pl-md-3">$</span><span id="total">{{get_cart_total()}}</span></b>
+                    <b class="pl-md-4">SUBTOTAL <span class="pl-md-3"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i></span><span id="total">{{get_cart_total()}}</span></b>
                 </div>
                 <div>
                     <a href="{{route('user.delivery')}}" class="btn btn-sm btn-outline-primary px-lg-5 px-3 submit-order">Order</a>

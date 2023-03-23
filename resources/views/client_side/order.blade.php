@@ -68,7 +68,7 @@
                         <p>{{$item['poppings']}}</p>
 
                         <input type="hidden" id="prize" value="{{ $item['prize'] }}">
-                        <span>$<span id="amount">{{ $item['prize'] }}</span></span>
+                        <span><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i><span id="amount">{{ $item['prize'] }}</span></span>
                         <div class="d-flex justify-content-between mt-4">
                             <label for="quantity" class="d-inline-block"><strong>Quantity</strong></label>
                             <select class="form-control w-25 d-inline-block" name="quantity" id="quantity">
