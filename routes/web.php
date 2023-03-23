@@ -67,6 +67,8 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
     Route::post('/change/save/password/{type?}', [PasswordManageController::class, 'saveChangePassword'])->name('.change.save.password');
   });
 
+
+
   Route::get(
     '/404',
     function () {
@@ -122,7 +124,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
       Route::get('/user-data', [UserDetailsController::class, 'getUserDetails'])->name('.user');
 
       Route::put('/change/role', [UserDetailsController::class, 'changeRole'])->name('.change.role');
-      Route::delete('/delete/user',[UserDetailsController::class,'deleteUser'])->name('.delete.user');
+      Route::delete('/delete/user', [UserDetailsController::class, 'deleteUser'])->name('.delete.user');
     });
   });
 });
@@ -140,12 +142,20 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
 
   Route::get('/about', [AboutController::class, 'about'])->name('.about');
   Route::get('/stories', [StoriesController::class, 'stories'])->name('.stories');
+
+  // contact 
   Route::get('/contact', [ContactController::class, 'contact'])->name('.contact');
+  Route::post('/contact/save', [ContactController::class, 'contactSave'])->name('.contact.save');
   Route::get('/login', [LoginController::class, 'login'])->name('.login');
   Route::post('/logincheck', [LoginController::class, 'logincheck'])->name('.login.check');
   Route::get('/registration', [RegistrationController::class, 'registration'])->name('.registration');
   Route::post('/regdatasave', [RegistrationController::class, 'regdatasave'])->name('.regdatasave');
   Route::get('/forget_password', [ForgetPasswordController::class, 'forget_password'])->name('.forget_password');
+
+  //user side
+  Route::group(['middleware' => 'changePassword'], function () {
+    Route::get('/changepassword', [LoginController::class, 'changepassword'])->name('.changepassword');
+  });
 
   Route::group(['middleware' => ['Ulogin']], function () {
 
@@ -164,21 +174,15 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
 
     Route::post('/save-order/{type}', [PlaceOrderController::class, 'saveOrder'])->name('.save-order');
 
-
     Route::post('/change/name', [LoginController::class, 'changeName'])->name('.change.name');
-
 
     Route::get('/pchange_password', [ForgetPasswordController::class, 'pchange_password'])->name('.pchange_password');
     Route::post('/pcheckpassword', [ForgetPasswordController::class, 'pcheckpassword'])->name('.pcheckpassword');
-    Route::get('/changepassword', [LoginController::class, 'changepassword'])->name('.changepassword');
     Route::post('/Usavechangepassword', [LoginController::class, 'Usavechangepassword'])->name('.Usavechangepassword');
 
     // Cart routes
     Route::post('/addtocart/{id}', [OrderController::class, 'addtocart'])->name('.addtocart');
     Route::get('/your-cart', [OrderController::class, 'yourCart'])->name('.your-cart');
     Route::delete('/remove/item/{id}', [OrderController::class, 'removeItem'])->name('.remove.item');
-
-    // contact save
-    Route::post('/contact/save', [ContactController::class, 'contactSave'])->name('.contact.save');
   });
 });

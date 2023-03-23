@@ -9,29 +9,27 @@ use Illuminate\Support\Facades\Auth;
 
 class ForgetPasswordController extends Controller
 {
-    public function forget_password()
-    {
-        return view('Client_side.forget_password');
-    }
+  public function forget_password()
+  {
+    return view('Client_side.forget_password');
+  }
 
-    public function pchange_password()
-    {
+  public function pchange_password()
+  {
     return view('client_side.pchangepassword');
+  }
+
+  public function pcheckpassword(Request $req)
+  {
+    $data = session()->get('loginData');
+
+    if (Hash::check($req->password, $data->password)) {
+
+      // dd(($data));
+      $req->Session()->put('password_data', $data);
+      return redirect(route('user.changepassword'));
+    } else {
+      return back()->with('error', 'Your old password is incorrect');
     }
-
-    public function pcheckpassword(Request $req)
-    {
-      $data = session()->get('loginData');
-
-      if(Hash::check($req->password,$data->password)){
-
-        // dd(($data));
-          $req->Session()->put('passworddata', $data);
-          return redirect(route('user.changepassword'));
-      }else{
-          return back()->with('error','Your old password is incorrect');
-      }
-    }
-
-
+  }
 }
