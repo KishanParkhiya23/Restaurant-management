@@ -29,9 +29,9 @@ nav {
     }
 }
 
-form {
+/* form,div {
     flex: 4;
-}
+} */
 
 .Yorder {
     flex: 2;
@@ -54,7 +54,11 @@ h2 {
 }
 
 .required {
-    color: red;
+    color: rgb(252, 72, 72);
+    margin-left: 10.4rem;
+    margin-top: -0.2rem;
+    padding-bottom: 0.3rem;
+    font-size: 0.75rem;
 }
 
 label,
@@ -78,7 +82,7 @@ select {
     width: 70%;
     height: 30px;
     padding: 5px 10px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     border: 1px solid #dadada;
     color: #888;
 }
@@ -87,7 +91,7 @@ select {
     /* width: 72%; */
     height: 45px;
     padding: 5px 10px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .Yorder {

@@ -6,6 +6,7 @@ use App\Http\Controllers\admin_side\ChefController;
 use App\Http\Controllers\admin_side\MenuController as Admin_sideMenuController;
 use App\Http\Controllers\admin_side\PasswordManageController;
 use App\Http\Controllers\admin_side\ChefAdminController;
+use App\Http\Controllers\admin_side\UserDetailsController;
 use App\Http\Controllers\Client_side\HomeController;
 use App\Http\Controllers\Client_side\AboutController;
 use App\Http\Controllers\Client_side\StoriesController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\Client_side\ForgetPasswordController;
 use App\Http\Controllers\Client_side\ProfileController;
 use App\Http\Controllers\Client_side\MenuController;
 use App\Http\Controllers\Client_side\OrderController;
+use App\Http\Controllers\Client_side\PlaceOrderController;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\layouts\Blank;
 use App\Http\Controllers\layouts\Container;
@@ -58,11 +60,11 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
   Route::post('/registration/store', [AdminAuthController::class, 'registrationStore'])->name('.registration.store');
   Route::get('/forget-password', [AdminAuthController::class, 'forgetPassword'])->name('.forget-password');
 
-  Route::post('/send-mail', [PasswordManageController::class, 'sendMail'])->name('.send.mail');
+  Route::post('/send-mail/{type?}', [PasswordManageController::class, 'sendMail'])->name('.send.mail');
 
   Route::group(['middleware' => 'changePassword'], function () {
     Route::get('/change/password', [PasswordManageController::class, 'showChangePassword'])->name('.change.password');
-    Route::post('/change/save/password', [PasswordManageController::class, 'saveChangePassword'])->name('.change.save.password');
+    Route::post('/change/save/password/{type?}', [PasswordManageController::class, 'saveChangePassword'])->name('.change.save.password');
   });
 
   Route::get(
@@ -95,25 +97,33 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
       Route::get('/edit/food/show/{id}', [Admin_sideMenuController::class, 'editFoodShow'])->name('.edit.food.show');
       Route::post('/edit/food/save/{id}', [Admin_sideMenuController::class, 'editFoodSave'])->name('.edit.food.save');
     });
-  });
 
-  Route::group(['prefix' => '/chef', 'as' => '.chef'], function () {
-    Route::get('/dashboard', [ChefController::class, 'index'])->name('.dashboard');
-    Route::get('/add/show', [ChefController::class, 'showAddChef'])->name('.add.show');
-    Route::post('/add/save', [ChefController::class, 'saveAddChef'])->name('.add.save');
-    Route::get('/edit/{id}', [ChefController::class, 'edit'])->name('.edit');
-    Route::post('/edit/save/{id}', [ChefController::class, 'editSave'])->name('.edit.save');
-    Route::delete('/delete/{id}', [ChefController::class, 'deleteChef'])->name('.delete');
-  });
+    Route::group(['prefix' => '/chef', 'as' => '.chef'], function () {
+      Route::get('/dashboard', [ChefController::class, 'index'])->name('.dashboard');
+      Route::get('/add/show', [ChefController::class, 'showAddChef'])->name('.add.show');
+      Route::post('/add/save', [ChefController::class, 'saveAddChef'])->name('.add.save');
+      Route::get('/edit/{id}', [ChefController::class, 'edit'])->name('.edit');
+      Route::post('/edit/save/{id}', [ChefController::class, 'editSave'])->name('.edit.save');
+      Route::delete('/delete/{id}', [ChefController::class, 'deleteChef'])->name('.delete');
+    });
 
-  Route::group(['prefix' => '/chef-admin', 'as' => '.chef-management'], function () {
-    Route::get('/dashboard', [ChefAdminController::class, 'index'])->name('.dashboard');
-    Route::get('/pending', [ChefAdminController::class, 'pendingShow'])->name('.pending.show');
-    Route::get('/processing', [ChefAdminController::class, 'processingShow'])->name('.processing.show');
-    Route::get('/completed', [ChefAdminController::class, 'completedShow'])->name('.completed.show');
+    Route::group(['prefix' => '/chef-admin', 'as' => '.chef-management'], function () {
+      Route::get('/dashboard', [ChefAdminController::class, 'index'])->name('.dashboard');
+      Route::get('/pending', [ChefAdminController::class, 'pendingShow'])->name('.pending.show');
+      Route::get('/processing', [ChefAdminController::class, 'processingShow'])->name('.processing.show');
+      Route::get('/completed', [ChefAdminController::class, 'completedShow'])->name('.completed.show');
 
-    Route::get('/order/accept/{id}', [ChefAdminController::class, 'acceptOrder'])->name('.accept.order');
-    Route::get('/order/complete/{id}', [ChefAdminController::class, 'completeOrder'])->name('.complete.order');
+      Route::get('/order/accept/{id}', [ChefAdminController::class, 'acceptOrder'])->name('.accept.order');
+      Route::get('/order/complete/{id}', [ChefAdminController::class, 'completeOrder'])->name('.complete.order');
+    });
+
+    Route::group(['prefix' => '/user-details', 'as' => '.user-details'], function () {
+      Route::get('/admin-data', [UserDetailsController::class, 'getAdminDetails'])->name('.admin');
+      Route::get('/user-data', [UserDetailsController::class, 'getUserDetails'])->name('.user');
+
+      Route::put('/change/role', [UserDetailsController::class, 'changeRole'])->name('.change.role');
+      Route::delete('/delete/user',[UserDetailsController::class,'deleteUser'])->name('.delete.user');
+    });
   });
 });
 
@@ -145,12 +155,14 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/yourorder', [OrderController::class, 'yourorder'])->name('.yourorder');
     Route::get('/vieworder/{id}', [OrderController::class, 'vieworder'])->name('.vieworder');
     Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
-    Route::get('/confirm-order',[OrderController::class,'confirmOrder'])->name('.confirm-order');
     Route::post('/change/cart/{id}', [OrderController::class, 'changeCart'])->name('.change.cart');
 
-    Route::get('/delivery',[OrderController::class,'delivery'])->name('.delivery');
-    Route::get('/take-away',[OrderController::class,'takeaway'])->name('.take-away');
-    Route::get('/ontableorder',[OrderController::class,'ontableorder'])->name('.ontableorder');
+    Route::get('/confirm-order', [PlaceOrderController::class, 'confirmOrder'])->name('.confirm-order');
+    Route::get('/delivery', [PlaceOrderController::class, 'delivery'])->name('.delivery');
+    Route::get('/take-away', [PlaceOrderController::class, 'takeaway'])->name('.take-away');
+    Route::get('/ontableorder', [PlaceOrderController::class, 'ontableorder'])->name('.ontableorder');
+
+    Route::post('/save-order/{type}', [PlaceOrderController::class, 'saveOrder'])->name('.save-order');
 
 
     Route::post('/change/name', [LoginController::class, 'changeName'])->name('.change.name');
@@ -165,6 +177,8 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::post('/addtocart/{id}', [OrderController::class, 'addtocart'])->name('.addtocart');
     Route::get('/your-cart', [OrderController::class, 'yourCart'])->name('.your-cart');
     Route::delete('/remove/item/{id}', [OrderController::class, 'removeItem'])->name('.remove.item');
-    Route::get('/save/order', [OrderController::class, 'saveOrder'])->name('.save.order');
+
+    // contact save
+    Route::post('/contact/save', [ContactController::class, 'contactSave'])->name('.contact.save');
   });
 });

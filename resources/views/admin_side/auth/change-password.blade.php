@@ -81,12 +81,5 @@
     </div>
 </div>
 
-<!-- @section('extraa-js')
-<script>
-    $('button[type="submit"]').click(function() {
-        $(this).html("Pleas wait...");
-    });
-</script>
-@endsection -->
 
 @endsection

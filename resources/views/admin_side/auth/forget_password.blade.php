@@ -7,6 +7,14 @@
 <link rel="stylesheet" href="{{asset('assets/vendor/css/pages/page-auth.css')}}">
 @endsection
 
+@section('extraa-js')
+<script>
+    $('button[type="submit"]').click(function() {
+        $(this).html("Please wait ...");
+    });
+</script>
+@endsection
+
 @section('content')
 <div class="container-xxl">
     <div class="authentication-wrapper authentication-basic container-p-y">
@@ -44,13 +52,5 @@
         </div>
     </div>
 </div>
-
-@section('extraa-js')
-<script>
-    $('button[type="submit"]').click(function(){
-        $(this).html("Please wait ...");
-    });
-</script>
-@endsection
 
 @endsection

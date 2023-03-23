@@ -10,7 +10,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate text-center mb-4">
                 <h1 class="mb-2 bread">Book a Table</h1>
-                <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home') }}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Reservation <i class="ion-ios-arrow-forward"></i></span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home') }}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Reservation </span></p>
             </div>
         </div>
     </div>
@@ -50,7 +50,6 @@
                                     <label for="">Date</label>
                                     <!-- <input type="Date" class="form-control" id="#" placeholder="Date"> -->
                                     <input type="date" value="{{old('dob')}}" id="my_date_picker" class="form-control @error('dob') is-invalid @enderror" name="dob" autofocus autocomplete="off" min="<?= date('Y-m-d'); ?>">
-
                                 </div>
                             </div>
                             <div class="col-md-6">

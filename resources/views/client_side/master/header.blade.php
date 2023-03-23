@@ -39,7 +39,7 @@ $data = session()->get('loginData');
                                 </a>
 
                                 <!-- Name display -->
-                                <i onclick="myFunction()" class="fa-solid fa-pen mr-2 ml-3" style="font-size:.8rem;cursor: pointer;"></i>
+                                <i onclick="myFunction()" class="fa-solid fa-pen mr-2 ml-3" style="font-size:.8rem;cursor: pointer;" title="Edit Username"></i>
                                 <span id="myName">
                                     <span class="myP" style="font-size: .9rem">
                                         {{ $data->fullname }}
@@ -49,7 +49,7 @@ $data = session()->get('loginData');
 
                                 <!-- Edit display -->
                                 <span id="editName" class="d-none">
-                                    <i class="fa-solid fa-floppy-disk mx-2" style="font-size:1.2rem;cursor: pointer;" onclick="changeName()"></i>
+                                    <i class="fa-solid fa-floppy-disk mx-2" style="font-size:1.2rem;cursor: pointer;" onclick="changeName()" title="Save Username"></i>
                                     <input type="text" value="{{ $data->fullname }}" style="background: none; color: white;" autofocus id="chaneName">
                                 </span>
                                 <!-- Edit display -->

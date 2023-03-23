@@ -14,11 +14,11 @@
   <div class="menu-inner-shadow"></div>
 
   @php
-  $admin = Auth::user();    
+  $admin = Auth::user();
   @endphp
 
   <ul class="menu-inner py-1">
-    @foreach ($admin['role'] != 2 ?  $menuData[0]->menu :  $menuData[0]->chefMenu as $menu)
+    @foreach (($admin['role'] != 2 ? $menuData[0]->menu : $menuData[0]->chefMenu) as $menu)
 
     {{-- adding active and open class if child is active --}}
 
