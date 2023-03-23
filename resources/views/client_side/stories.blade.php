@@ -26,7 +26,7 @@
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20" style="background-image: url({{ asset('client_side/images/image_1.jpg')}});">
                         </a>
-                        <div class="text pt-3 pb-4 px-4">
+                        <div class="text p-3">
                             <div class="meta">
                                 <div><a href="#">Sept. 06, 2019</a></div>
                                 <div><a href="#">Admin</a></div>
@@ -43,7 +43,7 @@
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20" style="background-image: url({{ asset('client_side/images/image_2.jpg')}});">
                         </a>
-                        <div class="text pt-3 pb-4 px-4">
+                        <div class="text p-3">
                             <div class="meta">
                                 <div><a href="#">Sept. 06, 2019</a></div>
                                 <div><a href="#">Admin</a></div>
@@ -60,7 +60,7 @@
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20" style="background-image: url({{ asset('client_side/images/image_3.jpg')}});">
                         </a>
-                        <div class="text pt-3 pb-4 px-4">
+                        <div class="text p-3">
                             <div class="meta">
                                 <div><a href="#">Sept. 06, 2019</a></div>
                                 <div><a href="#">Admin</a></div>
@@ -77,7 +77,7 @@
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20" style="background-image: url({{ asset('client_side/images/image_4.jpg')}});">
                         </a>
-                        <div class="text pt-3 pb-4 px-4">
+                        <div class="text p-3">
                             <div class="meta">
                                 <div><a href="#">Sept. 06, 2019</a></div>
                                 <div><a href="#">Admin</a></div>
@@ -94,7 +94,7 @@
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20" style="background-image: url({{ asset('client_side/images/image_5.jpg')}});">
                         </a>
-                        <div class="text pt-3 pb-4 px-4">
+                        <div class="text p-3">
                             <div class="meta">
                                 <div><a href="#">Sept. 06, 2019</a></div>
                                 <div><a href="#">Admin</a></div>
@@ -111,7 +111,7 @@
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20" style="background-image: url({{ asset('client_side/images/image_6.jpg')}});">
                         </a>
-                        <div class="text pt-3 pb-4 px-4">
+                        <div class="text p-3">
                             <div class="meta">
                                 <div><a href="#">Sept. 06, 2019</a></div>
                                 <div><a href="#">Admin</a></div>
@@ -122,21 +122,6 @@
                                 <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
                             </p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row no-gutters my-5">
-                <div class="col text-center">
-                    <div class="block-27">
-                        <ul>
-                            <li><a href="#">&lt;</a></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&gt;</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>

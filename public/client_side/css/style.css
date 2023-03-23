@@ -249,7 +249,7 @@ button {
 
 button:focus {
   outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  /* outline: 5px auto -webkit-focus-ring-color; */
 }
 
 input,
@@ -14137,3 +14137,4 @@ textarea.form-control {
 }
 
 /* cart badge css  */
+

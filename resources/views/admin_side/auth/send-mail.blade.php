@@ -12,7 +12,11 @@
     <h1>{{$details['title']}}</h1>
     <p>{{$details['body']}}</p>
     <p>{{$details['changeText']}}</p>
+    @if ($details['type'] != 1)
     <a href="http://127.0.0.1:8000/admin/change/password"><button class="btn btn-primary">Reset password</button></a>
+    @else
+    <a href="http://127.0.0.1:8000/user/changepassword"><button class="btn btn-primary">Reset password</button></a>
+    @endif
     <br><br>
     <b>From, The Fork & Spoon team</b>
     <p>Thank You.</p>

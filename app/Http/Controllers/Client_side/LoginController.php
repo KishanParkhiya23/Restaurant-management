@@ -15,12 +15,15 @@ class LoginController extends Controller
 {
   public function login()
   {
+    if (session()->has('password_data')) {
+      session()->pull('password_data');
+    }
     return view('Client_side.login');
   }
 
   public function logincheck(LoginRequest $req)
   {
-    $CheckLogin = DB::table('fusers')->whereEmail($req->email)->get()->first();
+    $CheckLogin = DB::table('fusers')->whereEmail($req->email)->where('is_set', 1)->get()->first();
 
     if ($CheckLogin) {
       if (Hash::check($req->password, $CheckLogin->password)) {
