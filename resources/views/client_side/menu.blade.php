@@ -54,7 +54,7 @@
                                                         <h3>{{$item['name']}}</h3>
                                                     </div>
                                                     <div class="one-forth">
-                                                        <span class="price">${{$item['prize']}}</span>
+                                                        <span class="price"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>{{$item['prize']}}</span>
                                                     </div>
                                                 </div>
                                                 <p>{{$item['poppings']}}
@@ -82,7 +82,7 @@
                                                         <h3>{{$item['name']}}</h3>
                                                     </div>
                                                     <div class="one-forth">
-                                                        <span class="price">${{$item['prize']}}</span>
+                                                        <span class="price"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>{{$item['prize']}}</span>
                                                     </div>
                                                 </div>
                                                 <p>{{$item['poppings']}}
@@ -109,7 +109,7 @@
                                                         <h3>{{$item['name']}}</h3>
                                                     </div>
                                                     <div class="one-forth">
-                                                        <span class="price">${{$item['prize']}}</span>
+                                                        <span class="price"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>{{$item['prize']}}</span>
                                                     </div>
                                                 </div>
                                                 <p>{{$item['poppings']}}
@@ -136,7 +136,7 @@
                                                         <h3>{{$item['name']}}</h3>
                                                     </div>
                                                     <div class="one-forth">
-                                                        <span class="price">${{$item['prize']}}</span>
+                                                        <span class="price"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>{{$item['prize']}}</span>
                                                     </div>
                                                 </div>
                                                 <p>{{$item['poppings']}}
@@ -163,7 +163,7 @@
                                                         <h3>{{$item['name']}}</h3>
                                                     </div>
                                                     <div class="one-forth">
-                                                        <span class="price">${{$item['prize']}}</span>
+                                                        <span class="price"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>{{$item['prize']}}</span>
                                                     </div>
                                                 </div>
                                                 <p>{{$item['poppings']}}
@@ -190,7 +190,7 @@
                                                         <h3>{{$item['name']}}</h3>
                                                     </div>
                                                     <div class="one-forth">
-                                                        <span class="price">${{$item['prize']}}</span>
+                                                        <span class="price"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>{{$item['prize']}}</span>
                                                     </div>
                                                 </div>
                                                 <p>{{$item['poppings']}}
