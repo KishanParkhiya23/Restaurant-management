@@ -30,7 +30,7 @@
                             <label for="email" class="form-label">Email</label>
                             <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email or username" autofocus>
                             @error('email')
-                                <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="mb-3 form-password-toggle">
@@ -45,7 +45,7 @@
                                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                             </div>
                             @error('password')
-                                <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="mb-3">
@@ -56,8 +56,12 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="my-2">
                             <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                        </div>
+
+                        <div class="my-2">
+                            <a href="{{route('auth.google')}}" class="btn btn-secondary d-grid w-100">Continue with google</a>
                         </div>
                     </form>
 

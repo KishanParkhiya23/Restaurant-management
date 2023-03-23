@@ -25,6 +25,7 @@ use App\Http\Controllers\layouts\Container;
 use App\Http\Controllers\layouts\Fluid;
 use App\Http\Controllers\layouts\WithoutMenu;
 use App\Http\Controllers\layouts\WithoutNavbar;
+use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -186,3 +187,9 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::delete('/remove/item/{id}', [OrderController::class, 'removeItem'])->name('.remove.item');
   });
 });
+
+
+// Socialite Routes
+
+Route::get('/auth/google', [SocialiteController::class, 'redirect'])->name('auth.google');
+Route::get('/auth/google/call-back', [SocialiteController::class, 'callback'])->name('auth.google.call-back');
