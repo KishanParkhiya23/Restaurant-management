@@ -34,7 +34,8 @@
     "files": [
       "app/Helpers/get_cart.php",
       "app/Helpers/get_catagory.php",
-      "app/Helpers/get_cart_total.php"
+      "app/Helpers/get_cart_total.php",
+      "app/Helpers/save_order.php"
     ]
   },
   "autoload-dev": {

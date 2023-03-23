@@ -71,7 +71,7 @@
                 },
                 success: function(response) {
                     if (response.success) {
-                        location.replace('/');
+                        location.reload();
                     }
                 }
             })

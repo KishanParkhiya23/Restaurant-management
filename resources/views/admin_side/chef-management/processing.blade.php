@@ -3,7 +3,7 @@
 @section('title', 'Processing orders')
 
 @section('extraa-css')
-<!-- <meta http-equiv="refresh" content="5"> -->
+<meta http-equiv="refresh" content="5">
 <style>
     .table> :not(caption)>*>* {
         padding: 0.8rem 1.8rem !important;
@@ -19,7 +19,6 @@
         width: 60px;
         margin: auto;
     }
-
 
     .notify-badge {
         position: relative;

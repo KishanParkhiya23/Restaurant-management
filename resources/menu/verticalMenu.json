@@ -49,6 +49,24 @@
           "slug": "layouts-blank"
         }
       ]
+    },
+    {
+      "name": "User details",
+      "url": "",
+      "icon": "menu-icon tf-icons fa-solid fa-user",
+      "slug": "layouts",
+      "submenu": [
+        {
+          "url": "admin/user-details/admin-data",
+          "name": "Admin",
+          "slug": "admin details"
+        },
+        {
+          "url": "admin/user-details/user-data",
+          "name": "User",
+          "slug": "user details"
+        }
+      ]
     }
   ],
   "chefMenu": [
