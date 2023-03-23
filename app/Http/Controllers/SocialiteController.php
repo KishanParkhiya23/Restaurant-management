@@ -16,18 +16,16 @@ class SocialiteController extends Controller
 
     public function callback(Request $request)
     {
-
         try {
-            $google_user = Socialite::driver('gooogle')->user();
+            $google_user = Socialite::driver('google')->user();
 
-            dd($google_user);
-            $current_user = User::where('google_id', $google_user->getTd())->first();
+            $current_user = User::where('google_id', $google_user->getId())->first();
 
             if (!$current_user) {
                 $new_user = User::create([
-                    'name' => $google_user->getName(),
+                    'firstname' => $google_user->getName(),
                     'email' => $google_user->getEmail(),
-                    'google_id' => $google_user->getTd()
+                    'google_id' => $google_user->getId()
                 ]);
 
                 Auth::login($new_user);
