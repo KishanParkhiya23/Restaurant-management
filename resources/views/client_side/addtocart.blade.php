@@ -155,7 +155,6 @@
                     <b class="pl-md-4">SUBTOTAL <span class="pl-md-3">$</span><span id="total">{{get_cart_total()}}</span></b>
                 </div>
                 <div>
-                    <!-- <a href="{{route('user.save.order')}}" class="btn btn-sm btn-outline-primary px-lg-5 px-3 submit-order">Order</a> -->
                     <a href="{{route('user.delivery')}}" class="btn btn-sm btn-outline-primary px-lg-5 px-3 submit-order">Order</a>
                 </div>
             </div>
