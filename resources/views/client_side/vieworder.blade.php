@@ -54,7 +54,7 @@
                                     {{$item->quantity}} items
                                 </div>
                                 <div class="col-md-1 col-lg-1 col-xl-1 p-0">
-                                    <h5 class="mb-0">${{ $item->orderFoods->prize * $item->quantity}}</h5>
+                                    <h5 class="mb-0"><i class="fa-solid fa-indian-rupee-sign fa-xs"></i> {{ $item->orderFoods->prize * $item->quantity}}</h5>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <span class="badge {{$item->status == 0 ? 'badge-danger' : ($item->status == 1 ? 'badge-warning' : ( $item->status == 2 ? 'badge-success' : 'badge-secondary' ))}}  rounded-pill d-inline py-2">

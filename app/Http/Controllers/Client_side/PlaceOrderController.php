@@ -68,19 +68,13 @@ class PlaceOrderController extends Controller
 
         if ($type == 3) {
             $request->validate(
-                [
-                    'table' => 'required'
-                ],
-                [
-                    'table.required' => 'Table must be selected'
-                ]
+                ['table' => 'required'],
+                ['table.required' => 'Table must be selected']
             );
         }
-        // dd($type);
-
 
         $order = save_order();
-
+        
         Order::where('orderId', $order)
             ->update([
                 'name' => $request->fullname,

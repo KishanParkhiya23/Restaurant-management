@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client_side;
 use App\Http\Controllers\Controller;
 use App\Models\Chef;
 use App\Models\Menu;
+use App\Models\Story;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +26,9 @@ class HomeController extends Controller
                 [Menu::whereType(5)->where('is_set', 1)->first()],
                 [Menu::whereType(6)->where('is_set', 1)->first()]
             );
-        return view('client_side.home', compact('chefs', 'menu', 'totalMenuItem'));
+
+        $stories = Story::where('is_set', 1)->get()->take(3);
+
+        return view('client_side.home', compact('chefs', 'menu', 'totalMenuItem', 'stories'));
     }
 }

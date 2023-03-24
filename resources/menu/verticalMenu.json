@@ -67,6 +67,12 @@
           "slug": "user details"
         }
       ]
+    },
+    {
+      "url": "/admin/stories-management",
+      "name": "Stories management",
+      "icon": "menu-icon tf-icons fa-solid fa-passport",
+      "slug": "stories-management"
     }
   ],
   "chefMenu": [

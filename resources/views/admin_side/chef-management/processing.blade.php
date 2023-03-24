@@ -37,6 +37,13 @@
         border: 1px solid #c8a97e;
         z-index: 1;
     }
+
+    .noData {
+        background-color: #d6d6d6;
+        color: white;
+        padding: 1rem 0;
+        border-radius: 1rem;
+    }
 </style>
 @endsection
 
@@ -49,6 +56,8 @@
         {{$data->links()}}
     </div>
     <div class="row text-center">
+
+        @if (count($data) > 0)
         @foreach ($data as $item)
         <div class="col-xl-3 col-sm-6 mb-5 text-center">
             <div class="bg-white rounded shadow-sm py-3 px-3" style="min-height: 250px;">
@@ -59,6 +68,9 @@
             </div>
         </div>
         @endforeach
+        @else
+        <h1 class="noData">No data found</h1>
+        @endif
     </div>
 </div>
 

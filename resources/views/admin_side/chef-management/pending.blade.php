@@ -21,7 +21,6 @@
         margin: auto;
     }
 
-
     .notify-badge {
         position: relative;
         background: #c8a97e;
@@ -39,10 +38,15 @@
         border: 1px solid #c8a97e;
         z-index: 1;
     }
+
+    .noData{
+        background-color: #d6d6d6;
+        color: white;
+        padding: 1rem 0;
+        border-radius: 1rem;
+    }
 </style>
 @endsection
-
-
 
 @section('content')
 <h4 class="fw-bold py-3 mb-0"> Pending orders
@@ -52,6 +56,7 @@
         {{$data->links()}}
     </div>
     <div class="row text-center">
+        @if (count($data) > 0)
         @foreach ($data as $item)
         <div class="col-xl-3 col-sm-6 mb-5 text-center">
             <div class="bg-white rounded shadow-sm py-3 px-3">
@@ -65,6 +70,9 @@
             </div>
         </div>
         @endforeach
+        @else
+        <h1 class="noData">No data found</h1>
+        @endif
     </div>
 </div>
 @section('extraa-js')
