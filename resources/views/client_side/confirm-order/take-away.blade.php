@@ -52,7 +52,7 @@
                                 <span class="fname">Full Name <span class="text-danger">*</span></span>
                                 <input class="form-control" type="text" name="fullname" value="{{$user->fullname}}">
                                 @error('fullname')
-                                <div class="required" >{{$message}}</div>
+                                <div class="required">{{$message}}</div>
                                 @enderror
                             </label>
 
@@ -60,34 +60,35 @@
                                 <span>Email Address <span class="text-danger">*</span></span>
                                 <input class="form-control" type="email" name="email" value="{{$user->email}}">
                                 @error('email')
-                                <div class="required" >{{$message}}</div>
+                                <div class="required">{{$message}}</div>
                                 @enderror
                             </label>
                             <label>
                                 <span>Contact <span class="text-danger">*</span></span>
                                 <input class="form-control" type="number" name="contact" value="{{$user->contact}}">
                                 @error('contact')
-                                <div class="required" >{{$message}}</div>
+                                <div class="required">{{$message}}</div>
                                 @enderror
                             </label>
                         </div>
                     </div>
                     <div class="Yorder">
-                        <table style="line-height: 20px;">
+                        <table style="line-height: 20px;" class="w-100">
                             <tr>
                                 <th colspan="2">Your order</th>
                             </tr>
                             @foreach ($food as $item)
                             <tr>
-                                <td>{{ $item->foods->name}} <span class="text-danger">x</span> {{ $item->quantity}}(Qty)</td>
-                                <td>${{ $item->foods->prize}}</td>
+                                <td style="width: 81%!important;">{{ $item->foods->name}} <span class="text-danger">x</span> {{ $item->quantity}}(Qty)</td>
+                                <td><i class="fa-solid fa-indian-rupee-sign fa-xs"></i> {{ $item->foods->prize}}</td>
                             </tr>
                             @endforeach
                             <tr>
                                 <td>Subtotal</td>
-                                <td>${{get_cart_total()}}</td>
+                                <td><i class="fa-solid fa-indian-rupee-sign fa-xs"></i> {{get_cart_total()}}</td>
                             </tr>
-                        </table><br>
+                        </table>
+                        <br>
                         <div>
                             <input type="radio" name="dbt" value="cd" checked> Cash on Delivery
                         </div>

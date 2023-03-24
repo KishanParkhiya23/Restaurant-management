@@ -35,7 +35,7 @@
                     <strong>{{$item['name']}}</strong>
                 </td>
                 <td>{{$item['poppings']}}</td>
-                <td><i class="fa-solid fa-indian-rupee-sign"></i>{{$item['prize']}}</td>
+                <td><i class="fa-solid fa-indian-rupee-sign fa-xs"></i>  {{$item['prize']}}</td>
                 <td>
                     <div class="dropdown">
                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>

@@ -62,7 +62,7 @@
           <p>{{$order->items}}</p>
         </td>
         <td>
-          <span class="badge badge-success rounded-pill d-inline">{{$order->totalAmount}} <i class="fa-solid fa-indian-rupee-sign"></i></span>
+          <span class="badge badge-success rounded-pill d-inline">{{$order->totalAmount}} <i class="fa-solid fa-indian-rupee-sign fa-xs"></i> </span>
         </td>
         <td>
           <a href="{{ route('user.vieworder',$order->orderId) }}" class="btn btn-link btn-sm btn-rounded">

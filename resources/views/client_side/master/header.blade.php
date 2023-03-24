@@ -11,18 +11,18 @@ $data = session()->get('loginData');
                 <div class="row d-flex">
                     <div class="col-md-2 d-flex topper align-items-center p-0">
                         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                        <span class="text">+ 1235 2355 98</span>
+                        <span class="text">+ 9313443788</span>
                     </div>
-                    <div class="col-md-2 d-flex topper align-items-center p-0">
+                    <div class="col-md-3 d-flex topper align-items-center p-0">
                         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-                        <span class="text">forkspoon@email.com</span>
+                        <span class="text"><a href="mailto:forkndspoon010@gmail.com" class="text-light">forkndspoon010@gmail.com</a></span>
                     </div>
-                    <div class="col-md-4 d-flex topper align-items-center text-lg-right justify-content-end p-0">
-                        <p class="mb-0 register-link"><span>Open hours:</span> <span>Monday - Sunday</span>
+                    <div class="col-md-4  p-0">
+                        <p class="mb-0 register-link"><span>Open hours:</span> <span>Mon - Sun</span>
                             <span>8:00AM - 11:00PM</span>
                         </p>
                     </div>
-                    <div class="col-lg-4 text-right p-0">
+                    <div class="col-lg-3 text-right p-0">
                         @if (!session()->has('Ulogin'))
                         <a href="{{ route('user.registration') }}" class="small mr-3"><span class="icon-users">
                             </span>Register</a>

@@ -95,13 +95,13 @@
                             </tr>
                             @foreach ($food as $item)
                             <tr>
-                                <td>{{ $item->foods->name}} <span class="text-danger">x</span> {{ $item->quantity}}(Qty)</td>
-                                <td>${{ $item->foods->prize}}</td>
+                                <td style="width: 81%!important;">{{ $item->foods->name}} <span class="text-danger">x</span> {{ $item->quantity}}(Qty)</td>
+                                <td><i class="fa-solid fa-indian-rupee-sign fa-xs"></i> {{ $item->foods->prize}}</td>
                             </tr>
                             @endforeach
                             <tr>
                                 <td>Subtotal</td>
-                                <td>${{get_cart_total()}}</td>
+                                <td><i class="fa-solid fa-indian-rupee-sign fa-xs"></i> {{get_cart_total()}}</td>
                             </tr>
                         </table><br>
                         <div>

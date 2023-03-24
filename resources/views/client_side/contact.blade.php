@@ -70,28 +70,21 @@
 <section class="ftco-section contact-section">
     <div class="container">
         <div class="row d-flex contact-info">
-            <div class="col-md-12 mb-4">
-                <h2 class="h4 font-weight-bold">Contact Information</h2>
-            </div>
-            <div class="w-100"></div>
-            <div class="col-md-3 d-flex">
+            <div class="col-md-4 d-flex">
                 <div class="dbox">
-                    <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                    <p><span>Address:</span>
+                        <br> <span class="text-primary">GD Ambekar Marg, Dadar, Mumbai, Maharashtra 400014</span>
+                    </p>
                 </div>
             </div>
-            <div class="col-md-3 d-flex">
+            <div class="col-md-4 d-flex">
                 <div class="dbox">
-                    <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                    <p><span>Phone :</span> <a href="tel://9313443788">+9313443788</a></p>
                 </div>
             </div>
-            <div class="col-md-3 d-flex">
+            <div class="col-md-4 d-flex">
                 <div class="dbox">
-                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-                </div>
-            </div>
-            <div class="col-md-3 d-flex">
-                <div class="dbox">
-                    <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                    <p><span>Email :</span> <a href="mailto:forkndspoon010@gmail.com">forkndspoon010@gmail.com</a></p>
                 </div>
             </div>
         </div>
