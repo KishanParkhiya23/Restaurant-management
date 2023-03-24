@@ -6,6 +6,7 @@ use App\Http\Controllers\admin_side\ChefController;
 use App\Http\Controllers\admin_side\MenuController as Admin_sideMenuController;
 use App\Http\Controllers\admin_side\PasswordManageController;
 use App\Http\Controllers\admin_side\ChefAdminController;
+use App\Http\Controllers\admin_side\StoriesManagementController;
 use App\Http\Controllers\admin_side\UserDetailsController;
 use App\Http\Controllers\Client_side\HomeController;
 use App\Http\Controllers\Client_side\AboutController;
@@ -28,21 +29,9 @@ use App\Http\Controllers\layouts\WithoutNavbar;
 use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 $controller_path = 'App\Http\Controllers';
 
 // Admin Side Route
-
 
 Route::get('/layouts/fluid', [Fluid::class, 'index'])->name('layouts-fluid');
 
@@ -129,6 +118,12 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
       Route::put('/change/role', [UserDetailsController::class, 'changeRole'])->name('.change.role');
       Route::delete('/delete/user', [UserDetailsController::class, 'deleteUser'])->name('.delete.user');
     });
+
+
+    Route::group(['prefix' => '/stories-management', 'as' => '.stories-management'], function () {
+      Route::get('/', [StoriesManagementController::class, 'index']);
+      Route::get('/add', [StoriesManagementController::class, 'addShow'])->name('.add.show');
+    });
   });
 });
 
@@ -154,6 +149,9 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
   Route::get('/registration', [RegistrationController::class, 'registration'])->name('.registration');
   Route::post('/regdatasave', [RegistrationController::class, 'regdatasave'])->name('.regdatasave');
   Route::get('/forget_password', [ForgetPasswordController::class, 'forget_password'])->name('.forget_password');
+
+  // get story data
+  Route::post('/get/story-data', [StoriesController::class, 'getModelData'])->name('.get.model-data');
 
   //user side
   Route::group(['middleware' => 'changePassword'], function () {

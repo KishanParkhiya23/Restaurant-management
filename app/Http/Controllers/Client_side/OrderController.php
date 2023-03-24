@@ -64,7 +64,7 @@ class OrderController extends Controller
 
     public function vieworder($id)
     {
-        $food = OrderItem::where('order_id', $id)->get();
+        $food = OrderItem::where('user_id', session()->get('Ulogin'))->where('order_id', $id)->get();
         return view('client_side.vieworder', compact('food'));
     }
 

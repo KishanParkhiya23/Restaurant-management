@@ -398,4 +398,42 @@ return [
             "password" => "user@123",
         ]
     ],
+    "stories" => [
+        [
+            "title" => "Taste the delicious foods in Asia",
+            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "date" => "02/08/2008",
+            "image" => "client_side/images/image_1.jpg"
+        ],
+        [
+            "title" => "Taste the delicious foods in Asia",
+            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "date" => "02/08/2008",
+            "image" => "client_side/images/image_2.jpg"
+        ],
+        [
+            "title" => "Taste the delicious foods in Asia",
+            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "date" => "02/08/2008",
+            "image" => "client_side/images/image_3.jpg"
+        ],
+        [
+            "title" => "Taste the delicious foods in Asia",
+            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "date" => "02/08/2008",
+            "image" => "client_side/images/image_4.jpg"
+        ],
+        [
+            "title" => "Taste the delicious foods in Asia",
+            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "date" => "02/08/2008",
+            "image" => "client_side/images/image_5.jpg"
+        ],
+        [
+            "title" => "Taste the delicious foods in Asia",
+            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "date" => "02/08/2008",
+            "image" => "client_side/images/image_6.jpg"
+        ]
+    ]
 ];

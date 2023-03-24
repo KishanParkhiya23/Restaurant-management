@@ -260,74 +260,6 @@
     </div>
 </section>
 
-<!-- <section class="ftco-section img" style="background-image: url({{ asset('client_side/images/bg_3.jpg') }})"
-        data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="row d-flex">
-                <div class="col-md-7 ftco-animate makereservation p-4 px-md-5 pb-md-5">
-                    <div class="heading-section ftco-animate mb-5 text-center">
-                        <span class="subheading">Book a table</span>
-                        <h2 class="mb-4">Make Reservation</h2>
-                    </div>
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Name</label>
-                                    <input type="text" class="form-control" placeholder="Your Name">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Email</label>
-                                    <input type="text" class="form-control" placeholder="Your Email">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Phone</label>
-                                    <input type="text" class="form-control" placeholder="Phone">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Phone</label>
-                                    <input type="text" class="form-control" id="book_date" placeholder="Date">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Time</label>
-                                    <input type="text" class="form-control" id="book_time" placeholder="Time">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Person</label>
-                                    <div class="select-wrap one-third">
-                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                        <select name="" id="" class="form-control">
-                                            <option value="">Person</option>
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4+</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <div class="form-group text-center">
-                                    <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        </section> -->
-
 <section class="ftco-section testimony-section img">
     <div class="overlay"></div>
     <div class="container">
@@ -430,57 +362,26 @@
             </div>
         </div>
         <div class="row">
+            @foreach ($stories as $story)
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('client_side/images/image_1.jpg') }}');">
+                    <a href="javascript:void(0)" class="block-20" style="background-image: url({{ asset($story['image'] != null ? $story['image'] : 'client_side/images/image_6.jpg')}});">
                     </a>
                     <div class="text p-3">
                         <div class="meta">
-                            <div><a href="#">Sept. 06, 2019</a></div>
-                            <div><a href="#">Admin</a></div>
+                            <div>{{$story['date']}}</div>
                         </div>
-                        <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                        <h3 class="heading"><a href="#">{{$story['title']}}</a></h3>
                         <p class="clearfix">
-                            <a href="#" class="float-left read">Read more</a>
-                            <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
+                            <!-- <a href="#" class="float-left read">Read more</a> -->
+                            <a href="{{ route('user.stories') }}">
+                                Read more
+                            </a>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 ftco-animate">
-                <div class="blog-entry">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('client_side/images/image_2.jpg') }}');">
-                    </a>
-                    <div class="text p-3">
-                        <div class="meta">
-                            <div><a href="#">Sept. 06, 2019</a></div>
-                            <div><a href="#">Admin</a></div>
-                        </div>
-                        <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                        <p class="clearfix">
-                            <a href="#" class="float-left read">Read more</a>
-                            <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 ftco-animate">
-                <div class="blog-entry">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('client_side/images/image_3.jpg') }}');">
-                    </a>
-                    <div class="text p-3">
-                        <div class="meta">
-                            <div><a href="#">Sept. 06, 2019</a></div>
-                            <div><a href="#">Admin</a></div>
-                        </div>
-                        <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                        <p class="clearfix">
-                            <a href="#" class="float-left read">Read more</a>
-                            <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
