@@ -63,6 +63,6 @@
         </div>
     </div>
     <div>
-      <p class="text-center">Copyright © by Fork & Spoon in 2022</p>
+        <p class="text-center">Copyright © by <a href="{{ route('home') }}">Fork & Spoon</a> in 2022</p>
     </div>
 </footer>

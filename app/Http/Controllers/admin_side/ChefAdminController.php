@@ -13,7 +13,8 @@ class ChefAdminController extends Controller
         $pending = OrderItem::whereStatus(0)->get();
         $process = OrderItem::whereStatus(1)->get();
         $completed = OrderItem::whereStatus(2)->get();
-        return view('admin_side.chef-management.dashboard', compact('pending', 'process', 'completed'));
+        $cancel = OrderItem::whereStatus(3)->get();
+        return view('admin_side.chef-management.dashboard', compact('pending', 'process', 'completed', 'cancel'));
     }
 
     public function pendingShow()
@@ -34,10 +35,22 @@ class ChefAdminController extends Controller
         return view('admin_side.chef-management.completed', compact('data'));
     }
 
+    public function cancelShow()
+    {
+        $data = OrderItem::whereStatus(3)->cursorPaginate(10);
+        return view('admin_side.chef-management.cancel', compact('data'));
+    }
+
     public function acceptOrder($id)
     {
         OrderItem::whereId($id)->update(['status' => 1]);
         return redirect(route('admin.chef-management.pending.show'))->with('success', 'Order accepted');
+    }
+
+    public function cancelOrder($id)
+    {
+        OrderItem::whereId($id)->update(['status' => 3]);
+        return redirect(route('admin.chef-management.pending.show'))->with('success', 'Order canceled');
     }
 
     public function completeOrder($id)

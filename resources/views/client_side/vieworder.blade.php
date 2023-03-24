@@ -19,7 +19,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate text-center mb-4">
                 <h1 class="mb-2 bread">Order</h1>
-                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="ion-ios-arrow-forward"></i></a></span> <a href="{{route('user.yourorder')}}"><span>Your orders <i class="ion-ios-arrow-forward"></i></span></a> </p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="ion-ios-arrow-forward"></i></a></span> <a href="{{route('user.yourorder')}}"><span>Your orders <i class="ion-ios-arrow-forward"></i></span></a><span> View order</span></p>
             </div>
         </div>
     </div>
@@ -57,7 +57,8 @@
                                     <h5 class="mb-0">${{ $item->orderFoods->prize * $item->quantity}}</h5>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <span class="badge {{$item->status == 0 ? 'badge-danger' : ($item->status == 1 ? 'badge-warning' : 'badge-success')}}  rounded-pill d-inline py-2">{{$item->status == 0 ? 'pending' : ($item->status == 1 ? 'processing' : 'completed')}} </span>
+                                    <span class="badge {{$item->status == 0 ? 'badge-danger' : ($item->status == 1 ? 'badge-warning' : ( $item->status == 2 ? 'badge-success' : 'badge-secondary' ))}}  rounded-pill d-inline py-2">
+                                        {{ $item->status == 0 ? 'pending'  : ( $item->status == 1 ? 'processing' : ( $item->status == 2 ? 'completed' : 'cancel' ) ) }} </span>
                                 </div>
                             </div>
                         </div>

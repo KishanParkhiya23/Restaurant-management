@@ -4,6 +4,18 @@
 
 @section('vendor-style')
 <link rel="stylesheet" href="{{asset('assets/vendor/libs/apex-charts/apex-charts.css')}}">
+<!-- <style>
+    .main {
+        background-image: url('https://images.unsplash.com/photo-1606836576983-8b458e75221d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+
+        /* background-image: url({{asset('assets/img/backgrounds/stefan-johnson-xIFbDeGcy44-unsplash.jpg')}}); */
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        color: white;
+    }
+</style> -->
 @endsection
 
 @section('vendor-script')
@@ -15,6 +27,10 @@
 @endsection
 
 @section('content')
+
+<!-- <div class="main">
+    fws
+</div> -->
 <div class="row">
     <div class="col-lg-6 mb-4 order-0">
         <div class="card">
@@ -36,26 +52,5 @@
         </div>
     </div>
 </div>
-<!-- <div class="row">
-    <div class="col-xl-6">
-        <h6 class="text-muted">Your all food catagory</h6>
-        <div class="nav-align-top mb-4">
-            <ul class="nav nav-tabs" role="tablist">
-                @foreach ($foodCatagory as $catagory)
-                <li class="nav-item">
-                    <button type="button" class="nav-link {{$loop->first ? 'active' : ''}}" role="tab" data-bs-toggle="tab" data-bs-target="#catagory{{$catagory['id']}}" aria-controls="navs-top-home" aria-selected="true">{{ucfirst($catagory['catagory'])}}</button>
-                </li>
-                @endforeach
-            </ul>
-            <div class="tab-content">
-                @foreach ($foodCatagory as $catagory)
-                <div class="tab-pane fade{{ $loop->first ? 'show active' : ' '}}" id="catagory{{$catagory['id']}}" role="tabpanel">
-                    <b class="d-block">{{ ucfirst($catagory['catagory']) }}</b>
-                    <a href="#" class="text-primary">View more</a>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</div> -->
+
 @endsection

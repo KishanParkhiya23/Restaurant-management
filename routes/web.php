@@ -115,8 +115,10 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
       Route::get('/pending', [ChefAdminController::class, 'pendingShow'])->name('.pending.show');
       Route::get('/processing', [ChefAdminController::class, 'processingShow'])->name('.processing.show');
       Route::get('/completed', [ChefAdminController::class, 'completedShow'])->name('.completed.show');
+      Route::get('/cancel', [ChefAdminController::class, 'cancelShow'])->name('.cancel.show');
 
       Route::get('/order/accept/{id}', [ChefAdminController::class, 'acceptOrder'])->name('.accept.order');
+      Route::get('/order/cancel/{id}', [ChefAdminController::class, 'cancelOrder'])->name('.cancel.order');
       Route::get('/order/complete/{id}', [ChefAdminController::class, 'completeOrder'])->name('.complete.order');
     });
 

@@ -60,7 +60,8 @@
                     <img src="{{asset(isset($item->orderFoods->image) ? $item->orderFoods->image : 'client_side/images/menu/no-menu-image.jpg')}}" alt="" class="card-image img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                     <h5 class="mb-0">{{$item->orderFoods->name}}</h5><span class="small text-uppercase text-muted mt-2">{{$item->orderFoods->poppings}}</span>
                 </div>
-                <a href="{{route('admin.chef-management.accept.order',$item->id)}}" class="btn btn-primary d-block w-50 m-auto mt-2">Accept</a>
+                <a href="{{route('admin.chef-management.cancel.order',$item->id)}}" class="btn btn-secondary m-auto mt-2">Cancel</a>
+                <a href="{{route('admin.chef-management.accept.order',$item->id)}}" class="btn btn-primary m-auto mt-2">Accept</a>
             </div>
         </div>
         @endforeach

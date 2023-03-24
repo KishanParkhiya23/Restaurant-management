@@ -115,22 +115,32 @@
       ]
     },
     {
-      "url": "/admin/chef-admin/pending",
-      "name": "Pending orders",
-      "icon": "menu-icon tf-icons fa-solid fa-hourglass-half",
-      "slug": "/admin/chef-admin/pending"
-    },
-    {
-      "url": "/admin/chef-admin/processing",
-      "name": "Processing orders",
-      "icon": "menu-icon tf-icons fa-solid fa-spinner",
-      "slug": "/admin/chef-admin/processing"
-    },
-    {
-      "url": "/admin/chef-admin/completed",
-      "name": "Completed orders",
-      "icon": "menu-icon tf-icons fa-regular fa-circle-check",
-      "slug": "/admin/chef-admin/completed"
+      "name": "Orders",
+      "url": "",
+      "icon": "menu-icon tf-icons fa-solid fa-plate-wheat",
+      "slug": "layouts",
+      "submenu": [
+        {
+          "url": "/admin/chef-admin/pending",
+          "name": "Pending",
+          "slug": "pending"
+        },
+        {
+          "url": "/admin/chef-admin/processing",
+          "name": "Processing",
+          "slug": "processing"
+        },
+        {
+          "url": "/admin/chef-admin/completed",
+          "name": "Completed",
+          "slug": "completed"
+        },
+        {
+          "url": "/admin/chef-admin/cancel",
+          "name": "Cancel",
+          "slug": "cancel"
+        }
+      ]
     }
   ]
 }

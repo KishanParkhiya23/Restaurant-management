@@ -73,6 +73,21 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-3 col-md-12 col-6 mb-4">
+            <div class="card">
+                <div class="card-body" style="padding: 1.25rem 1.5rem ;">
+                    <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="avatar flex-shrink-0">
+                            <img src="{{asset('assets/img/icons/unicons/cancel.png')}}" alt="chart success" class="rounded">
+                        </div>
+                    </div>
+                    <span class="fw-semibold d-block mb-1">cancel Orders</span>
+                    <h3 class="card-title mb-2">{{count($cancel)}}</h3>
+                    <a href="{{route('admin.chef-management.completed.show')}}"><small class="text-success fw-semibold"><i class='bx bx-right-arrow-alt'></i> View More</small></a>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
