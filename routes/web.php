@@ -157,15 +157,17 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
   Route::group(['middleware' => 'changePassword'], function () {
     Route::get('/changepassword', [LoginController::class, 'changepassword'])->name('.changepassword');
   });
+  Route::get('/menu', [MenuController::class, 'menu'])->name('.menu');
+  Route::get('/reservation', [ReservationController::class, 'reservation'])->name('.reservation');
 
   Route::group(['middleware' => ['Ulogin']], function () {
 
-    Route::get('/menu', [MenuController::class, 'menu'])->name('.menu');
-    Route::get('/reservation', [ReservationController::class, 'reservation'])->name('.reservation');
     Route::get('/Ulogout', [LoginController::class, 'Ulogout'])->name('.Ulogout');
+    Route::post('/change/name', [LoginController::class, 'changeName'])->name('.change.name');
+
+    Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
     Route::get('/yourorder', [OrderController::class, 'yourorder'])->name('.yourorder');
     Route::get('/vieworder/{id}', [OrderController::class, 'vieworder'])->name('.vieworder');
-    Route::get('/order/{id}', [OrderController::class, 'order'])->name('.forder');
     Route::post('/change/cart/{id}', [OrderController::class, 'changeCart'])->name('.change.cart');
 
     Route::get('/confirm-order', [PlaceOrderController::class, 'confirmOrder'])->name('.confirm-order');
@@ -174,8 +176,6 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
     Route::get('/ontableorder', [PlaceOrderController::class, 'ontableorder'])->name('.ontableorder');
 
     Route::post('/save-order/{type}', [PlaceOrderController::class, 'saveOrder'])->name('.save-order');
-
-    Route::post('/change/name', [LoginController::class, 'changeName'])->name('.change.name');
 
     Route::get('/pchange_password', [ForgetPasswordController::class, 'pchange_password'])->name('.pchange_password');
     Route::post('/pcheckpassword', [ForgetPasswordController::class, 'pcheckpassword'])->name('.pcheckpassword');
