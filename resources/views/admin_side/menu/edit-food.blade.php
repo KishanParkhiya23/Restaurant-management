@@ -83,7 +83,7 @@ $urlData = 'wine';
                     <label class="col-sm-2 col-form-label" for="basic-icon-default-company">Item Prize</label>
                     <div class="col-sm-10">
                         <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-company2" class="input-group-text  @error('prize') is-invalid @enderror"> <i class='bx bxs-badge-dollar' style="font-size: 1.2rem;opacity:1"></i> </span>
+                            <span id="basic-icon-default-company2" class="input-group-text  @error('prize') is-invalid @enderror"> <i class='fa-sharp fa-solid fa-indian-rupee-sign' style="font-size: 1.2rem;opacity:1"></i> </span>
                             <input type="text" id="prize" value="{{$data['prize']}}" class="form-control  @error('prize') is-invalid @enderror" placeholder="Enter Prize" aria-label="prize" aria-describedby="basic-icon-default-company2" name="prize" />
                         </div>
                         @error('prize')
