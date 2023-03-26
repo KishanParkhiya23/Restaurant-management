@@ -49,12 +49,10 @@ class Analytics extends Controller
   public function getOrderPercentage(Request $request)
   {
     $totalOrder = OrderItem::count();
-    $pendingPer = ((OrderItem::whereStatus(0)->count()) * 100) / $totalOrder;
-    $processPer = ((OrderItem::whereStatus(1)->count()) * 100) / $totalOrder;
-    $completedPer = ((OrderItem::whereStatus(2)->count()) * 100) / $totalOrder;
-    $cancelPer = ((OrderItem::whereStatus(3)->count()) * 100) / $totalOrder;
-
-    // dd($pendingPer, $processPer, $completedPer, $cancelPer);
+    $pendingPer = round(((OrderItem::whereStatus(0)->count()) * 100) / $totalOrder, 2);
+    $processPer = round(((OrderItem::whereStatus(1)->count()) * 100) / $totalOrder, 2);
+    $completedPer = round(((OrderItem::whereStatus(2)->count()) * 100) / $totalOrder, 2);
+    $cancelPer = round(((OrderItem::whereStatus(3)->count()) * 100) / $totalOrder, 2);
 
     return response()->json(["success" => true, "pendingPer" => $pendingPer, "processPer" => $processPer, "completedPer" => $completedPer, "cancelPer" => $cancelPer]);
   }

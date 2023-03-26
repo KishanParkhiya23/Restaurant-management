@@ -19,12 +19,27 @@ class UserDataSeeder extends Seeder
     public function run()
     {
         $users = Config::get('constants.users');
+        $admins = Config::get('constants.admins');
         foreach ($users as $item) {
             Fuser::create([
                 "fullname" => $item['fullname'],
                 "contact" => $item['contact'],
                 "email" => $item['email'],
                 "password" =>  Hash::make($item['password']),
+            ]);
+        }
+        foreach ($admins as $item) {
+            User::create([
+                "firstname" => $item['firstname'],
+                "lastname" => $item['lastname'],
+                "contact" => $item['contact'],
+                "city" => $item['city'],
+                "dob" => $item['dob'],
+                "gender" => $item['gender'],
+                "role" => $item['role'],
+                "email" => $item['email'],
+                "password" => $item['password'],
+                "profile_img" => $item['profile_img']
             ]);
         }
     }

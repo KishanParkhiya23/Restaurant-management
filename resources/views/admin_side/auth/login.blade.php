@@ -61,7 +61,7 @@
                         </div>
 
                         <div class="my-2">
-                            <a href="{{route('auth.google')}}" class="btn btn-secondary d-grid w-100">Continue with google</a>
+                            <a href="{{route('auth.google')}}" class="btn btn-secondary w-100"><i class="fa-brands fa-google" style="color: #fff;"></i>&nbsp;&nbsp;Continue with google</a>
                         </div>
                     </form>
 

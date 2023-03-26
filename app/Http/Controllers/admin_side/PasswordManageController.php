@@ -37,7 +37,7 @@ class PasswordManageController extends Controller
         session()->pull('password_data');
 
         if (!empty(Auth::id())) {
-            if (isset($saveData['role'])) {
+            if (isset($saveData->role)) {
                 return redirect(route('admin.profile'));
             } else {
                 return redirect(route('home'));

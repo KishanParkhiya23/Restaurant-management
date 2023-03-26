@@ -201,3 +201,5 @@ Route::group(['prefix' => '/user', 'as' => 'user'], function () {
 
 Route::get('/auth/google', [SocialiteController::class, 'redirect'])->name('auth.google');
 Route::get('/auth/google/call-back', [SocialiteController::class, 'callback'])->name('auth.google.call-back');
+Route::get('/auth/get-password', [SocialiteController::class, 'getPasswordShow'])->name('auth.get-password');
+Route::post('/auth/save-password', [SocialiteController::class, 'savePasswordShow'])->name('auth.save-password');

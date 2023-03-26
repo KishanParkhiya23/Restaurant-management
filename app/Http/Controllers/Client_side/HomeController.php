@@ -15,6 +15,7 @@ class HomeController extends Controller
     public function home()
     {
         $chefs = Chef::where('is_set', 1)->take(4)->get();
+        $totalChef = Chef::where('is_set', 1)->get();
         $totalMenuItem = Menu::where('is_set', 1)->get();
         $menu = Menu::whereType(2)->where('is_set', 1)->first();
         $menu =
@@ -29,6 +30,6 @@ class HomeController extends Controller
 
         $stories = Story::where('is_set', 1)->get()->take(3);
 
-        return view('client_side.home', compact('chefs', 'menu', 'totalMenuItem', 'stories'));
+        return view('client_side.home', compact('chefs', 'menu', 'totalMenuItem', 'stories', 'totalChef'));
     }
 }

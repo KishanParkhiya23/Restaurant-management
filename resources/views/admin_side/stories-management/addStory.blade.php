@@ -79,7 +79,7 @@
                     <label class="col-sm-2 form-label" for="basic-icon-default-message">Description</label>
                     <div class="col-sm-10">
                         <div class="input-group input-group-merge">
-                            <textarea id="description" class="form-control @error('description') is-invalid @enderror" placeholder="Enter description" aria-label="description" aria-describedby="basic-icon-default-message2" rows="3" name="description">{{ isset($data) ? $data['description'] : '' }}</textarea>
+                            <textarea id="description" class="form-control @error('description') is-invalid @enderror" placeholder="Enter description" aria-label="description" aria-describedby="basic-icon-default-message2" rows="5" name="description">{{ isset($data) ? $data['description'] : '' }}</textarea>
                         </div>
                         @error('description')
                         <div class="text-error">{{$message}}</div>

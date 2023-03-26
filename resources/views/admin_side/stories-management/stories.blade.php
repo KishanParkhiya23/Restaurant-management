@@ -6,7 +6,7 @@
         table-layout: fixed !important;
     }
 
-    .avatar img {
+    table .avatar img {
         width: 200% !important;
         height: 200% !important;
     }
