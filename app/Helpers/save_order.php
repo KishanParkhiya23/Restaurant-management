@@ -13,7 +13,7 @@ function save_order()
     //     $checkId = Order::where('orderId', $orderId)->first();
     // } while (isset($checkId));
 
-    $orderData = Order::where('user_id', session()->get('Ulogin'))->orderBy('id', 'desc')->first();
+    $orderData = Order::orderBy('id', 'desc')->first();
     if ($orderData) {
         $prefix  = 'order';
         $code_E = substr($orderData->orderId, strlen($prefix));

@@ -74,6 +74,8 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
     Route::get('/profile/change/password', [AdminProfileController::class, 'changePassword'])->name('.profile.change.password');
     Route::post('/profile/check/password', [AdminProfileController::class, 'checkPassword'])->name('.profile.check.password');
 
+    Route::get('/get/order-percentage', [Analytics::class, 'getOrderPercentage'])->name('.get.order-percentage');
+
     Route::group(['prefix' => '/menu', 'as' => '.menu'], function () {
       Route::get('/breakfast', [Admin_sideMenuController::class, 'breakfastShow'])->name('.breakfast.show');
       Route::get('/lunch', [Admin_sideMenuController::class, 'lunchShow'])->name('.lunch.show');
@@ -123,6 +125,12 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
     Route::group(['prefix' => '/stories-management', 'as' => '.stories-management'], function () {
       Route::get('/', [StoriesManagementController::class, 'index']);
       Route::get('/add', [StoriesManagementController::class, 'addShow'])->name('.add.show');
+      Route::post('/add/save', [StoriesManagementController::class, 'addSave'])->name('.add.save');
+
+      Route::get('/edit/{id}', [StoriesManagementController::class, 'editShow'])->name('.edit.show');
+      Route::post('/edit/save', [StoriesManagementController::class, 'editSave'])->name('.edit.save');
+
+      Route::delete('/delete', [StoriesManagementController::class, 'deleteStory'])->name('.delete');
     });
   });
 });
