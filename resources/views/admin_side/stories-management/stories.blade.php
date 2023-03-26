@@ -5,8 +5,42 @@
     table.a {
         table-layout: fixed !important;
     }
+
+    .avatar img {
+        width: 200% !important;
+        height: 200% !important;
+    }
 </style>
 @section('content')
+
+@section('extraa-js')
+<script>
+    function deleteRecord(data) {
+        swal({
+            title: `Are you sure you want to delete this record?`,
+            text: "If you delete this, it will be gone forever.",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                $.ajax({
+                    type: 'DELETE',
+                    url: `/admin/stories-management/delete`,
+                    data: {
+                        "id": data.id,
+                        "_token": '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        location.reload();
+                    }
+                })
+            }
+        });
+    }
+</script>
+@endsection
+
 
 <!-- Striped Rows -->
 <div class="card">
@@ -18,10 +52,10 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th style="width: 7%;">Image</th>
-                    <th>Title</th>
-                    <th>Date</th>
-                    <th class="width:50%">Description</th>
+                    <th>Image</th>
+                    <th style="width:20%">Title</th>
+                    <th style="width:11%">Date</th>
+                    <th style="width:65%">Description</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -42,8 +76,8 @@
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+                                <a class="dropdown-item" href="{{route('admin.stories-management.edit.show',$story['id'])}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="deleteRecord(this)" id="{{ $story['id'] }}"><i class="bx bx-trash me-1"></i> Delete</a>
                             </div>
                         </div>
                     </td>

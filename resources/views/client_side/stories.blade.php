@@ -21,7 +21,7 @@
         <div class="row">
             @foreach ($stories as $story)
             <div class="col-md-4 ftco-animate">
-                <div class="blog-entry">
+                <div class="blog-entry" style="min-height: 31rem;">
                     <a href="javascript:void(0)" class="block-20" style="background-image: url({{ asset($story['image'] != null ? $story['image'] : 'client_side/images/image_6.jpg')}});">
                     </a>
                     <div class="text p-3">
@@ -31,7 +31,7 @@
                         <h3 class="heading"><a href="#">{{$story['title']}}</a></h3>
                         <p class="clearfix">
                             <!-- <a href="#" class="float-left read">Read more</a> -->
-                            <span class="text-primary" style="cursor: pointer;" id="{{ $story['id'] }}" onclick="showModel(this)">
+                            <span class="text-primary mt-auto" style="cursor: pointer;" id="{{ $story['id'] }}" onclick="showModel(this)">
                                 Read more
                             </span>
                         </p>

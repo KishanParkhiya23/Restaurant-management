@@ -400,38 +400,63 @@ return [
     ],
     "stories" => [
         [
-            "title" => "Taste the delicious foods in Asia",
-            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "title" => "View of restaurant",
+            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            A restaurant is a business that prepares and serves food and drinks to customers. Meals are generally served and eaten on the premises, but many restaurants also offer take-out and food delivery services.
+            
+            Restaurants vary greatly in appearance and offerings, including a wide variety of cuisines and service models ranging from inexpensive fast-food restaurants and cafeterias to mid-priced family restaurants, to high-priced luxury establishments.
+             ",
             "date" => "02/08/2008",
             "image" => "client_side/images/image_1.jpg"
         ],
         [
-            "title" => "Taste the delicious foods in Asia",
-            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "title" => "Amazing Chef",
+            "description" => "We are looking for a Chef to join our team and prepare delicious meals for our customers.
+
+            Chef responsibilities include studying recipes, setting up menus and preparing high-quality dishes. You should be able to delegate tasks to kitchen staff to ensure meals are prepared in a timely manner. Also, you should be familiar with sanitation regulations. If you have experience with advanced cooking techniques and non-traditional ingredients, we’d like to meet you.
+            
+            Ultimately, you’ll prepare and deliver a complete menu that delights our guests.",
             "date" => "02/08/2008",
             "image" => "client_side/images/image_2.jpg"
         ],
         [
-            "title" => "Taste the delicious foods in Asia",
-            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "title" => "Simplified online ordering",
+            "description" => "
+            Almost all restaurants now offer online food ordering services. But making the option of online purchase available alone won’t do the job. A glitchy website and a tacky payment gateway can take away the seamless customer experience.
+            
+            This is why it is imperative that restaurant owners who are serious about scaling their business invest in a proper online food order management system. It makes placing orders straightforward, creating a  frictionless relationship between the restaurant and the customers. It is an excellent way to increase the positive ratings for the website as well.
+            ",
             "date" => "02/08/2008",
             "image" => "client_side/images/image_3.jpg"
         ],
         [
-            "title" => "Taste the delicious foods in Asia",
-            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "title" => "Restaurant payment technology",
+            "description" => "
+            The restaurant industry invests a lot of time and energy in bringing out the best experience for consumers. Hospitality and service are always of prime importance, especially for the brands trying to establish themselves. The way restaurants handle payments is often archaic, inefficient, and time-consuming. As the industry has evolved, the need for better payment technology has become more and more urgent. Luckily, there are a number of cutting-edge solutions that are making it easier for restaurateurs to upgrade their payment systems.
+            
+            Introducing these advanced restaurant payment methods has proved to be very efficient for restaurant owners as well as the customers. You probably pay for most of your purchases with cash, credit, or debit. But there are other ways to pay for things. Restaurant payment technology is basically an alternative to cash, credit, or debit that's accepted by many restaurants. Here are some of the most popular types of restaurant payment technology-
+                (1) delivery
+                (2) take away
+                (3) on table order",
             "date" => "02/08/2008",
             "image" => "client_side/images/image_4.jpg"
         ],
         [
-            "title" => "Taste the delicious foods in Asia",
-            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "title" => "Party Facilities",
+            "description" => "
+            Celebration and merriment are an indispensable part of our lives. They make our lives enjoyable and worth living, especially after the problems faced during this pandemic recently. The pandemic taught us to never miss an opportunity of getting together and celebrating. And weddings are undisputed occasions for being together and making every moment memorable and happy. 
+            
+            To plan an elaborative and distinguished wedding, one needs exquisite banquet services. They are a necessary and basic requirement of hosting an enjoyable event. They can be as varied as the event you’re attending. The word banquet means a sumptuous feast and is arranged to cater for a large number of people. Banquet service in today’s time is an elaborate meal than a regular family dinner, along with various other facilities, activities, and hospitality, due to the scope of the event or the size of the crowd present. These services can be as varied as the marriage, meeting, conference etc. and they are decided by the extent of the event, menu, and crowd.
+            ",
             "date" => "02/08/2008",
             "image" => "client_side/images/image_5.jpg"
         ],
         [
-            "title" => "Taste the delicious foods in Asia",
-            "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            "title" => " Super easy recipe and menu management ",
+            "description" => "
+            We all know how important the menu is to maintaining a restaurant’s brand image. A well-maintained and updated menu not only helps the customers place the correct orders at the right price but also creates a great impression of the restaurant. The same applies to restaurant recipes. But standardization is critical here. 
+            
+            The menu management feature of restaurant management system helps individuals update their menus without the hassle of printing them out and then editing them again every time a small error occurs. The restaurant recipes can also be made available to employees, which helps maintain the uniformity of dishes across the restaurant. ",
             "date" => "02/08/2008",
             "image" => "client_side/images/image_6.jpg"
         ]

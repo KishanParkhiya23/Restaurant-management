@@ -95,7 +95,7 @@
                             </tr>
                             @foreach ($food as $item)
                             <tr>
-                                <td style="width: 81%!important;">{{ $item->foods->name}} <span class="text-danger">x</span> {{ $item->quantity}}(Qty)</td>
+                                <td style="width: 75%!important;">{{ $item->foods->name}} <span class="text-danger">x</span> {{ $item->quantity}}(Qty)</td>
                                 <td><i class="fa-solid fa-indian-rupee-sign fa-xs"></i> {{ $item->foods->prize}}</td>
                             </tr>
                             @endforeach

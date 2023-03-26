@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class OrderItem extends Model
 {
     use HasFactory;
-    
+
     protected $guarded = [];
 
     public function orderFoods()
     {
-        return $this->belongsTo(Menu::class,'product_id','id');
+        return $this->belongsTo(Menu::class, 'product_id', 'id');
     }
 }

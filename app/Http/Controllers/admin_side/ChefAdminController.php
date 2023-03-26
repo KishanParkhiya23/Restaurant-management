@@ -14,7 +14,30 @@ class ChefAdminController extends Controller
         $process = OrderItem::whereStatus(1)->get();
         $completed = OrderItem::whereStatus(2)->get();
         $cancel = OrderItem::whereStatus(3)->get();
-        return view('admin_side.chef-management.dashboard', compact('pending', 'process', 'completed', 'cancel'));
+
+
+        $totalOrder = OrderItem::count();
+
+        $delivery = 0;
+        $takeaway = 0;
+        $onTable = 0;
+
+        foreach (OrderItem::all() as $order) {
+            $type = get_order_type($order['order_id']);
+            switch ($type) {
+                case '1':
+                    $delivery += 1;
+                    break;
+                case '2':
+                    $takeaway += 1;
+                    break;
+                case '3':
+                    $onTable += 1;
+                    break;
+            }
+        }
+
+        return view('admin_side.chef-management.dashboard', compact('pending', 'process', 'completed', 'cancel', 'totalOrder', 'delivery', 'takeaway', 'onTable'));
     }
 
     public function pendingShow()
