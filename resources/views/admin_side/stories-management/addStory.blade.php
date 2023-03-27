@@ -57,7 +57,7 @@
                     <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Title</label>
                     <div class="col-sm-10">
                         <div class="input-group input-group-merge ">
-                            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="John Doe" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" name="title" value="{{ isset($data) ? $data['title'] : '' }}" />
+                            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="John Doe" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" name="title" value="{{ isset($data) ? $data['title'] : old('title') }}" />
                         </div>
                         @error('title')
                         <div class="text-error">{{$message}}</div>
@@ -68,7 +68,7 @@
                     <label class="col-sm-2 col-form-label" for="basic-icon-default-company">Date</label>
                     <div class="col-sm-10">
                         <div class="input-group input-group-merge">
-                            <input type="date" id="date" class="form-control  @error('date') is-invalid @enderror" placeholder="Enter date" aria-label="date" aria-describedby="basic-icon-default-company2" name="date" value="{{ isset($data) ? $data['date'] : '' }}" max="<?= date('Y-m-d') ?>" />
+                            <input type="date" id="date" class="form-control  @error('date') is-invalid @enderror" placeholder="Enter date" aria-label="date" aria-describedby="basic-icon-default-company2" name="date" value="{{ isset($data) ? $data['date'] : old('date') }}" max="<?= date('Y-m-d') ?>" />
                         </div>
                         @error('date')
                         <div class="text-error">{{$message}}</div>
@@ -79,7 +79,7 @@
                     <label class="col-sm-2 form-label" for="basic-icon-default-message">Description</label>
                     <div class="col-sm-10">
                         <div class="input-group input-group-merge">
-                            <textarea id="description" class="form-control @error('description') is-invalid @enderror" placeholder="Enter description" aria-label="description" aria-describedby="basic-icon-default-message2" rows="5" name="description">{{ isset($data) ? $data['description'] : '' }}</textarea>
+                            <textarea id="description" class="form-control @error('description') is-invalid @enderror" placeholder="Enter description" aria-label="description" aria-describedby="basic-icon-default-message2" rows="5" name="description">{{ isset($data) ? $data['description'] : old('description') }}</textarea>
                         </div>
                         @error('description')
                         <div class="text-error">{{$message}}</div>

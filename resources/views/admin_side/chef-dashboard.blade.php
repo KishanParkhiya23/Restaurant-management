@@ -38,7 +38,7 @@
                 @foreach ($chefs as $chef)
                 <tr>
                     <td>
-                        <img src="{{asset($chef['image'])}}" alt="Avatar" class="rounded-circle">
+                        <img src="{{asset($chef['image'] != null ? $chef['image'] : 'client_side\images\no-image.png')}}" alt="Avatar" class="rounded-circle">
                         <strong>{{$chef['name']}}</strong>
                     </td>
                     <td>{{$chef['speciality']}}</td>
@@ -81,9 +81,10 @@
                     type: 'DELETE',
                     url: `/admin/chef/delete/${data.id}`,
                     data: {
-                        "id":id,
+                        "id": id,
                         "_token": "{{ csrf_token() }}"
-                    },success:function(response){
+                    },
+                    success: function(response) {
                         location.replace('/admin/chef/dashboard');
                     }
                 })
