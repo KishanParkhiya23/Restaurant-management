@@ -73,6 +73,12 @@
       "name": "Stories management",
       "icon": "menu-icon tf-icons fa-solid fa-passport",
       "slug": "stories-management"
+    },
+    {
+      "url": "/admin/contact-details/contact",
+      "name": "Contact Details",
+      "icon": "menu-icon tf-icons fa-solid fa-address-book",
+      "slug": "contact-details"
     }
   ],
   "chefMenu": [

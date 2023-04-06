@@ -27,7 +27,7 @@
                             <h5 class="card-title text-primary">Food details here</h5>
                             <p class="mb-4">You have <span class="fw-bold">6</span> types of food available in your resturent.</p>
 
-                            <a href="{{route('admin.menu.breakfast.show')}}" class="btn btn-sm btn-outline-primary">View All Foods</a>
+                            <a href="{{route('user.menu')}}" class="btn btn-sm btn-outline-primary">View All Foods</a>
                         </div>
                     </div>
                     <div class="col-sm-5 text-center text-sm-left">

@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <span class="badge {{$item->status == 0 ? 'badge-danger' : ($item->status == 1 ? 'badge-warning' : ( $item->status == 2 ? 'badge-success' : 'badge-secondary' ))}}  rounded-pill d-inline py-2">
-                                        {{ $item->status == 0 ? 'pending'  : ( $item->status == 1 ? 'processing' : ( $item->status == 2 ? 'completed' : 'cancel' ) ) }} </span>
+                                        {{ $item->status == 0 ? 'Pending'  : ( $item->status == 1 ? 'Processing' : ( $item->status == 2 ? 'Completed' : 'Cancel' ) ) }} </span>
                                 </div>
                             </div>
                         </div>

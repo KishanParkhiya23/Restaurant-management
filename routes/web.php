@@ -6,6 +6,7 @@ use App\Http\Controllers\admin_side\ChefController;
 use App\Http\Controllers\admin_side\MenuController as Admin_sideMenuController;
 use App\Http\Controllers\admin_side\PasswordManageController;
 use App\Http\Controllers\admin_side\ChefAdminController;
+use App\Http\Controllers\admin_side\ContactController as Admin_sideContactController;
 use App\Http\Controllers\admin_side\StoriesManagementController;
 use App\Http\Controllers\admin_side\UserDetailsController;
 use App\Http\Controllers\Client_side\HomeController;
@@ -131,6 +132,11 @@ Route::group(['prefix' => '/admin', 'as' => 'admin'], function () {
       Route::post('/edit/save', [StoriesManagementController::class, 'editSave'])->name('.edit.save');
 
       Route::delete('/delete', [StoriesManagementController::class, 'deleteStory'])->name('.delete');
+    });
+
+    Route::group(['prefix' => '/contact-details', 'as' => '.contact-details'], function () {
+      Route::get('/contact', [Admin_sideContactController::class, 'contactShow'])->name('.contact');
+      Route::post('/contact/get-data', [Admin_sideContactController::class, 'getContactData'])->name('.get-data');
     });
   });
 });
