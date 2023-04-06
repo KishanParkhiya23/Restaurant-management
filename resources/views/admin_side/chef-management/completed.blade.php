@@ -25,9 +25,12 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th style="width: 60%!important;">Order</th>
-                        <th style="width: 20%!important;">items</th>
-                        <th style="width: 20%!important;">Date</th>
+                        <th>Order</th>
+                        <th>user name</th>
+                        <th>user contact</th>
+                        <th>items</th>
+                        <th>Type</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
@@ -38,7 +41,10 @@
                             <img src="{{asset(isset($item->orderFoods->image) ? $item->orderFoods->image : 'client_side/images/menu/no-menu-image.jpg')}}" alt="Avatar" class="rounded-circle">
                             <strong>{{$item->orderFoods->name}}</strong>
                         </td>
+                        <td>{{ $item->users->fullname }}</td>
+                        <td>{{ $item->users->contact }}</td>
                         <td>{{$item->quantity}}</td>
+                        <td> {{$item->orderFoods->type == 1 ? 'Delivery' : ($item->orderFoods->type == 2 ? 'Takeaway' : 'On-table order')}} </td>
                         <td>{{ date('d-m-Y',strtotime($item->updated_at)) }}</td>
                     </tr>
                     @endforeach

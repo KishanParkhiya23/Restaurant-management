@@ -90,7 +90,7 @@
                     meal.</p>
                 <pc class="time">
                     <span>Mon - Fri <strong>8 AM - 11 PM</strong></span>
-                    <span><a href="#">+ 1-978-123-4567</a></span>
+                    <span><a href="tel://9313443788">+9313443788</a></span>
                     </p>
             </div>
         </div>

@@ -15,4 +15,9 @@ class OrderItem extends Model
     {
         return $this->belongsTo(Menu::class, 'product_id', 'id');
     }
+
+    public function users()
+    {
+        return $this->belongsTo(Fuser::class, 'user_id', 'id');
+    }
 }
